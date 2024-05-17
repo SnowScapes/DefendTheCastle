@@ -28,7 +28,9 @@ public class IntroButtons : MonoBehaviour, IUiButton
     {
         switch (buttonNum)
         {
-            case 0: break;
+            case 0:
+                GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
+                break;
             case 1: SettingBoard.SetActive(true);
                 break;
             case 2: Application.Quit();
