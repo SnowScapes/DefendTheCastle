@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445462bb16e07bd43bbcaf7e2596f97b, type: 3}
+  m_Name: GoblinWarrior
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -545653920490516761, guid: 088bbcf09a1d6ad479957d735970922c, type: 3}
+  - {fileID: -103914926745189171, guid: 98f4e5ea952c6694195d6ec3abe03ffa, type: 3}
+  - {fileID: -1280972699232832092, guid: 9f60479cbfaffe6409d22a9bcaff4337, type: 3}
+  - {fileID: 8805203645464791205, guid: a21be278fccc0004da991cc7248ee650, type: 3}
+  animator:
+  - {fileID: 0}
+  unitName: "\uACE0\uBE14\uB9B0 \uC804\uC0AC"
+  description: "\uB9C8\uC655\uAD70\uC758 \uAE30\uCD08 \uBCD1\uACFC."
