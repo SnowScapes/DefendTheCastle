@@ -20,4 +20,6 @@ MonoBehaviour:
   animator:
   - {fileID: 0}
   unitName: "\uACE0\uBE14\uB9B0 \uC804\uC0AC"
-  description: "\uB9C8\uC655\uAD70\uC758 \uAE30\uCD08 \uBCD1\uACFC."
+  description:
+  - "\uB9C8\uC655\uAD70\uC758 \uAE30\uCD08 \uBCD1\uACFC. "
+  - "\uC801\uC5D0\uAC8C \uB2E4\uAC00\uAC00 \uADFC\uC811\uACF5\uACA9\uC744 \uD55C\uB2E4."

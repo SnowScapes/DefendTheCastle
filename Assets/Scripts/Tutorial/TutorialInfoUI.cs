@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TutorialInfoUI : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] unitImages;
+    private List<GameObject> unitImages;
     [SerializeField]
     private Text unitNameTxt;
     [SerializeField]
@@ -14,11 +14,34 @@ public class TutorialInfoUI : MonoBehaviour
 
     public void InitInfo(InfoSO so)
     {
-        for(int i = 0; i < unitImages.Length; i++) 
+        CheckObjectCount(so);
+        for (int i = 0; i < unitImages.Count; i++) 
         {
             unitImages[i].GetComponent<Image>().sprite = so.sprites[i];
         }
         unitNameTxt.text = so.unitName;
-        unitDescriptionTxt.text = so.description;
+        SetDescription(so);
+    }
+
+    private void SetDescription(InfoSO so)
+    {
+        for (int i = 0; i < so.description.Length; i++)
+        {
+            unitDescriptionTxt.text += so.description[i];
+            unitDescriptionTxt.text += "\n";
+        }
+    }
+
+    private void CheckObjectCount(InfoSO so)
+    {
+        
+        while (so.sprites.Length != unitImages.Count)
+        {
+            if (so.sprites.Length < unitImages.Count)
+            {
+                Destroy(unitImages[unitImages.Count - 1]);
+                unitImages.RemoveAt(unitImages.Count - 1);
+            }
+        }
     }
 }
