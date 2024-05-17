@@ -7,7 +7,6 @@ using UnityEngine;
 public class MonsterBehavior : BehaviorController
 {
     [SerializeField] private Transform _transform;
-    [SerializeField] private GameObject castle;
 
     [SerializeField] private TestSpawnManager spawnmanager;
     [SerializeField] private Spawn spawnPoint;
