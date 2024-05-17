@@ -17,7 +17,6 @@ public class TutorialManager : MonoBehaviour
         if (GameManager.instance != null)
         {
             startBtn.onClick.AddListener(() => GameManager.instance.ChangedScene(Define.eSceneName.MainScene));
-            startBtn.interactable = false;
             skipBtn.onClick.AddListener(() => GameManager.instance.ChangedScene(Define.eSceneName.MainScene));
         }
     }
