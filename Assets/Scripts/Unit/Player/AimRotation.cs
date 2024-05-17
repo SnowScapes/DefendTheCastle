@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AimRotation : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer characterRenderer;
     [SerializeField] private Transform pivot;
+    [SerializeField] private GameObject Character;
 
     private BehaviorController controller;
 
@@ -25,12 +27,10 @@ public class AimRotation : MonoBehaviour
     }
 
     private void Rotation(Vector2 direction)
-    {
+    { 
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
 
-        pivot.position = (Vector3)direction.normalized * 0.5f;
-       
+        pivot.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 }
