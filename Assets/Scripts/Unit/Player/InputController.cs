@@ -26,4 +26,9 @@ public class InputController : BehaviorController
 
         CallLookEvent(direction);
     }
+
+    public void OnFire(InputValue input)
+    {
+        IsAttacking = input.isPressed;
+    }
 }

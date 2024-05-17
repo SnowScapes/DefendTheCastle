@@ -5,6 +5,8 @@ using UnityEngine;
 public class AimRotation : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer characterRenderer;
+    [SerializeField] private Transform pivot;
+
     private BehaviorController controller;
 
     private void Awake()
@@ -27,5 +29,8 @@ public class AimRotation : MonoBehaviour
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+
+        pivot.position = (Vector3)direction.normalized * 0.5f;
+       
     }
 }
