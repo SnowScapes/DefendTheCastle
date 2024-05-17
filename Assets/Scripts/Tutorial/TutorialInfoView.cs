@@ -24,6 +24,7 @@ public class TutorialInfoView : MonoBehaviour
             tutorialMananger.infoes.Add(go);
             var panel = go.GetComponent<TutorialInfoUI>();
             panel.InitInfo(infoSOs[i]);
+            go.gameObject.SetActive(false);
         }        
     }
 }
