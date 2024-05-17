@@ -14,12 +14,12 @@ public class MonsterBehavior : BehaviorController
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
     private bool arrived = false;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _transform = this.GetComponent<Transform>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetRallyPos();
         OnMoveEvent += WalkTo;
@@ -35,7 +35,6 @@ public class MonsterBehavior : BehaviorController
                 {
                     Vector2 rallypos = new Vector2(spawnmanager.Rally_Left[i].position.x, spawnmanager.Rally_Left[i].position.y);
                     rallyPoint.Enqueue(rallypos);
-                    Debug.Log("queue success");
                 }
                 break;
             case Spawn.Center: 
