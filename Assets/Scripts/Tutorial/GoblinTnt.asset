@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445462bb16e07bd43bbcaf7e2596f97b, type: 3}
+  m_Name: GoblinTnt
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -8342529471178515844, guid: 470557b87adf1d448a7482fcba24a122, type: 3}
+  - {fileID: 8592349951100520407, guid: e2bfbf2cdc9ba704989fe18f84bed18f, type: 3}
+  - {fileID: -4807295167400680658, guid: ac1c8e14187ba3c4a8d1cd1562f0b431, type: 3}
+  - {fileID: 7265701200675373915, guid: beef68d17549cb8498d47ceee62f8b01, type: 3}
+  animator:
+  - {fileID: 0}
+  unitName: "\uACE0\uBE14\uB9B0 \uD22C\uCC99\uBCD1"
+  description: "\uB9C8\uC655\uAD70\uC758 \uC6D0\uAC70\uB9AC \uBCD1\uC0AC."

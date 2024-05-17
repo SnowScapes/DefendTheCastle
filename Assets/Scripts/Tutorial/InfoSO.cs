@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InfoSO : MonoBehaviour
+[CreateAssetMenu(fileName = "InfoSo", menuName = "Tutorial/UI/Infoes/Deafult", order = 0)]
+public class InfoSO : ScriptableObject
 {
-    public Image[] Images;
-    public Animator animator;
-    public string Name;
-    public string Description;
+    public Sprite[] sprites;
+    public Animator[] animator;
+    public string unitName;
+    public string description;
 }

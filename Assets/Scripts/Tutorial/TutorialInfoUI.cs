@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class TutorialInfoUI : MonoBehaviour
 {
     [SerializeField]
-    private Image[] UnitImages;
+    private GameObject[] unitImages;
     [SerializeField]
-    private Text UnitNameTxt;
+    private Text unitNameTxt;
     [SerializeField]
-    private Text UnitDescriptionTxt;
+    private Text unitDescriptionTxt;
 
     public void InitInfo(InfoSO so)
     {
-        for(int i = 0; i < UnitImages.Length; i++) 
+        for(int i = 0; i < unitImages.Length; i++) 
         {
-            UnitImages[i] = so.Images[i];
+            unitImages[i].GetComponent<Image>().sprite = so.sprites[i];
         }
-        UnitNameTxt.text = so.Name;
-        UnitDescriptionTxt.text = so.Description;
+        unitNameTxt.text = so.unitName;
+        unitDescriptionTxt.text = so.description;
     }
 }

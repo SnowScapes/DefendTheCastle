@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445462bb16e07bd43bbcaf7e2596f97b, type: 3}
+  m_Name: GoblinBarrel
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 3641757562647556068, guid: 6740b6cadb2d0e643b6d36fede7e658b, type: 3}
+  - {fileID: -8217758874831088439, guid: 460ab3dd20580c945a52d3952ac9c017, type: 3}
+  - {fileID: -937695574643470712, guid: a982bbd597ec9f14caec685a996f43f4, type: 3}
+  - {fileID: -5767918264697802385, guid: f148bf04af8b3494ea74b7c0b9a7bec7, type: 3}
+  animator:
+  - {fileID: 0}
+  unitName: "\uACE0\uBE14\uB9B0 \uD3ED\uD30C\uBCD1"
+  description: "\uB9C8\uC655\uAD70\uC758 \uC804\uBB38 \uD3ED\uD30C\uBCD1."

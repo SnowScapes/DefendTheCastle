@@ -6,10 +6,10 @@ using UnityEngine;
 public class TutorialInfoView : MonoBehaviour
 {
     [SerializeField]
-    private GameObject InfoUIPrefab;
-    public List<GameObject> Infoes = new List<GameObject>();
+    private GameObject infoUIPrefab;
+    public TutorialManager tutorialMananger;
     [SerializeField]
-    private InfoSO[] InfoSOs;
+    private InfoSO[] infoSOs;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +18,12 @@ public class TutorialInfoView : MonoBehaviour
 
     private void CreateInfoes()
     {
-        for (int i = 0; i < InfoSOs.Length; i++)
+        for (int i = 0; i < infoSOs.Length; i++)
         {
-            GameObject go = Instantiate(InfoUIPrefab, transform);
-            Infoes.Add(go);
+            GameObject go = Instantiate(infoUIPrefab, transform);
+            tutorialMananger.infoes.Add(go);
             var panel = go.GetComponent<TutorialInfoUI>();
-            panel.InitInfo(InfoSOs[i]);
+            panel.InitInfo(infoSOs[i]);
         }        
     }
 }
