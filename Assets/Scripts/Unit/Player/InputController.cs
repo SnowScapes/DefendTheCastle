@@ -6,16 +6,22 @@ using UnityEngine.InputSystem;
 
 public class InputController : BehaviorController
 {
-    public void OnMove(InputAction.CallbackContext input)
+    private Camera camera;
+
+    private void Awake()
     {
-        Vector2 direction = input.ReadValue<Vector2>().normalized;
+        camera = Camera.main;
+    }
+    public void OnMove(InputValue input)
+    {
+        Vector2 direction = input.Get<Vector2>().normalized;
         CallMoveEvent(direction);
     }
 
-    public void OnLook(InputAction.CallbackContext input)
+    public void OnLook(InputValue input)
     {
-        Vector2 direction = input.ReadValue<Vector2>().normalized;
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(direction);
+        Vector2 direction = input.Get<Vector2>();
+        Vector2 worldPos = camera.ScreenToWorldPoint(direction);
         direction = (worldPos - (Vector2)transform.position).normalized;
 
         CallLookEvent(direction);
