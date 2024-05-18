@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8429344626475249103}
   - component: {fileID: 5968560678785103892}
   - component: {fileID: 3164919504630105314}
-  m_Layer: 0
+  - component: {fileID: 2431163441308316989}
+  m_Layer: 10
   m_Name: GoblinTorch
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -106,6 +107,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2431163441308316989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415521254149942370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6414cc374a95b7469d5a1caf3ce6f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  spawnmanager: {fileID: 0}
+  spawnPoint: 0
 --- !u!1 &1638950319736826746
 GameObject:
   m_ObjectHideFlags: 0

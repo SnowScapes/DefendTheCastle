@@ -12,12 +12,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
+  - 
+  - Background
+  - Item
+  - Projectile
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
