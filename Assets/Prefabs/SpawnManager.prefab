@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creator: {fileID: 5257673289641693570}
   objMonster:
-  - {fileID: 8414900589519468450, guid: 2f0add040a30f4544b3781d6d07649a6, type: 3}
-  - {fileID: 7157356009863168197, guid: 9d47cc526118aa14991059954eb97d11, type: 3}
-  - {fileID: 7033413081453748505, guid: 936b9af47b8d2ee49a96860af5819e73, type: 3}
+  - {fileID: 415521254149942370, guid: 7428d43f9f863634eae01428c633e9c8, type: 3}
+  - {fileID: 1136165121066507348, guid: ef9c535abe8bbf34ba8c1288a88e10d2, type: 3}
+  - {fileID: 8369343405598923016, guid: 0aa29f679bf494b4b8d927196766e407, type: 3}
   spawnerLocation:
   - {fileID: 0}
   - {fileID: 0}
@@ -57,9 +57,13 @@ MonoBehaviour:
   MaxMonsterCount: 5
   Rally_Left:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Rally_Center:
   - {fileID: 0}
   Rally_Right:
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &5257673289641693570
 MonoBehaviour:
