@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MonsterBehavior : BehaviorController
 {
     [SerializeField] private Transform _transform;
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private TestSpawnManager spawnmanager;
-    [SerializeField] private Spawn spawnPoint;
+    [SerializeField] private MonsterSpawner spawnmanager;
+    [SerializeField] internal Spawn spawnPoint;
 
     private IEnumerator move;
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
@@ -17,6 +18,7 @@ public class MonsterBehavior : BehaviorController
 
     protected virtual void Awake()
     {
+        spawnmanager = GameObject.Find("SpawnManager").GetComponent<MonsterSpawner>();
         _rigidbody = this.GetComponent<Rigidbody2D>();
         _transform = this.GetComponent<Transform>();
     }
@@ -34,28 +36,24 @@ public class MonsterBehavior : BehaviorController
         switch (spawnPoint)
         {
             case Spawn.Left:
-                for (int i = 0; i < spawnmanager.Rally_Left.Count; i++)
-                {
-                    Vector2 rallypos = new Vector2(spawnmanager.Rally_Left[i].position.x, spawnmanager.Rally_Left[i].position.y);
-                    rallyPoint.Enqueue(rallypos);
-                }
+                queueRally(spawnmanager.Rally_Left);
                 break;
             case Spawn.Center: 
-                for (int i = 0; i < spawnmanager.Rally_Center.Count; i++)
-                {
-                    Vector2 rallypos = new Vector2(spawnmanager.Rally_Center[i].position.x,
-                        spawnmanager.Rally_Center[i].position.y);
-                    rallyPoint.Enqueue(rallypos);
-                }
+                queueRally(spawnmanager.Rally_Center);
                 break;
             case Spawn.Right: 
-                for (int i = 0; i < spawnmanager.Rally_Right.Count; i++)
-                {
-                    Vector2 rallypos = new Vector2(spawnmanager.Rally_Right[i].position.x,
-                        spawnmanager.Rally_Right[i].position.y);
-                    rallyPoint.Enqueue(rallypos);
-                }
+                queueRally(spawnmanager.Rally_Right);
                 break;
+        }
+    }
+
+    private void queueRally(List<Transform> rallyPos)
+    {
+        for (int i = 0; i < rallyPos.Count; i++)
+        {
+            float rallypos_x = Random.Range(rallyPos[i].position.x - 0.5f, rallyPos[i].position.x + 0.5f);
+            float rallypos_y = Random.Range(rallyPos[i].position.y - 0.5f, rallyPos[i].position.y + 0.5f);
+            rallyPoint.Enqueue(new Vector2(rallypos_x,rallypos_y));
         }
     }
     

@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum eSpecialMode {normal, invincibleMode, speedMode}
 
+[Serializable]
 public class PlayerStat : UnitStat
 {
     public bool knockback;
@@ -17,7 +20,7 @@ public class PlayerStat : UnitStat
             IncreasedAtk(value);
         }
     }
-    //최대 체력 증가
+
     public int MaxHpUpgrade
     {
         get
@@ -29,7 +32,7 @@ public class PlayerStat : UnitStat
             IncreasedHp(value);
         }
     }
-    //체력회복
+
     public int HpRecovery
     {
         get

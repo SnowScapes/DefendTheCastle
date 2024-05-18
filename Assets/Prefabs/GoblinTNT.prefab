@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8100690050641405322}
   - component: {fileID: 2606609579247016055}
   - component: {fileID: 4328832407036740062}
-  m_Layer: 0
+  - component: {fileID: -4661727380987523321}
+  m_Layer: 10
   m_Name: GoblinTNT
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -106,6 +107,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-4661727380987523321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136165121066507348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab31eb7a1a8cde48b690562f09dc4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  spawnmanager: {fileID: 0}
+  spawnPoint: 0
 --- !u!1 &6431117377839932894
 GameObject:
   m_ObjectHideFlags: 0
