@@ -60,7 +60,6 @@ public class MonsterBehavior : BehaviorController
     
     private void WalkTo(Vector2 destination)
     {
-        // 추후에 정보에서 속도 불러오기
         _transform.position = Vector2.MoveTowards(_transform.position, destination, 0.01f);
         if ((Vector2)_transform.position == destination)
             arrived = true;
