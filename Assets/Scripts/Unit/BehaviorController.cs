@@ -19,7 +19,7 @@ public class BehaviorController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (timeSinceLastAttack < 0.2f) // 0,2f -> ¼öÁ¤ ÇÊ¿ä
+        if (timeSinceLastAttack < 0.2f) // 0,2f -> ìˆ˜ì • í•„ìš”
         {
             timeSinceLastAttack += Time.deltaTime;
         }
