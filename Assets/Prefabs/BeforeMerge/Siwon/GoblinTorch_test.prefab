@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 0}
+  _rigidbody: {fileID: 0}
   spawnmanager: {fileID: 0}
   spawnPoint: 0
 --- !u!1 &4102410221301718971
