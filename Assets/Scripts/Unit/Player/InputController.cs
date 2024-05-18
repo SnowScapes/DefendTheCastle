@@ -8,8 +8,9 @@ public class InputController : BehaviorController
 {
     private Camera camera;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         camera = Camera.main;
     }
     public void OnMove(InputValue input)

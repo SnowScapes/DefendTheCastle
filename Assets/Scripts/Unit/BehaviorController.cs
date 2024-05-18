@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class BehaviorController : MonoBehaviour
@@ -12,6 +13,13 @@ public class BehaviorController : MonoBehaviour
     protected bool IsAttacking { get; set; }
     private float timeSinceLastAttack = float.MaxValue;
 
+    protected PlayerStatsHandler stats { get; private set; }
+
+    protected virtual void Awake()
+    {
+        stats = GetComponent<PlayerStatsHandler>();
+    }
+
     private void Update()
     {
         HandleAttackDelay();
@@ -19,7 +27,7 @@ public class BehaviorController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (timeSinceLastAttack < 0.2f) // 0,2f -> 수정 필요
+        if (timeSinceLastAttack <= stats.CurrentStat.attackSO.delay) 
         {
             timeSinceLastAttack += Time.deltaTime;
         }

@@ -7,14 +7,15 @@ public class Movement : MonoBehaviour
 {
     private BehaviorController controller;
     private Rigidbody2D movementRigidbody;
+    private PlayerStatsHandler playerStatsHandler;
 
     private Vector2 movementDirection = Vector2.zero;
-    float speed = 5f;
 
     private void Awake()
     {
         controller = GetComponent<BehaviorController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
+        playerStatsHandler = GetComponent<PlayerStatsHandler>();
     }
 
     private void Start()
@@ -34,7 +35,7 @@ public class Movement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction *= speed;
+        direction *= playerStatsHandler.CurrentStat.speed;
         movementRigidbody.velocity = direction;
     }
 
