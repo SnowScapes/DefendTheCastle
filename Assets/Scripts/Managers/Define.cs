@@ -7,4 +7,12 @@ public class Define
         MainScene,
         EndScene
     }
+
+    public enum eMonsterType
+    {
+        Torch = 0,
+        Tnt,
+        Barrel,
+        Satan
+    }
 }
