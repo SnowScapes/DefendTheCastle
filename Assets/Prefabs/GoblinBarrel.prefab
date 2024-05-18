@@ -117,7 +117,8 @@ GameObject:
   - component: {fileID: 7720103289572050190}
   - component: {fileID: 2860196963151600412}
   - component: {fileID: 1808182081074081308}
-  m_Layer: 0
+  - component: {fileID: -8626830980436314834}
+  m_Layer: 10
   m_Name: GoblinBarrel
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -212,3 +213,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-8626830980436314834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369343405598923016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043f3c7350d2cb84ea367f2556d46e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  spawnmanager: {fileID: 0}
+  spawnPoint: 0
