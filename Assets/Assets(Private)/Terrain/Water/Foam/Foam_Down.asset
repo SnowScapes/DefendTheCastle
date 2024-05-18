@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Foam_Down
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: -197958921, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: -1311627026, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: -551392804, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 445008239, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 1446750637, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0

@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Foam_left
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: 779870109, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 1599288336, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 2009344966, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 1560542965, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 803180437, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 1709744029, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: 945082375, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  - {fileID: -383855836, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
