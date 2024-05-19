@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4122768371699669687}
   - component: {fileID: 3698518470581934525}
   - component: {fileID: 1434423848631198283}
+  - component: {fileID: 7891997637452977651}
+  - component: {fileID: 2540136441476572900}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -195,6 +197,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 5255847300117534795}
   ProjPrefab: {fileID: 6578986455680086051, guid: 9ee7e87d10f4bb14a9963104e89a2c1d, type: 3}
+--- !u!114 &7891997637452977651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104181402301944412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3c3a85ffbbee145b41fe428bcb3217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2540136441476572900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104181402301944412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc23d17a89e96949a8ee6df87e2344a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3348705357081440166
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +379,7 @@ Animator:
   m_GameObject: {fileID: 6794804536610085116}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 384788315442756142, guid: 0c61089265537c24090784f76c19df09, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1aabd736a06f32b4086798e1bcddb618, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
