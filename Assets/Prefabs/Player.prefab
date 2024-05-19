@@ -210,16 +210,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStat:
     <id>k__BackingField: 0
-    <unitName>k__BackingField: 
-    <maxHp>k__BackingField: 0
-    <hp>k__BackingField: 0
-    <moveSpeed>k__BackingField: 0
+    <unitName>k__BackingField: Player
+    <maxHp>k__BackingField: 10
+    <hp>k__BackingField: 10
+    <moveSpeed>k__BackingField: 5
     <attackSpeed>k__BackingField: 0
     <atk>k__BackingField: 0
     <range>k__BackingField: 0
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
-    knockback: 0
+    knockback: 1
     statsChangeType: 0
     mode: 0
     <AtkUpgrade>k__BackingField: 0
