@@ -8,7 +8,7 @@ public class BehaviorController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action OnAttackEvent;
+    public event Action<AttackSO> OnAttackEvent;
 
     protected bool IsAttacking { get; set; }
     private float timeSinceLastAttack = float.MaxValue;
@@ -34,7 +34,7 @@ public class BehaviorController : MonoBehaviour
         else if(IsAttacking)
         {
             timeSinceLastAttack = 0f;
-            CallAttackEvent();
+            CallAttackEvent(stats.CurrentStat.attackSO);
         }
     }
 
@@ -49,8 +49,8 @@ public class BehaviorController : MonoBehaviour
         OnLookEvent?.Invoke(input);
     }
 
-    public void CallAttackEvent()
+    public void CallAttackEvent(AttackSO attackSO)
     {
-        OnAttackEvent?.Invoke();
+        OnAttackEvent?.Invoke(attackSO);
     }
 }

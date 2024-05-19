@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 4122768371699669687}
   - component: {fileID: 3698518470581934525}
   - component: {fileID: 1434423848631198283}
-  - component: {fileID: 4543842018968229089}
-  m_Layer: 6
+  - component: {fileID: 326689952522731183}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 5255847300117534795}
   ProjPrefab: {fileID: 6578986455680086051, guid: 9ee7e87d10f4bb14a9963104e89a2c1d, type: 3}
---- !u!114 &4543842018968229089
+--- !u!114 &326689952522731183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,11 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0782db07d7c97aa468a8c55f02993e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStat:
-    statsChangeType: 2
-    maxHealth: 10
-    speed: 15
-    attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
+  baseStat: {fileID: 0}
   statModifiers: []
 --- !u!1 &3348705357081440166
 GameObject:
@@ -223,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5255847300117534795}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: arrow_SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2987426738402651518}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: bow_Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +284,7 @@ GameObject:
   - component: {fileID: 1236078964709246865}
   - component: {fileID: 8425198769547049853}
   - component: {fileID: 5089037802677161190}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

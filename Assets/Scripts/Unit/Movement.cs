@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction *= playerStatsHandler.CurrentStat.speed;
+        direction *= playerStatsHandler.CurrentStat.moveSpeed;
         movementRigidbody.velocity = direction;
     }
 

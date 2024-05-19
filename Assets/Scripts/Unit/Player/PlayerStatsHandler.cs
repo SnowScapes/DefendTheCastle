@@ -26,8 +26,8 @@ public class PlayerStatsHandler : MonoBehaviour
         CurrentStat = new PlayerStat { attackSO = attackSO };
 
         CurrentStat.statsChangeType = baseStat.statsChangeType;
-        CurrentStat.maxHealth = baseStat.maxHealth;
-        CurrentStat.speed = baseStat.speed;
+        CurrentStat.maxHp = baseStat.maxHp;
+        CurrentStat.moveSpeed = baseStat.moveSpeed;
 
         // Line 20 ~ 32 기본 능력치 적용
 

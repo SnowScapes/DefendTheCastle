@@ -6,14 +6,14 @@ using UnityEngine;
 [Serializable]
 public class UnitStat : MonoBehaviour
 {
-    [SerializeField]protected int id;
-    [SerializeField]protected string name;
-    [SerializeField]protected int maxHp;
-    [SerializeField]protected int hp;
-    [SerializeField]protected float moveSpeed;
-    [SerializeField]protected float attackSpeed;
-    [SerializeField]protected int atk;
-    [SerializeField]protected float range;
-    [SerializeField]protected int level;
-    [SerializeField]protected int gold;
+    public int id { get; set; }
+    public string unitName { get; set; }
+    public int maxHp { get; set; }
+    public int hp { get; set; }
+    public float moveSpeed { get; set; }
+    public float attackSpeed { get; set; }
+    public int atk { get; set; }
+    public float range { get; set; }
+    public int level { get; set; }
+    public int gold { get; set; }
 }

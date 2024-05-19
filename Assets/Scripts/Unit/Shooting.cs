@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Shooting : MonoBehaviour
 {
@@ -27,13 +28,36 @@ public class Shooting : MonoBehaviour
     }
 
 
-    private void OnShoot()
+    private void OnShoot(AttackSO attackSO)
     {
-        CreateProjectile();
+        RangedAttackSO rangedAttackSO = attackSO as RangedAttackSO;
+        if(rangedAttackSO == null) return;
+
+        float projectilesAngleSpace = rangedAttackSO.multipleProjectilesAngle;
+        int numberOfPorjectilesPerShot = rangedAttackSO.numberOfProjectilesPerShot;
+
+        float minAngle = -(numberOfPorjectilesPerShot / 2f) * projectilesAngleSpace + 0.5f * rangedAttackSO.multipleProjectilesAngle;
+
+        for(int i = 0; i< numberOfPorjectilesPerShot; i++)
+        {
+            float angle = minAngle + i * projectilesAngleSpace;
+            float randomSpread = Random.Range(-rangedAttackSO.spread, rangedAttackSO.spread);
+            angle += randomSpread;
+            CreateProjectile(rangedAttackSO, angle);
+        }
+
     }
 
-    private void CreateProjectile()
+    private void CreateProjectile(RangedAttackSO rangedAttackSO , float angle)
     {
-        Instantiate(ProjPrefab, projectileSpawnPosition.position, Quaternion.identity);
+        GameObject obj = Instantiate(ProjPrefab);
+        obj.transform.position = projectileSpawnPosition.position;
+        ProjectileController attackController = obj.GetComponent<ProjectileController>();
+        attackController.InitializeAttack(RotateVector2(aimDirection,angle),rangedAttackSO);
+    }
+
+    private static Vector2 RotateVector2(Vector2 v, float angle)
+    {
+        return Quaternion.Euler(0f, 0f, angle) * v;
     }
 }
