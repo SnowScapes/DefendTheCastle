@@ -31,7 +31,7 @@ public class PlayerAnimationController : AnimationController
         animator.SetBool(isRun, vector.magnitude > magnituteThreshold);
     }
 
-    private void Attacking()
+    protected virtual void Attacking()
     {
         animator.SetTrigger(attackFront);
     }
