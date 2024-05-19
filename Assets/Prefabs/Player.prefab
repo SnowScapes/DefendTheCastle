@@ -208,7 +208,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0782db07d7c97aa468a8c55f02993e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStat: {fileID: 0}
+  baseStat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <maxHp>k__BackingField: 0
+    <hp>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <attackSpeed>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <range>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    knockback: 0
+    statsChangeType: 0
+    mode: 0
+    <AtkUpgrade>k__BackingField: 0
+    <HpUpgrade>k__BackingField: 0
+    attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
   statModifiers: []
 --- !u!1 &3348705357081440166
 GameObject:
