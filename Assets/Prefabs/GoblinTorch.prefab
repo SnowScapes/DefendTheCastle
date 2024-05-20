@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3164919504630105314}
   - component: {fileID: 2431163441308316989}
   - component: {fileID: 6082598455300698571}
+  - component: {fileID: -1904887399270468231}
   m_Layer: 10
   m_Name: GoblinTorch
   m_TagString: Monster
@@ -128,8 +129,9 @@ MonoBehaviour:
   stat:
     <id>k__BackingField: 0
     <unitName>k__BackingField: 
+    <hp>k__BackingField: 20
     <maxHp>k__BackingField: 0
-    <hp>k__BackingField: 0
+    <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
@@ -146,6 +148,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddb170a164d05c419f394c9e393e485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1904887399270468231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415521254149942370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81c12ec4945b434ba3f5b1842667894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 0}
 --- !u!1 &1638950319736826746
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2321234030401858163}
   - component: {fileID: 906490120011016787}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

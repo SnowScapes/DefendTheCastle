@@ -11,7 +11,7 @@ public class MonsterBehavior : BehaviorController
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private MonsterSpawner spawnmanager;
     [SerializeField] internal Spawn spawnPoint;
-    [SerializeField] private MonsterStat stat;
+    [SerializeField] internal MonsterStat stat;
 
     private IEnumerator move;
     private IEnumerator attack;

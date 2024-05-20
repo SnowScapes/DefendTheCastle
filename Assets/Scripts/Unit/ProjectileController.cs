@@ -9,6 +9,7 @@ public class ProjectileController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
+    public InputController playerController;
     public PlayerStat stat;
     private AttackSO attackData;
     private float currentDuration;
@@ -82,11 +83,12 @@ public class ProjectileController : MonoBehaviour
         }
         else if(IsLayerMatched(attackData.target.value,collision.gameObject.layer))
         {
+            playerController.OnAttackEvent += collision.GetComponent<MonsterHealthManager>().DamageHandler;
             // Todo : 데미지 주기
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
-
+    
     private bool IsLayerMatched(int value, int layer)
     {
         return value == (value | 1 << layer);
