@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ShopSlot : MonoBehaviour
 {
     public UpgradeList upgradeList;
+    public Shop shop;
+    [SerializeField]
+    private Button upgradeBtn;  
     [SerializeField]
     private Text attributeTxt;
     [SerializeField] 
@@ -24,7 +27,7 @@ public class ShopSlot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        SetListUI();
     }
 
     public void SetListUI()
@@ -51,20 +54,22 @@ public class ShopSlot : MonoBehaviour
         switch(type) 
         {
             case Define.eUpgradeType.PlayerAtk:
+                upgradeBtn.onClick.AddListener(shop.OnAtkUpgrade);
                 return "플레이어\n공격력";
             case Define.eUpgradeType.PlayerMaxHp:
+                upgradeBtn.onClick.AddListener(shop.OnPlayerMaxHpUpgrade);
                 return "플레이어\n최대 체력";
             case Define.eUpgradeType.PlayerMoveSpeed:
+                upgradeBtn.onClick.AddListener(shop.OnPlayerMoveSpeedUpgrade);
                 return "플레이어\n이동속도";
+            case Define.eUpgradeType.PlayerAtkSpeed:
+                upgradeBtn.onClick.AddListener(shop.OnPlayerAtkSpeedUpgrade);
+                return "플레이어\n공격속도";
             case Define.eUpgradeType.CastleLv:
+                upgradeBtn.onClick.AddListener(shop.OnCastleUpgrade);
                 return "캐슬\n최대 체력";
             default: 
                 return string.Empty;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

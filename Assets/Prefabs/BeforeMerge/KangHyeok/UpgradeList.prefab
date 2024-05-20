@@ -854,6 +854,8 @@ MonoBehaviour:
     UpgradeValues: 
     UpgradeCosts: 
     UpgradeImg: {fileID: 0}
+  shop: {fileID: 0}
+  upgradeBtn: {fileID: 2692781513744397973}
   attributeTxt: {fileID: 5364028750552112548}
   costTxt: {fileID: 2740390160512463967}
   abiltyGO: {fileID: 775045061658775011}

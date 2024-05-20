@@ -15,5 +15,5 @@ MonoBehaviour:
   type: 2
   upgradeLv: 0
   upgradeValues: 010000000300000005000000
-  upgradeCosts: 00000000e8030000dc050000
+  upgradeCosts: e8030000dc050000
   upgradeUI: {fileID: 0}

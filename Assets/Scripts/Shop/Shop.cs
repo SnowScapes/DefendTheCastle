@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private GameObject upgradePrefab;
     [SerializeField]
-    private GameObject[] purchasedAction;
+    private Text purchasedStateTxt;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class Shop : MonoBehaviour
             upgradeList[i].InitInfo(contentSO[i]);
             dicUpgrade[contentSO[i].type] = upgradeList[i];
             go.GetComponent<ShopSlot>().upgradeList = upgradeList[i];
+            go.GetComponent<ShopSlot>().shop = this;
         }
     }
 
@@ -53,6 +55,12 @@ public class Shop : MonoBehaviour
     {
         float temp = player.moveSpeed;
         SetValue(Define.eUpgradeType.PlayerMoveSpeed, ref temp);
+    }
+
+    public void OnPlayerAtkSpeedUpgrade()
+    {
+        //float temp = player.;
+        //SetValue(Define.eUpgradeType.PlayerAtkSpeed, ref temp);
     }
 
     public void OnSpecialItem()
@@ -86,19 +94,25 @@ public class Shop : MonoBehaviour
 
     private void OnResult(int index)
     {
-        if (purchasedAction[0].activeSelf || purchasedAction[1].activeSelf)
+        if (purchasedStateTxt.gameObject.activeSelf)
         {
             StopAllCoroutines();
-            purchasedAction[0].SetActive(false);
-            purchasedAction[1].SetActive(false);
         }
         StartCoroutine(ActionResult(index));
     }
     IEnumerator ActionResult(int result)
     {
-        purchasedAction[result].SetActive(true);
+        purchasedStateTxt.gameObject.SetActive(true);
+        if (result == 0)
+        {
+            purchasedStateTxt.text = "업그레이드에 실패하였습니다.";
+        }
+        else
+        {
+            purchasedStateTxt.text = "업그레이드를 성공하였습니다.";
+        }
         yield return new WaitForSeconds(1.0f);
-        purchasedAction[result].SetActive(false);
+        purchasedStateTxt.gameObject.SetActive(false);
     }
 
 }
