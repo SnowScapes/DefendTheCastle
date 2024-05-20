@@ -10,10 +10,13 @@ public class Shooting : MonoBehaviour
     [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 aimDirection = Vector2.right;
 
+    private ObjectPool pool;
+
     public GameObject ProjPrefab; // ≈ıªÁ√º «¡∏Æ∆’ ( »≠ªÏ, ∆¯≈∫ )
     private void Awake()
     {
         controller = GetComponent<BehaviorController>();
+        pool = GameObject.FindObjectOfType<ObjectPool>();
     }
 
     private void Start()
@@ -50,7 +53,7 @@ public class Shooting : MonoBehaviour
 
     private void CreateProjectile(RangedAttackSO rangedAttackSO , float angle)
     {
-        GameObject obj = Instantiate(ProjPrefab);
+        GameObject obj = pool.SpawnFromPool(rangedAttackSO.bulletName);
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.InitializeAttack(RotateVector2(aimDirection,angle),rangedAttackSO);
