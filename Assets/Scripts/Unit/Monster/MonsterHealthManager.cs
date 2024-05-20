@@ -9,7 +9,7 @@ public class MonsterHealthManager : MonoBehaviour
 
     private void Awake()
     {
-        stat = this.GetComponent<MonsterStat>();
+        stat = this.GetComponent<MonsterBehavior>().stat;
     }
 
     private void Start()
@@ -19,6 +19,7 @@ public class MonsterHealthManager : MonoBehaviour
 
     public void DamageHandler(int power)
     {
+        Debug.Log("Damaged");
         stat.hp -= power;
         if (stat.hp <= 0)
         {
