@@ -11,10 +11,9 @@ public enum StatsChangeType
 }
 
 
-[Serializable]
+[System.Serializable]
 public class PlayerStat : UnitStat
 {
-    public StatsChangeType statsChangeType; // 스탯이 어떻게 변하는지
     public AttackSO attackSO;
 
     public bool knockback;
@@ -27,7 +26,7 @@ public class PlayerStat : UnitStat
         }
         set
         {
-            IncreasedAtk(value);
+            ChangedAtk(value);
         }
     }
 
@@ -55,9 +54,13 @@ public class PlayerStat : UnitStat
         }
     }
 
-    private void IncreasedAtk(int addValue)
+    public void InitStat(AttackSO so)
     {
-        atk += addValue;
+        ChangedAtk(so.power);
+    }
+    private void ChangedAtk(int addValue)
+    {
+        atk = addValue;
     }
 
     private void RecoveryHp(int addValue)
@@ -75,8 +78,21 @@ public class PlayerStat : UnitStat
 
     private void IncreasedHp(int addValue)
     {
-        maxHp += addValue;
-        hp += addValue;
+        int temp = addValue - maxHp;
+        maxHp = addValue;
+        hp += temp;
+    }
+
+    public bool CheckedHaveMoney(int cost)
+    {
+        if (gold >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 

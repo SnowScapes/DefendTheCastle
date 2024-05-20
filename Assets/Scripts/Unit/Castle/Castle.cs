@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Castle : MonoBehaviour
 {
-    public int hpUpgradStep { get; private set; } = 0;
     [SerializeField]
     private int castleHp = 50;
     // Start is called before the first frame update
@@ -22,6 +21,5 @@ public class Castle : MonoBehaviour
     public void SetCastleHp(int stat)
     {
         castleHp = stat;
-        hpUpgradStep++;
     }
 }

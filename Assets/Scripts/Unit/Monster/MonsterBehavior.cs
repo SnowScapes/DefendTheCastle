@@ -59,7 +59,7 @@ public class MonsterBehavior : BehaviorController
     
     private void WalkTo(Vector2 destination)
     {
-        // 추후에 정보에서 속도 불러오기
+        // 추후???�보?�서 ?�도 불러?�기
         _rigidbody.position = Vector2.MoveTowards(_rigidbody.position, destination, 0.01f);
         if ((Vector2)_rigidbody.position == destination)
             arrived = true;

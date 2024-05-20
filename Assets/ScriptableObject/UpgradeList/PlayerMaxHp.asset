@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd33e9954627844e98d8384ea175d4d, type: 3}
+  m_Name: PlayerMaxHp
+  m_EditorClassIdentifier: 
+  type: 0
+  upgradeLv: 0
+  upgradeValues: 6400000096000000
+  upgradeCosts: 00000000b0040000
+  upgradeUI: {fileID: 858841808, guid: 2e5b3ee6f53772348a8d36da55b0eeea, type: 3}
