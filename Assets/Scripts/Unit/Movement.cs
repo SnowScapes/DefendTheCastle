@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private BehaviorController controller;
+    private InputController controller;
     private Rigidbody2D movementRigidbody;
-    private PlayerStatsHandler playerStatsHandler;
+    private PlayerStat playerStatsHandler;
 
     private Vector2 movementDirection = Vector2.zero;
 
     private void Awake()
     {
-        controller = GetComponent<BehaviorController>();
+        controller = GetComponent<InputController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
-        playerStatsHandler = GetComponent<PlayerStatsHandler>();
+        playerStatsHandler = controller.Stats;
     }
 
     private void Start()
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction *= playerStatsHandler.CurrentStat.moveSpeed;
+        direction *= playerStatsHandler.moveSpeed;
         movementRigidbody.velocity = direction;
     }
 

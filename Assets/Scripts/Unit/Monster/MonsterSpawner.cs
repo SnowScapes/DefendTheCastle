@@ -36,7 +36,7 @@ public class MonsterSpawner : MonoBehaviour
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(3.0f);
-        StartCoroutine(GetMonsters(Define.eMonsterType.Torch, 5, spawnerLocation[1].transform, 1.0f));
+        StartCoroutine(GetMonsters(Define.eMonsterType.Torch, 1, spawnerLocation[1].transform, 1.0f));
         yield return null;
     }
 
@@ -67,6 +67,16 @@ public class MonsterSpawner : MonoBehaviour
                 case Define.eMonsterType.Tnt: go.GetComponent<TNTBehavior>().spawnPoint = (Spawn)spawnLocation;
                     break;
                 case Define.eMonsterType.Barrel: go.GetComponent<BarrelBehavior>().spawnPoint = (Spawn)spawnLocation;
+                    break;
+            }
+
+            switch ((Spawn)spawnLocation)
+            {
+                case Spawn.Left: go.GetComponent<MonsterBehavior>().queueRally(Rally_Left);
+                    break;
+                case Spawn.Center: go.GetComponent<MonsterBehavior>().queueRally(Rally_Center);
+                    break;
+                case Spawn.Right: go.GetComponent<MonsterBehavior>().queueRally(Rally_Right);
                     break;
             }
             pools.Add(go);

@@ -11,43 +11,28 @@ public class MonsterBehavior : BehaviorController
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private MonsterSpawner spawnmanager;
     [SerializeField] internal Spawn spawnPoint;
+    [SerializeField] internal MonsterStat stat;
 
     private IEnumerator move;
+    private IEnumerator attack;
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
     private bool arrived = false;
 
     protected virtual void Awake()
     {
-        spawnmanager = GameObject.Find("SpawnManager").GetComponent<MonsterSpawner>();
         _rigidbody = this.GetComponent<Rigidbody2D>();
         _transform = this.GetComponent<Transform>();
     }
 
     protected virtual void Start()
     {
-        SetRallyPos();
         OnMoveEvent += WalkTo;
         move = moveCoroutine();
+        attack = attackCoroutine();
         StartCoroutine(move);
     }
 
-    private void SetRallyPos()
-    {
-        switch (spawnPoint)
-        {
-            case Spawn.Left:
-                queueRally(spawnmanager.Rally_Left);
-                break;
-            case Spawn.Center: 
-                queueRally(spawnmanager.Rally_Center);
-                break;
-            case Spawn.Right: 
-                queueRally(spawnmanager.Rally_Right);
-                break;
-        }
-    }
-
-    private void queueRally(List<Transform> rallyPos)
+    public void queueRally(List<Transform> rallyPos)
     {
         for (int i = 0; i < rallyPos.Count; i++)
         {
@@ -59,23 +44,36 @@ public class MonsterBehavior : BehaviorController
     
     private void WalkTo(Vector2 destination)
     {
-        // 추후???�보?�서 ?�도 불러?�기
-        _rigidbody.position = Vector2.MoveTowards(_rigidbody.position, destination, 0.01f);
+        _rigidbody.position = Vector2.MoveTowards(_rigidbody.position, destination, Time.deltaTime);
         if ((Vector2)_rigidbody.position == destination)
-            arrived = true;
-    }
-
-    protected void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
         {
-            StopCoroutine(move);
+            arrived = true;
         }
     }
 
-    protected void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(move);
+        switch (other.gameObject.layer)
+        {
+            case 11: Debug.Log("Attack Player");
+                StopCoroutine(move);
+                StartCoroutine(attack);
+                break;
+            case 12: Debug.Log("Attack Castle");
+                StopCoroutine(move);
+                StartCoroutine(attack);
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StopCoroutine(attack);
+            StartCoroutine(move);
+            Debug.Log("Goto Castle Again");
+        }
     }
 
     IEnumerator moveCoroutine()
@@ -90,6 +88,16 @@ public class MonsterBehavior : BehaviorController
                 yield return null;
             }
             arrived = false;
+        }
+    }
+
+    IEnumerator attackCoroutine()
+    {
+        WaitForSeconds delay = new WaitForSeconds(stat.attackSO.delay);
+        while (true)
+        {
+            CallAttackEvent(stat.atk);
+            yield return delay;
         }
     }
 }

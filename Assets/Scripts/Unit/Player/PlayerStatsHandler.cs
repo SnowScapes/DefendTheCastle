@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class PlayerStatsHandler : MonoBehaviour
 {
-    // ±âº» ½ºÅÈ°ú Ãß°¡ ½ºÅÈÀ» °è»êÇØ¼­ ÃÖÁ¾ ½ºÅÈÀ» °è»êÇÏ´Â ·ÎÁ÷
+    // ï¿½âº» ï¿½ï¿½ï¿½È°ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     [SerializeField] private PlayerStat baseStat;
     public PlayerStat CurrentStat { get; private set; }
@@ -28,7 +29,8 @@ public class PlayerStatsHandler : MonoBehaviour
         CurrentStat.maxHp = baseStat.maxHp;
         CurrentStat.moveSpeed = baseStat.moveSpeed;
 
-        // Line 20 ~ 32 ±âº» ´É·ÂÄ¡ Àû¿ë
+        // Line 20 ~ 32 ï¿½âº» ï¿½É·ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 
     }
 }
+*/

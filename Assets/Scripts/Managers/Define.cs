@@ -16,6 +16,12 @@ public class Define
         Satan
     }
 
+    public enum eProjName
+    {
+        Arrow = 0,
+        Tnt
+    }
+
     public enum eUpgradeType
     {
         PlayerHp = 0,

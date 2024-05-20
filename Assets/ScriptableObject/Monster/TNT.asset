@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7c6cef15dd75eb4ca242d7b27ae487b, type: 3}
-  m_Name: PlayerRangedAttack
+  m_Name: TNT
   m_EditorClassIdentifier: 
   size: 1
-  delay: 0.15
-  power: 2
-  projSpeed: 5
+  delay: 1
+  power: 5
+  projSpeed: 0
   target:
     serializedVersion: 2
-    m_Bits: 1024
-  isOnKnockback: 1
-  knockbackPower: 5
-  knockbackTime: 0.1
-  bulletName: Arrow
-  duration: 5
-  spread: 4
-  numberOfProjectilesPerShot: 1
-  multipleProjectilesAngle: 7
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Bits: 4096
+  isOnKnockback: 0
+  knockbackPower: 0
+  knockbackTime: 0
+  bulletName: Dynamite
+  duration: 0
+  spread: 0
+  numberOfProjectilesPerShot: 0
+  multipleProjectilesAngle: 0
+  projectileColor: {r: 0, g: 0, b: 0, a: 0}

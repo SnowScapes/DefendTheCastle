@@ -15,7 +15,15 @@ public enum StatsChangeType
 public class PlayerStat : UnitStat
 {
     public AttackSO attackSO;
-
+    [field:SerializeField] public float size { get; set; }
+    [field:SerializeField] public string bulletName { get; set; }
+    [field: SerializeField] public float delay { get; set; }
+    [field: SerializeField] public float projSpeed { get; set; }
+    [field:SerializeField] public float duration { get; set; }
+    [field:SerializeField] public float spread { get; set; }
+    [field:SerializeField] public int numberOfProjectilesPerShot { get; set; }
+    [field:SerializeField] public float multipleProjectilesAngle { get; set; }
+    [field:SerializeField] public Color projectileColor { get; set; }
     public bool knockback;
     public enum eSpecialMode { invincibleMode, speedMode }
     public int AtkUpgrade
@@ -56,7 +64,17 @@ public class PlayerStat : UnitStat
 
     public void InitStat(AttackSO so)
     {
-        ChangedAtk(so.power);
+        RangedAttackSO _so = so as RangedAttackSO;
+        size = _so.size;
+        bulletName = _so.bulletName;
+        delay = _so.delay;
+        duration = _so.duration;
+        spread = _so.spread;
+        numberOfProjectilesPerShot = _so.numberOfProjectilesPerShot;
+        multipleProjectilesAngle = _so.multipleProjectilesAngle;
+        projSpeed = _so.projSpeed;
+        projectileColor = _so.projectileColor;
+        ChangedAtk(_so.power);
     }
     private void ChangedAtk(int addValue)
     {

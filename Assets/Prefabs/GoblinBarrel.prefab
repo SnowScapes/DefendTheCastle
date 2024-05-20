@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2860196963151600412}
   - component: {fileID: 1808182081074081308}
   - component: {fileID: -8626830980436314834}
+  - component: {fileID: -1195374970221440662}
   m_Layer: 10
   m_Name: GoblinBarrel
   m_TagString: Monster
@@ -194,7 +195,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369343405598923016}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -229,3 +230,24 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   spawnmanager: {fileID: 0}
   spawnPoint: 0
+  stat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <maxHp>k__BackingField: 0
+    <hp>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 11400000, guid: 51a70f640d9426b4ab68593d465c715b, type: 2}
+--- !u!114 &-1195374970221440662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369343405598923016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddb170a164d05c419f394c9e393e485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

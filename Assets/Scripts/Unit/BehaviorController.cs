@@ -8,7 +8,7 @@ public class BehaviorController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action<AttackSO> OnAttackEvent;
+    public event Action<int> OnAttackEvent;
 
 
     public void CallMoveEvent(Vector2 input)
@@ -21,8 +21,8 @@ public class BehaviorController : MonoBehaviour
         OnLookEvent?.Invoke(input);
     }
 
-    public void CallAttackEvent(AttackSO attackSO)
+    public void CallAttackEvent(int attack)
     {
-        OnAttackEvent?.Invoke(attackSO);
+        OnAttackEvent?.Invoke(attack);
     }
 }
