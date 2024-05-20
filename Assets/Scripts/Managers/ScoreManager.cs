@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
         gameScore = 0;
     }
 
-    //After Monster Die, Monster.cs call
+    //After Monster Die, Monster.cs call, Update
     //After call gameScore += score;
     ScoreManager scoreManager;
     public void MonsterScoreAdd()
@@ -35,10 +35,10 @@ public class ScoreManager : MonoBehaviour
         scoreManager.gameScore += score;
     }
 
-    //After Item Eat call
-    public void ItemScoreAdd(int score)
+    //After Item Eat call, Update
+    public void ItemScoreAdd(int itemScore)
     {
-        scoreManager.gameScore += 10 * score;
+        scoreManager.gameScore += 10 * itemScore;
     }
 
     //Castle call
@@ -52,17 +52,4 @@ public class ScoreManager : MonoBehaviour
     {
         scoreManager.gameScore += 100*stageLevel;
     }
-
-    //Last scoreCal..?
-    public int GameScore()
-    {
-        MonsterScoreAdd();
-        //ItemScoreAdd();
-        //CastleHpScoreAdd(castle.castleHP);
-        //StageLevelScoreAdd(stageLevel);
-        return gameScore;
-
-    }
-
-
 }
