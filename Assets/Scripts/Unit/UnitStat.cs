@@ -3,17 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class UnitStat : MonoBehaviour
+public class UnitStat
 {
-    [SerializeField]protected int id;
-    [SerializeField]protected string unitName;
-    [SerializeField]protected int maxHp;
-    [SerializeField]protected int hp;
-    [SerializeField]protected float moveSpeed;
-    [SerializeField]protected float attackSpeed;
-    [SerializeField]protected int atk;
-    [SerializeField]protected float range;
-    [SerializeField]protected int level;
-    [SerializeField]protected int gold;
+    [field: SerializeField] public int id { get; set; }
+    [field: SerializeField] public string unitName { get; set; }
+    [field: SerializeField] public int maxHp { get; set; }
+    [field: SerializeField] public int hp { get; set; }
+    [field: SerializeField] public float moveSpeed { get; set; }
+    [field: SerializeField] public int level { get; set; }
+    [field: SerializeField] public int gold { get; set; }
 }
