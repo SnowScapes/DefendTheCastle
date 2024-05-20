@@ -25,7 +25,6 @@ public class PlayerStatsHandler : MonoBehaviour
 
         CurrentStat = new PlayerStat { attackSO = attackSO };
 
-        CurrentStat.statsChangeType = baseStat.statsChangeType;
         CurrentStat.maxHp = baseStat.maxHp;
         CurrentStat.moveSpeed = baseStat.moveSpeed;
 

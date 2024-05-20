@@ -15,4 +15,16 @@ public class Define
         Barrel,
         Satan
     }
+
+    public enum eUpgradeType
+    {
+        PlayerHp = 0,
+        PlayerMaxHp,
+        PlayerAtk,
+        PlayerMoveSpeed,
+        PlayerAtkSpeed,
+        CastleLv,
+        SpecialItem,
+        MaxType
+    }
 }
