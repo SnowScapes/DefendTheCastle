@@ -36,7 +36,7 @@ public class ProjectileController : MonoBehaviour
         {
             DestroyProjectile(transform.position, false);
         }
-        rigidbody.velocity = direction * attackData.speed;
+        rigidbody.velocity = direction * attackData.projSpeed;
     }
 
     private void DestroyProjectile(Vector3 position, bool createFx)

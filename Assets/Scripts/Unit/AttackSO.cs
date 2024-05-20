@@ -9,11 +9,11 @@ public class AttackSO : ScriptableObject
     public float size;
     public float delay;
     public float power;
-    public float speed;
+    public float projSpeed;
     public LayerMask target;
 
     [Header("Knock Back Info")]
-    public bool isOnKnockBack;
+    public bool isOnKnockback;
     public float knockbackPower;
     public float knockbackTime;
 }

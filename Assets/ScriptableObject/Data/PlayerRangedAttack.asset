@@ -15,11 +15,11 @@ MonoBehaviour:
   size: 1
   delay: 0.15
   power: 2
-  speed: 10
+  projSpeed: 5
   target:
     serializedVersion: 2
     m_Bits: 0
-  isOnKnockBack: 1
+  isOnKnockback: 1
   knockbackPower: 5
   knockbackTime: 0.1
   bulletName: Arrow
