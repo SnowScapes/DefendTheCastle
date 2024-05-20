@@ -21,4 +21,16 @@ public class Define
         Arrow = 0,
         Tnt
     }
+
+    public enum eUpgradeType
+    {
+        PlayerHp = 0,
+        PlayerMaxHp,
+        PlayerAtk,
+        PlayerMoveSpeed,
+        PlayerAtkSpeed,
+        CastleLv,
+        SpecialItem,
+        MaxType
+    }
 }

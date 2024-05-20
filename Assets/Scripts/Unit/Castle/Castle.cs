@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Castle : MonoBehaviour
 {
+    [SerializeField]
+    private int castleHp = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class Monster : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetCastleHp(int stat)
+    {
+        castleHp = stat;
     }
 }

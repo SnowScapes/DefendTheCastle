@@ -11,12 +11,89 @@ public enum StatsChangeType
 }
 
 
-[Serializable]
+[System.Serializable]
 public class PlayerStat : UnitStat
 {
-    public StatsChangeType statsChangeType; // 스탯이 어떻게 변하는지
-    public eSpecialMode mode;
-    [field: SerializeField] public int AtkUpgrade { get; private set; }
-    [field: SerializeField] public int HpUpgrade { get; private set; }
     public AttackSO attackSO;
+
+    public bool knockback;
+    public enum eSpecialMode { invincibleMode, speedMode }
+    public int AtkUpgrade
+    {
+        get
+        {
+            return atk;
+        }
+        set
+        {
+            ChangedAtk(value);
+        }
+    }
+
+    public int MaxHpUpgrade
+    {
+        get
+        {
+            return maxHp;
+        }
+        set
+        {
+            IncreasedHp(value);
+        }
+    }
+
+    public int HpRecovery
+    {
+        get
+        {
+            return hp;
+        }
+        set
+        {
+            RecoveryHp(value);
+        }
+    }
+
+    public void InitStat(AttackSO so)
+    {
+        ChangedAtk(so.power);
+    }
+    private void ChangedAtk(int addValue)
+    {
+        atk = addValue;
+    }
+
+    private void RecoveryHp(int addValue)
+    {
+        if (hp + addValue <= maxHp)
+        {
+            hp += addValue;
+            return;
+        }
+        else
+        {
+            hp = maxHp;
+        }
+    }
+
+    private void IncreasedHp(int addValue)
+    {
+        int temp = addValue - maxHp;
+        maxHp = addValue;
+        hp += temp;
+    }
+
+    public bool CheckedHaveMoney(int cost)
+    {
+        if (gold >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
 }

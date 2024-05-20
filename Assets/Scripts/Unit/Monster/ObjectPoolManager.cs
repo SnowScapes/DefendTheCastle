@@ -9,26 +9,26 @@ public class ObjectPoolManager : MonoBehaviour
 {
     public IObjectPool<GameObject> InitPool(GameObject go)
     {
-        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreateMonster(go), GetMonster, ReleaseMonster, DestroyMonster, maxSize: 20);
+        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreatePool(go), GetPool, ReleasePool, DestroyPool, maxSize: 20);
         return pool;       
     }
 
-    private void DestroyMonster(GameObject pool)
+    private void DestroyPool(GameObject pool)
     {
         Destroy(pool);
     }
 
-    private void ReleaseMonster(GameObject pool)
+    private void ReleasePool(GameObject pool)
     {
         pool.SetActive(false);
     }
 
-    public void GetMonster(GameObject pool)
+    public void GetPool(GameObject pool)
     {
         pool.SetActive(true);
     }
 
-    private GameObject CreateMonster(GameObject pool)
+    private GameObject CreatePool(GameObject pool)
     {
         GameObject go = Instantiate(pool);
         //TODO 받아넣기
