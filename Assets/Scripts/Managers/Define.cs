@@ -15,4 +15,10 @@ public class Define
         Barrel,
         Satan
     }
+
+    public enum eProjName
+    {
+        Arrow = 0,
+        Tnt
+    }
 }

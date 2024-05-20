@@ -19,6 +19,4 @@ public class PlayerStat : UnitStat
     [field: SerializeField] public int AtkUpgrade { get; private set; }
     [field: SerializeField] public int HpUpgrade { get; private set; }
     public AttackSO attackSO;
-
-
 }
