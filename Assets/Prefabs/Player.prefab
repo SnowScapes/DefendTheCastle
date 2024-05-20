@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4122768371699669687}
   - component: {fileID: 3698518470581934525}
   - component: {fileID: 1434423848631198283}
-  - component: {fileID: 326689952522731183}
   - component: {fileID: 8577486253192229273}
   m_Layer: 11
   m_Name: Player
@@ -157,6 +156,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534b507892db7ed49be128f34137d0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 5
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    knockback: 0
 --- !u!114 &4122768371699669687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,25 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 5255847300117534795}
   ProjPrefab: {fileID: 6578986455680086051, guid: 9ee7e87d10f4bb14a9963104e89a2c1d, type: 3}
---- !u!114 &326689952522731183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104181402301944412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0782db07d7c97aa468a8c55f02993e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseStat:
-    statsChangeType: 0
-    mode: 0
-    <AtkUpgrade>k__BackingField: 0
-    <HpUpgrade>k__BackingField: 0
-    attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
-  statModifiers: []
 --- !u!114 &8577486253192229273
 MonoBehaviour:
   m_ObjectHideFlags: 0

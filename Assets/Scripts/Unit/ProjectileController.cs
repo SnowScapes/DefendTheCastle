@@ -9,8 +9,8 @@ public class ProjectileController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
-
-    private RangedAttackSO attackData;
+    public PlayerStat stat;
+    private AttackSO attackData;
     private float currentDuration;
     private Vector2 direction;
     private bool isReady;
@@ -23,6 +23,11 @@ public class ProjectileController : MonoBehaviour
         trailRenderer = GetComponent<TrailRenderer>();
     }
 
+    private void Start()
+    {
+        attackData = stat.attackSO;
+    }
+
     private void Update()
     {
         if(!isReady)
@@ -32,11 +37,11 @@ public class ProjectileController : MonoBehaviour
 
         currentDuration += Time.deltaTime;
 
-        if(currentDuration > attackData.duration)
+        if(currentDuration > stat.duration)
         {
             DestroyProjectile(transform.position, false);
         }
-        rigidbody.velocity = direction * attackData.projSpeed;
+        rigidbody.velocity = direction * stat.projSpeed;
     }
 
     private void DestroyProjectile(Vector3 position, bool createFx)
@@ -48,15 +53,15 @@ public class ProjectileController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void InitializeAttack(Vector2 direction, RangedAttackSO attackData)
+    public void InitializeAttack(Vector2 direction)
     {
-        this.attackData = attackData;
+        //this.attackData = attackData;
         this.direction = direction;
 
         UpdateProjectileSprite();
         trailRenderer.Clear();
         currentDuration = 0;
-        spriteRenderer.color = attackData.projectileColor;
+        spriteRenderer.color = stat.projectileColor;
 
         transform.right = this.direction;
 
@@ -65,7 +70,7 @@ public class ProjectileController : MonoBehaviour
 
     private void UpdateProjectileSprite()
     {
-        transform.localScale = Vector3.one * attackData.size;
+        transform.localScale = Vector3.one * stat.size;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

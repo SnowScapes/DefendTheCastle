@@ -17,9 +17,9 @@ public class MonsterHealthManager : MonoBehaviour
         stat.hp = stat.maxHp;
     }
 
-    public void DamageHandler(AttackSO attackSO)
+    public void DamageHandler(int power)
     {
-        stat.hp -= (int)attackSO.power;
+        stat.hp -= power;
         if (stat.hp <= 0)
         {
             Debug.Log("Monster Die");

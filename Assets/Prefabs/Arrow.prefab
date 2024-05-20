@@ -319,4 +319,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCollisionLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 640
+  stat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 0}
+    <size>k__BackingField: 0
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    knockback: 0

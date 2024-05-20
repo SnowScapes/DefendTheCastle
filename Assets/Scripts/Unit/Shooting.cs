@@ -7,21 +7,23 @@ using Random = UnityEngine.Random;
 
 public class Shooting : MonoBehaviour
 {
-    private BehaviorController controller;
+    private InputController controller;
+    [SerializeField]private PlayerStat stat;
     [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 aimDirection = Vector2.right;
 
     private ProjObjectPool objectPool;
 
-    public GameObject ProjPrefab; // Åõ»çÃ¼ ÇÁ¸®ÆÕ ( È­»ì, ÆøÅº )
+    public GameObject ProjPrefab; // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ( È­ï¿½ï¿½, ï¿½ï¿½Åº )
     private void Awake()
     {
-        controller = GetComponent<BehaviorController>();
+        controller = GetComponent<InputController>();
         objectPool = GetComponent<ProjObjectPool>();
     }
 
     private void Start()
     {
+        stat = controller.Stats;
         controller.OnAttackEvent += OnShoot;
         controller.OnLookEvent += OnAim;
     }
@@ -32,32 +34,29 @@ public class Shooting : MonoBehaviour
     }
 
 
-    private void OnShoot(AttackSO attackSO)
+    private void OnShoot(int _)
     {
-        RangedAttackSO rangedAttackSO = attackSO as RangedAttackSO;
-        if(rangedAttackSO == null) return;
+        float projectilesAngleSpace = stat.multipleProjectilesAngle;
+        int numberOfPorjectilesPerShot = stat.numberOfProjectilesPerShot;
 
-        float projectilesAngleSpace = rangedAttackSO.multipleProjectilesAngle;
-        int numberOfPorjectilesPerShot = rangedAttackSO.numberOfProjectilesPerShot;
-
-        float minAngle = -(numberOfPorjectilesPerShot / 2f) * projectilesAngleSpace + 0.5f * rangedAttackSO.multipleProjectilesAngle;
+        float minAngle = -(numberOfPorjectilesPerShot / 2f) * projectilesAngleSpace + 0.5f * stat.multipleProjectilesAngle;
 
         for(int i = 0; i< numberOfPorjectilesPerShot; i++)
         {
             float angle = minAngle + i * projectilesAngleSpace;
-            float randomSpread = Random.Range(-rangedAttackSO.spread, rangedAttackSO.spread);
+            float randomSpread = Random.Range(-stat.spread, stat.spread);
             angle += randomSpread;
-            CreateProjectile(rangedAttackSO, angle);
+            CreateProjectile(angle);
         }
 
     }
 
-    private void CreateProjectile(RangedAttackSO rangedAttackSO , float angle)
+    private void CreateProjectile(float angle)
     {
         Define.eProjName type;
-        if (rangedAttackSO.bulletName == "Arrow")
+        if (stat.bulletName == "Arrow")
             type = Define.eProjName.Arrow;
-        else if (rangedAttackSO.bulletName == "Tnt")
+        else if (stat.bulletName == "Tnt")
             type = Define.eProjName.Tnt;
         else
             return;
@@ -66,7 +65,7 @@ public class Shooting : MonoBehaviour
 
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
-        attackController.InitializeAttack(RotateVector2(aimDirection,angle),rangedAttackSO);
+        attackController.InitializeAttack(RotateVector2(aimDirection,angle));
     }
 
     private static Vector2 RotateVector2(Vector2 v, float angle)
