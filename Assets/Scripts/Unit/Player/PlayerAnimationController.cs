@@ -22,7 +22,9 @@ public class PlayerAnimationController : AnimationController
 
     private void Start()
     {
-        controller.OnAttackEvent += Attacking;
+        // OnAttackEvent 가 AttackSO 를 매개변수로 받아야해서 주석 안해두면 플레이 모드로 안 넘어가져서 잠시 주석처리 해두었습니다.
+        
+        // controller.OnAttackEvent += Attacking;
         controller.OnMoveEvent += Move;
     }
 

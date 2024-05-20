@@ -4,7 +4,7 @@ using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputController : BehaviorController
+public class InputController : PlayerBehavior
 {
     private Camera camera;
 

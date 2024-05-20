@@ -10,34 +10,6 @@ public class BehaviorController : MonoBehaviour
     public event Action<Vector2> OnLookEvent;
     public event Action<AttackSO> OnAttackEvent;
 
-    protected bool IsAttacking { get; set; }
-    private float timeSinceLastAttack = float.MaxValue;
-
-    protected PlayerStatsHandler stats { get; private set; }
-
-    protected virtual void Awake()
-    {
-        stats = GetComponent<PlayerStatsHandler>();
-    }
-
-    private void Update()
-    {
-        HandleAttackDelay();
-    }
-
-    private void HandleAttackDelay()
-    {
-        if (timeSinceLastAttack <= stats.CurrentStat.attackSO.delay) 
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
-        else if(IsAttacking)
-        {
-            timeSinceLastAttack = 0f;
-            CallAttackEvent(stats.CurrentStat.attackSO);
-        }
-    }
-
 
     public void CallMoveEvent(Vector2 input)
     {
