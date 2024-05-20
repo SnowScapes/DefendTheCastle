@@ -23,9 +23,9 @@ public class MonsterAnimationController : AnimationController
         controller.OnMoveEvent += MoveAnimation;
     }
 
-    private void Attacking(AttackSO attackSo)
+    private void Attacking(int _)
     {
-        animator.SetTrigger(attack);
+        //animator.SetTrigger(attack);
     }
 
     private void MoveAnimation(Vector2 direction)

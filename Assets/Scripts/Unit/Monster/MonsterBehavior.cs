@@ -14,6 +14,7 @@ public class MonsterBehavior : BehaviorController
     [SerializeField] private MonsterStat stat;
 
     private IEnumerator move;
+    private IEnumerator attack;
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
     private bool arrived = false;
 
@@ -27,6 +28,7 @@ public class MonsterBehavior : BehaviorController
     {
         OnMoveEvent += WalkTo;
         move = moveCoroutine();
+        attack = attackCoroutine();
         StartCoroutine(move);
     }
 
@@ -55,11 +57,11 @@ public class MonsterBehavior : BehaviorController
         {
             case 11: Debug.Log("Attack Player");
                 StopCoroutine(move);
-                CallAttackEvent(stat.attackSO);
+                StartCoroutine(attack);
                 break;
             case 12: Debug.Log("Attack Castle");
                 StopCoroutine(move);
-                CallAttackEvent(stat.attackSO);
+                StartCoroutine(attack);
                 break;
         }
     }
@@ -68,6 +70,7 @@ public class MonsterBehavior : BehaviorController
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            StopCoroutine(attack);
             StartCoroutine(move);
             Debug.Log("Goto Castle Again");
         }
@@ -85,6 +88,16 @@ public class MonsterBehavior : BehaviorController
                 yield return null;
             }
             arrived = false;
+        }
+    }
+
+    IEnumerator attackCoroutine()
+    {
+        WaitForSeconds delay = new WaitForSeconds(stat.attackSO.delay);
+        while (true)
+        {
+            CallAttackEvent(stat.atk);
+            yield return delay;
         }
     }
 }

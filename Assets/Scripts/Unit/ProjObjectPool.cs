@@ -35,7 +35,7 @@ public class ProjObjectPool : MonoBehaviour
         {
             GameObject go = dicProjPool[type].Get();
             go.transform.SetParent(transform);
-           
+            go.GetComponent<ProjectileController>().stat = this.GetComponent<InputController>().Stats;
             pools.Add(go);
         }
 
