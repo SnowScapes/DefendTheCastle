@@ -48,7 +48,7 @@ public class Shop : MonoBehaviour
 
     public void OnCastleUpgrade()
     {
-        castle.SetCastleHp(100);
+        castle.UpgradeCastle(100);
     }
 
     public void OnPlayerMoveSpeedUpgrade()

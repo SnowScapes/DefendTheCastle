@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public bool isPlaying = false;
+    public bool isAlive = true;
     private void Awake()
     {
         if(instance == null) 
@@ -30,6 +32,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void GameOver()
+    {
+
+    }
     public void ChangedScene(Define.eSceneName name)
     {
         SceneManager.LoadScene((int)name);
