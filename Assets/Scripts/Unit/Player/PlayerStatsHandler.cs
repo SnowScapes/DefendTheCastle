@@ -1,36 +1,45 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-/*
+
 public class PlayerStatsHandler : MonoBehaviour
 {
-    // �⺻ ���Ȱ� �߰� ������ ����ؼ� ���� ������ ����ϴ� ����
-
-    [SerializeField] private PlayerStat baseStat;
-    public PlayerStat CurrentStat { get; private set; }
-
-    public List<PlayerStat> statModifiers = new List<PlayerStat>();
+    [SerializeField]
+    private PlayerStat stat;
+    [SerializeField]
+    private Castle castle;
 
     private void Awake()
     {
-        UpdatePlayerStat();
+        stat = gameObject.GetComponent<InputController>().Stats;
     }
-
-    private void UpdatePlayerStat()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        AttackSO attackSO = null;
-
-        if (baseStat.attackSO != null)
-            attackSO = Instantiate(baseStat.attackSO);
-
-        CurrentStat = new PlayerStat { attackSO = attackSO };
-
-        CurrentStat.maxHp = baseStat.maxHp;
-        CurrentStat.moveSpeed = baseStat.moveSpeed;
-
-        // Line 20 ~ 32 �⺻ �ɷ�ġ ����
-
+        if(collision.CompareTag("Item"))
+        {
+            Item item = collision.GetComponent<Item>();
+            int index = item.GetItemType(item.type);
+            if (index != -1)
+            {
+                switch (index)
+                {
+                    case 0:
+                        castle.RepairCastle(item.amount);
+                        break;
+                    case 1:
+                        stat.gold += item.amount;
+                        break;
+                    case 2:
+                        stat.HpRecovery = item.amount;
+                        break;
+                    case 3:
+                        StartCoroutine(stat.FeverTime());
+                        break;
+                }
+            }
+        }
     }
+
 }
-*/

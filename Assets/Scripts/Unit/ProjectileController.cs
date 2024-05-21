@@ -6,7 +6,7 @@ public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
     public ProjObjectPool pool;
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
     public InputController playerController;

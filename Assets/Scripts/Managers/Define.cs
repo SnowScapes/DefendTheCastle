@@ -38,6 +38,8 @@ public class Define
     {
         Wood = 0,
         Gold,
-        Meat
+        Meat,
+        Mushroom,
+        MaxCount
     }
 }

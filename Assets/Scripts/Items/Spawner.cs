@@ -57,4 +57,9 @@ public class Spawner : MonoBehaviour
         go.transform.SetParent(poolBox.transform);
         go.transform.position = poolBox.transform.position;
     }
+
+    public void ReleaseItem(GameObject pool)
+    {
+        pools.Release(pool);
+    }
 }
