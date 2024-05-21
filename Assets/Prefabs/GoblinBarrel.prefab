@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7381762437485616824}
   - component: {fileID: 2093026176276490026}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,9 +311,9 @@ MonoBehaviour:
   spawnPoint: 0
   stat:
     <id>k__BackingField: 0
-    <unitName>k__BackingField: 
+    <unitName>k__BackingField: Barrel
     <hp>k__BackingField: 0
-    <maxHp>k__BackingField: 0
+    <maxHp>k__BackingField: 30
     <atk>k__BackingField: 10
     <moveSpeed>k__BackingField: 0
     <level>k__BackingField: 0

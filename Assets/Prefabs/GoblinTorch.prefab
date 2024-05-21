@@ -128,9 +128,9 @@ MonoBehaviour:
   spawnPoint: 0
   stat:
     <id>k__BackingField: 0
-    <unitName>k__BackingField: 
-    <hp>k__BackingField: 20
-    <maxHp>k__BackingField: 0
+    <unitName>k__BackingField: Torch
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 20
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
     <level>k__BackingField: 0

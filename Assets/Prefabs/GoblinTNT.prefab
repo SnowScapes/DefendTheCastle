@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4328832407036740062}
   - component: {fileID: -4661727380987523321}
   - component: {fileID: -7365800433943093606}
+  - component: {fileID: 6969414832866378000}
   m_Layer: 10
   m_Name: GoblinTNT
   m_TagString: Monster
@@ -127,14 +128,15 @@ MonoBehaviour:
   spawnPoint: 0
   stat:
     <id>k__BackingField: 0
-    <unitName>k__BackingField: 
+    <unitName>k__BackingField: TNT
     <hp>k__BackingField: 0
-    <maxHp>k__BackingField: 0
+    <maxHp>k__BackingField: 15
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 11400000, guid: 9c215ec7567bf184cbd614bae52eb5d2, type: 2}
+  Dynamite_Prefab: {fileID: 6660723251897500060, guid: 7e916badbb44a6442ae0710b23444e6c, type: 3}
 --- !u!114 &-7365800433943093606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +149,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddb170a164d05c419f394c9e393e485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6969414832866378000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136165121066507348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81c12ec4945b434ba3f5b1842667894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 0}
 --- !u!1 &2922086989428781497
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2350594243920624795}
   - component: {fileID: 2699342827198399775}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,10 +232,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2}
+  m_Offset: {x: 0, y: -1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -222,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4}
+  m_Size: {x: 1.2, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &6431117377839932894
 GameObject:
