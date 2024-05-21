@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5090229425227628520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -784,7 +784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5292956887832757957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: JoinShop, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3858009550228930619
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +883,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1749124120864521833}
   - component: {fileID: 1123352455909014106}
-  - component: {fileID: 1854292425751621083}
   - component: {fileID: 8499273362189948406}
   - component: {fileID: 4211886611519916976}
   m_Layer: 5
@@ -909,43 +920,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303768519948765674}
   m_CullTransparentMesh: 1
---- !u!114 &1854292425751621083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4303768519948765674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db1783bc7676e54e9aa044ee409b442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: 
-    <hp>k__BackingField: 0
-    <maxHp>k__BackingField: 0
-    <atk>k__BackingField: 0
-    <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
-    <gold>k__BackingField: 0
-    attackSO: {fileID: 0}
-    <size>k__BackingField: 0
-    <bulletName>k__BackingField: 
-    <delay>k__BackingField: 0
-    <projSpeed>k__BackingField: 0
-    <duration>k__BackingField: 0
-    <spread>k__BackingField: 0
-    <numberOfProjectilesPerShot>k__BackingField: 0
-    <multipleProjectilesAngle>k__BackingField: 0
-    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-    knockback: 0
-  castle: {fileID: 0}
-  upgradeList: []
-  contentSO: []
-  upgradePrefab: {fileID: 0}
-  purchasedStateTxt: {fileID: 0}
 --- !u!114 &8499273362189948406
 MonoBehaviour:
   m_ObjectHideFlags: 0

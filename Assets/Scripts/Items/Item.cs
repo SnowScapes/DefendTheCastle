@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    
     public Spawner spawner;
-    [SerializeField]
-    private Define.eItmeType type;
-    [SerializeField]
-    private int amount;
+    public Define.eItmeType type { get; private set; }
+    public int amount { get; private set; }
     [SerializeField]
     private SpriteRenderer spriteRenderer;
     [SerializeField]
@@ -27,9 +26,36 @@ public class Item : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Init(Define.eItmeType itemType, int _amount)
     {
-        
+        type = itemType;
+        amount = _amount;
+        GetItemType(itemType);
     }
+
+    public int GetItemType(Define.eItmeType _type)
+    {
+        switch (_type) 
+        {
+            case Define.eItmeType.Wood:
+
+                animator.SetTrigger("Wood");
+                amount = 5;
+                return 0;
+            case Define.eItmeType.Gold:
+                animator.SetTrigger("Gold");
+                return 1;
+            case Define.eItmeType.Meat:
+                amount = 5;
+                animator.SetTrigger("Meat");
+                return 2;
+            case Define.eItmeType.Mushroom:
+                animator.SetTrigger("Mushroom");
+                return 3;
+            default:
+                return -1;
+        }
+    }
+
+
 }
