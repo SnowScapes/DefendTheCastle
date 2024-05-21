@@ -538,7 +538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32204146}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 108977664}
   - component: {fileID: 108977666}
   - component: {fileID: 108977665}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,6 +1288,10 @@ PrefabInstance:
       value: CastleExplosion (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1305,7 +1309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449530731}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EndExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1789,6 +1793,10 @@ PrefabInstance:
       value: CastleExplosion (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1808,7 +1816,7 @@ GameObject:
   - component: {fileID: 614958607}
   - component: {fileID: 614958609}
   - component: {fileID: 614958608}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1914,7 +1922,7 @@ GameObject:
   - component: {fileID: 691187536}
   - component: {fileID: 691187538}
   - component: {fileID: 691187537}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745271181}
   - component: {fileID: 745271182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4134,6 +4142,10 @@ PrefabInstance:
     - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
       propertyPath: m_Name
       value: CastleExplosion (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
       propertyPath: m_IsActive
@@ -6267,6 +6279,10 @@ PrefabInstance:
       value: CastleExplosion
       objectReference: {fileID: 0}
     - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723909679374456578, guid: 3831627b2c2071c439a52784757fa6d0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -6286,7 +6302,7 @@ GameObject:
   - component: {fileID: 932521161}
   - component: {fileID: 932521163}
   - component: {fileID: 932521162}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7337,7 +7353,7 @@ GameObject:
   - component: {fileID: 982140215}
   - component: {fileID: 982140217}
   - component: {fileID: 982140216}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7601,7 +7617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115263882}
   - component: {fileID: 1115263883}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CastleLv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9601,7 +9617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385233791}
   - component: {fileID: 1385233792}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Castle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9653,7 +9669,6 @@ MonoBehaviour:
     - {fileID: 691187535}
     spriteRenderer: {fileID: 1850462600}
     destroySprite: {fileID: 21300000, guid: 9c110feb3e036c5489f0cea8f1d10933, type: 3}
-  currentCastleHp: 50
   castleMaxHp: 50
   burningeffects: []
   explosioneffects:
@@ -9851,7 +9866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1515450662}
   - component: {fileID: 1515450663}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10135,7 +10150,7 @@ GameObject:
   - component: {fileID: 1606376153}
   - component: {fileID: 1606376155}
   - component: {fileID: 1606376154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Burn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10884,7 +10899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1850462599}
   - component: {fileID: 1850462600}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11078,7 +11093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982551143}
   - component: {fileID: 1982551144}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CastleLv1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
