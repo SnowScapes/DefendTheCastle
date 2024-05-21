@@ -2939,7 +2939,7 @@ Tilemap:
       - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -5, z: 0}
@@ -2954,7 +2954,7 @@ Tilemap:
       - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -5, z: 0}
@@ -3164,7 +3164,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 0, z: 0}
@@ -3239,7 +3239,7 @@ Tilemap:
       - {fileID: 1709744029, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 945082375, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -383855836, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: 1, z: 0}
@@ -8738,6 +8738,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0.2998047, y: -100.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!4 &1530868350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 303710956060481460, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
+  m_PrefabInstance: {fileID: 188987296165047295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550372180
 GameObject:
   m_ObjectHideFlags: 0
@@ -10028,7 +10033,7 @@ PrefabInstance:
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Left.Array.data[4]
       value: 
-      objectReference: {fileID: 1982551143}
+      objectReference: {fileID: 1530868350}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Right.Array.data[0]
       value: 
@@ -10040,7 +10045,7 @@ PrefabInstance:
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Right.Array.data[2]
       value: 
-      objectReference: {fileID: 1982551143}
+      objectReference: {fileID: 1530868350}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Center.Array.data[0]
       value: 
@@ -10048,7 +10053,7 @@ PrefabInstance:
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Center.Array.data[1]
       value: 
-      objectReference: {fileID: 1982551143}
+      objectReference: {fileID: 1530868350}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: spawnerLocation.Array.data[0]
       value: 
