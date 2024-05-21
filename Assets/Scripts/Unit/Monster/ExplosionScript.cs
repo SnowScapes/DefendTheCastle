@@ -6,7 +6,15 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour
 {
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip bombClip;
     public int power { get; set; }
+    
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +32,7 @@ public class ExplosionScript : MonoBehaviour
 
     IEnumerator delay()
     {
+        source.PlayOneShot(bombClip);
         yield return new WaitForSeconds(0.91f);
         Destroy(gameObject);
     }
