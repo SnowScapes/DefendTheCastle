@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public LevelInfo LevelInfo;
+    public int currentLevel { get; set; }
     public bool isPlaying = false;
     public bool isAlive = true;
     private void Awake()
