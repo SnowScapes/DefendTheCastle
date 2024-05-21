@@ -36,7 +36,7 @@ public class MonsterSpawner : Spawner
         for (int i = 0; i < objPrefab.Length; i++)
         {
             dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objPrefab[i], DefaultItemCount);
-            //초기 ?�???�소
+            //초기 ?�???�소
             Summon((Define.eMonsterType)i, DefaultItemCount, spawnerLocation[1].transform, 1);
         }
     }

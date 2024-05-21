@@ -81,15 +81,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creator: {fileID: 5257673289641693570}
-  objMonster:
+  objPrefab:
   - {fileID: 415521254149942370, guid: 7428d43f9f863634eae01428c633e9c8, type: 3}
   - {fileID: 1136165121066507348, guid: ef9c535abe8bbf34ba8c1288a88e10d2, type: 3}
   - {fileID: 8369343405598923016, guid: 0aa29f679bf494b4b8d927196766e407, type: 3}
+  poolBox: {fileID: 220909057992032775}
   spawnerLocation:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  DefaultMonsterCount: 5
   Rally_Left:
   - {fileID: 0}
   - {fileID: 0}
@@ -125,7 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creator: {fileID: 5257673289641693570}
-  objItem: {fileID: 4915683828827615669, guid: f1c9370afed231a4b9012db7076955b2, type: 3}
+  objPrefab:
+  - {fileID: 4915683828827615669, guid: f1c9370afed231a4b9012db7076955b2, type: 3}
+  poolBox: {fileID: 4863177154844431241}
 --- !u!1 &4863177154844431241
 GameObject:
   m_ObjectHideFlags: 0
