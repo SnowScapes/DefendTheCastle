@@ -12,9 +12,9 @@ public class PlayerAnimationController : AnimationController
     private static readonly int attackFront = Animator.StringToHash("attackFront"); // 옆 공격
     private static readonly int attackDiagonalDown = Animator.StringToHash("attackDiagonalDown"); //사선아래 공격
     private static readonly int attackDown = Animator.StringToHash("attackDown"); // 아래 공격
-
+    private static readonly int reverse = Animator.StringToHash("reverse");
     private readonly float magnituteThreshold = 0.5f;
-
+    private float degree;
     private void Awake()
     {
         base.Awake();
@@ -22,10 +22,14 @@ public class PlayerAnimationController : AnimationController
 
     private void Start()
     {
-        // OnAttackEvent 가 AttackSO 를 매개변수로 받아야해서 주석 안해두면 플레이 모드로 안 넘어가져서 잠시 주석처리 해두었습니다.
-        
-        // controller.OnAttackEvent += Attacking;
+        controller.OnAttackEvent += Attacking;
         controller.OnMoveEvent += Move;
+        controller.OnLookEvent += OnAim;
+    }
+
+    private void OnAim(Vector2 direction)
+    {
+       degree = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }
 
     private void Move(Vector2 vector)
@@ -33,9 +37,25 @@ public class PlayerAnimationController : AnimationController
         animator.SetBool(isRun, vector.magnitude > magnituteThreshold);
     }
 
-    protected virtual void Attacking()
+    protected virtual void Attacking(int n)
     {
-        animator.SetTrigger(attackFront);
+        if (degree <= 90 && degree >= -90)
+            animator.SetBool(reverse, false);
+        else
+            animator.SetBool(reverse, true);
+
+        if (degree <= 90 && degree >= 67.5 || degree <= 112.5 && degree >= 90) //  상단
+            animator.SetTrigger(attackUp);
+        else if (degree < 67.5 && degree >= 22.5 || degree <= 157.5 && degree >= 112.5) //  대각 상단
+            animator.SetTrigger(attackDiagonalUp);
+        else if (degree < 22.5 && degree >= -22.5 || degree <= 180 && degree >= 157.5 || degree >= -180 && degree <= -157.5) //  정면
+            animator.SetTrigger(attackFront);
+        else if (degree < -22.5 && degree >= -67.5 || degree >= -157.5 && degree <= -112.5) //  대각 하단
+            animator.SetTrigger(attackDiagonalDown);
+        else if (degree < -67.5 && degree >= -90 || degree >= -112.5 && degree <= -90) //  하단
+            animator.SetTrigger(attackDown);
+        
+
     }
 
     private void Hit()
