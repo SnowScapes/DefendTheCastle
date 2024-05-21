@@ -82,7 +82,7 @@ public class ProjectileController : MonoBehaviour
         }
         else if(IsLayerMatched(attackData.target.value,collision.gameObject.layer))
         {
-            playerController.OnAttackEvent += collision.GetComponent<MonsterHealthManager>().DamageHandler;
+            collision.GetComponent<MonsterHealthManager>().DamageHandler(stat.atk);
             DestroyProjectile();
         }
     }
