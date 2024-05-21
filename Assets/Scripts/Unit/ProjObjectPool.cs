@@ -10,7 +10,7 @@ public class ProjObjectPool : MonoBehaviour
     [SerializeField]  ObjectPoolManager creator;
     public static ProjObjectPool instance;
     [SerializeField] private GameObject[] objProj;
-    [SerializeField] private int MaxProjCount = 20;
+    [SerializeField] private int DefaultMonsterCount = 20;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class ProjObjectPool : MonoBehaviour
         {
             dicProjPool[(Define.eProjName)i] = creator.InitPool(objProj[i]);
 
-            Summon((Define.eProjName)i, MaxProjCount);
+            Summon((Define.eProjName)i, DefaultMonsterCount);
         }
     }
 
