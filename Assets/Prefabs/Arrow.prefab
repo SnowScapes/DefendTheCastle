@@ -320,6 +320,7 @@ MonoBehaviour:
   levelCollisionLayer:
     serializedVersion: 2
     m_Bits: 128
+  player: {fileID: 104181402301944412, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
   playerController: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
   stat:
     <id>k__BackingField: 0

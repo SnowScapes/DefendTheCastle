@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
-
+    public ProjObjectPool pool;
     private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
@@ -25,6 +25,7 @@ public class ProjectileController : MonoBehaviour
 
     private void Start()
     {
+        stat = playerController.Stats;
         attackData = stat.attackSO;
     }
 
@@ -48,7 +49,7 @@ public class ProjectileController : MonoBehaviour
     private void DestroyProjectile()
     {
         gameObject.SetActive(false);
-        ProjObjectPool.instance.ReleaseProjPool(0, gameObject);
+        pool.ReleaseProjPool(0, gameObject);
     }
 
     public void InitializeAttack(Vector2 direction)

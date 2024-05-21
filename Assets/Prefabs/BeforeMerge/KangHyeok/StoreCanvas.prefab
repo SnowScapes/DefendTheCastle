@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5090229425227628520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -931,6 +931,15 @@ MonoBehaviour:
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 0}
+    <size>k__BackingField: 0
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
     knockback: 0
   castle: {fileID: 0}
   upgradeList: []
@@ -1093,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3312026924906637648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1270,7 +1279,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -391.5, y: 299.99997}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 750, y: 25}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8961880253286656863
 MonoBehaviour:
@@ -1332,6 +1341,15 @@ MonoBehaviour:
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 0}
+    <size>k__BackingField: 0
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
     knockback: 0
   castle: {fileID: 0}
   upgradeList:
