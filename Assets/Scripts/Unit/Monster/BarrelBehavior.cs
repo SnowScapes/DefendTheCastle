@@ -24,7 +24,7 @@ public class BarrelBehavior : MonsterBehavior
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 11)
+        if (other.gameObject.layer == 11 || other.gameObject.layer == 12)
         {
             StopCoroutine(move);
             CallAttackEvent(stat.atk);

@@ -9998,6 +9998,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Left.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Right.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Center.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Left.Array.data[0]
       value: 
       objectReference: {fileID: 1472313239}
@@ -10014,6 +10026,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1472313235}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Left.Array.data[4]
+      value: 
+      objectReference: {fileID: 1982551143}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Right.Array.data[0]
       value: 
       objectReference: {fileID: 1125488034}
@@ -10022,9 +10038,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1472313231}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Right.Array.data[2]
+      value: 
+      objectReference: {fileID: 1982551143}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: Rally_Center.Array.data[0]
       value: 
       objectReference: {fileID: 1472313233}
+    - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
+      propertyPath: Rally_Center.Array.data[1]
+      value: 
+      objectReference: {fileID: 1982551143}
     - target: {fileID: 9116933305746343452, guid: 80d9bd30e0485df4ebd186133dd8c39a, type: 3}
       propertyPath: spawnerLocation.Array.data[0]
       value: 
