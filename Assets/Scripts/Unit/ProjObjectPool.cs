@@ -7,10 +7,22 @@ using UnityEngine.Pool;
 public class ProjObjectPool : MonoBehaviour
 {
     [SerializeField] public Dictionary<Define.eProjName, IObjectPool<GameObject>> dicProjPool = new Dictionary<Define.eProjName, IObjectPool<GameObject>>();
-    [SerializeField] private ObjectPoolManager creator;
+    [SerializeField]  ObjectPoolManager creator;
+    public static ProjObjectPool instance;
     [SerializeField] private GameObject[] objProj;
-    [SerializeField] private int MaxProjCount = 100;
+    [SerializeField] private int MaxProjCount = 20;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -34,7 +46,7 @@ public class ProjObjectPool : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicProjPool[type].Get();
-            go.transform.SetParent(transform);
+            go.transform.SetParent(creator.transform);
             go.GetComponent<ProjectileController>().playerController = this.GetComponent<InputController>();
             go.GetComponent<ProjectileController>().stat = this.GetComponent<InputController>().Stats;
             pools.Add(go);
