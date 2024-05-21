@@ -8,7 +8,12 @@ public class ProjObjectPool : Spawner
 {
     [SerializeField] public Dictionary<Define.eProjName, IObjectPool<GameObject>> dicProjPool = new Dictionary<Define.eProjName, IObjectPool<GameObject>>();
     [SerializeField] private int MaxProjCount = 20;
+    InputController inputController;
 
+    private void Awake()
+    {
+        inputController = GetComponent<InputController>();
+    }
     protected override void Start()
     {
         base.Start();
@@ -32,8 +37,9 @@ public class ProjObjectPool : Spawner
         {
             GameObject go = dicProjPool[type].Get();
             go.transform.SetParent(poolBox.transform);
-            go.GetComponent<ProjectileController>().playerController = this.GetComponent<InputController>();
-            go.GetComponent<ProjectileController>().stat = this.GetComponent<InputController>().Stats;
+            ProjectileController proj = go.GetComponent<ProjectileController>();
+            proj.playerController = inputController;
+            proj.pool = this;
             pools.Add(go);
         }
 

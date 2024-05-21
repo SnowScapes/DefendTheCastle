@@ -249,7 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creator: {fileID: 0}
-  objPrefab: []
+  objPrefab:
+  - {fileID: 6578986455680086051, guid: 9ee7e87d10f4bb14a9963104e89a2c1d, type: 3}
   poolBox: {fileID: 0}
   MaxProjCount: 100
 --- !u!1 &3348705357081440166

@@ -5,9 +5,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
-
-    [SerializeField]
-    private ProjObjectPool pool;
+    public ProjObjectPool pool;
     private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
@@ -27,6 +25,7 @@ public class ProjectileController : MonoBehaviour
 
     private void Start()
     {
+        stat = playerController.Stats;
         attackData = stat.attackSO;
     }
 
