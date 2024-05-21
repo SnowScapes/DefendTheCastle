@@ -113,5 +113,12 @@ public class PlayerStat : UnitStat
         }
     }
 
-
+    public void DamageHandler(int power)
+    {
+        hp -= power;
+        if (hp <= 0)
+        {
+            // 게임종료
+        }
+    }
 }
