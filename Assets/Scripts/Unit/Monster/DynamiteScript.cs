@@ -23,7 +23,6 @@ public class DynamiteScript : MonoBehaviour
     {
         Vector3 direction = targetPos.position - transform.position;
         direction = direction.normalized;
-        Debug.Log(direction);
         while (true)
         {
             transform.position += direction * Time.deltaTime * TntSO.projSpeed;
