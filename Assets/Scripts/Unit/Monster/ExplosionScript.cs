@@ -23,10 +23,12 @@ public class ExplosionScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 11)
+        switch (other.gameObject.layer)
         {
-            Debug.Log("player damaged " + power);
-            other.gameObject.GetComponent<InputController>().Stats.DamageHandler(power);
+            case 11: other.gameObject.GetComponent<InputController>().Stats.DamageHandler(power);
+                break;
+            case 12: other.gameObject.GetComponentInParent<Castle>().OnDamaged(power);
+                break;
         }
     }
 
