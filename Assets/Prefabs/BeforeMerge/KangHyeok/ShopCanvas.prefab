@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 3114399686982969651}
   - component: {fileID: 8972963968491720847}
   m_Layer: 5
-  m_Name: StoreCanvas
+  m_Name: ShopCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,7 +1279,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -391.5, y: 299.99997}
-  m_SizeDelta: {x: 750, y: 25}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8961880253286656863
 MonoBehaviour:
