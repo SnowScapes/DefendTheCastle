@@ -15,7 +15,6 @@ public class ProjectileController : MonoBehaviour
     private float currentDuration;
     private Vector2 direction;
     private bool isReady;
-    private bool fxOnDestroy = true;
 
     private void Awake()
     {
@@ -40,18 +39,16 @@ public class ProjectileController : MonoBehaviour
 
         if(currentDuration > stat.duration)
         {
-            DestroyProjectile(transform.position, false);
+            DestroyProjectile();
+
         }
         rigidbody.velocity = direction * stat.projSpeed;
     }
 
-    private void DestroyProjectile(Vector3 position, bool createFx)
+    private void DestroyProjectile()
     {
-        if(createFx)
-        {
-            // Todo : 파티클 시스템
-        }
         gameObject.SetActive(false);
+        ProjObjectPool.instance.ReleaseProjPool(0, gameObject);
     }
 
     public void InitializeAttack(Vector2 direction)
@@ -75,17 +72,18 @@ public class ProjectileController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(IsLayerMatched(levelCollisionLayer.value,collision.gameObject.layer))
+    {   
+        if (IsLayerMatched(levelCollisionLayer.value,collision.gameObject.layer))
         {
             Vector2 destroyPosition = collision.ClosestPoint(transform.position) - direction * 0.2f;
-            DestroyProjectile(destroyPosition, fxOnDestroy);
+            DestroyProjectile();
+            
+
         }
         else if(IsLayerMatched(attackData.target.value,collision.gameObject.layer))
         {
-            playerController.OnAttackEvent += collision.GetComponent<MonsterHealthManager>().DamageHandler;
-            // Todo : 데미지 주기
-            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+            collision.GetComponent<MonsterHealthManager>().DamageHandler(stat.atk);
+            DestroyProjectile();
         }
     }
     

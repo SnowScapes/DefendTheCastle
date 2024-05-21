@@ -319,7 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCollisionLayer:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 128
+  playerController: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
   stat:
     <id>k__BackingField: 0
     <unitName>k__BackingField: 
@@ -329,7 +330,7 @@ MonoBehaviour:
     <moveSpeed>k__BackingField: 0
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
-    attackSO: {fileID: 0}
+    attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
     <size>k__BackingField: 0
     <bulletName>k__BackingField: 
     <delay>k__BackingField: 0
@@ -339,4 +340,4 @@ MonoBehaviour:
     <numberOfProjectilesPerShot>k__BackingField: 0
     <multipleProjectilesAngle>k__BackingField: 0
     <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-    knockback: 0
+    knockback: 1

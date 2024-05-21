@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class MonsterAnimationController : AnimationController
 {
-    private static readonly int attack = Animator.StringToHash("attack");
     private Transform _transform;
     private MonsterBehavior _monsterBehavior;
 
@@ -25,19 +24,16 @@ public class MonsterAnimationController : AnimationController
 
     private void Attacking(int _)
     {
-        //animator.SetTrigger(attack);
+        animator.SetTrigger("attack");
     }
 
     private void MoveAnimation(Vector2 direction)
     {
-        if ((Vector2)transform.position != direction)
-            animator.SetBool("isRun", true);
-        else
-            animator.SetBool("isRun", false);
+        animator.SetTrigger("run");
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Hitting()
     {
-        animator.SetBool("isRun", false);
+        animator.SetTrigger("hit");
     }
 }

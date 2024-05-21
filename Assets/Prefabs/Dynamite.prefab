@@ -61,7 +61,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 3318363954352461206}
   - component: {fileID: 6393660893139169800}
   - component: {fileID: -783688242516829554}
+  - component: {fileID: 5273608645989806714}
   m_Layer: 0
   m_Name: Dynamite
   m_TagString: Untagged
@@ -180,7 +181,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -315,7 +316,7 @@ Animator:
   m_GameObject: {fileID: 6660723251897500060}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 613051e4048222147b99e6e2bd6abeb6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -326,3 +327,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5273608645989806714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660723251897500060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555e34bd3cebd8e469bb617121f95ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion_prefab: {fileID: 4093275879539375780, guid: f3dbbb314a9cc6346a546d014505db5c, type: 3}
+  TntSO: {fileID: 11400000, guid: 9c215ec7567bf184cbd614bae52eb5d2, type: 2}

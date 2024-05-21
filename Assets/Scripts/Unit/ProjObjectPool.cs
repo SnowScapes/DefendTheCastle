@@ -7,8 +7,7 @@ using UnityEngine.Pool;
 public class ProjObjectPool : Spawner
 {
     [SerializeField] public Dictionary<Define.eProjName, IObjectPool<GameObject>> dicProjPool = new Dictionary<Define.eProjName, IObjectPool<GameObject>>();
-    [SerializeField] private int MaxProjCount = 100;
-    [SerializeField] 
+    [SerializeField] private int MaxProjCount = 20;
 
     protected override void Start()
     {

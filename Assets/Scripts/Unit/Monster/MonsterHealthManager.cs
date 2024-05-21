@@ -6,10 +6,12 @@ using UnityEngine;
 public class MonsterHealthManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat stat;
+    private MonsterAnimationController anim;
 
     private void Awake()
     {
         stat = this.GetComponent<MonsterBehavior>().stat;
+        anim = GetComponentInChildren<MonsterAnimationController>();
     }
 
     private void Start()
@@ -19,11 +21,11 @@ public class MonsterHealthManager : MonoBehaviour
 
     public void DamageHandler(int power)
     {
-        Debug.Log("Damaged");
         stat.hp -= power;
+        anim.Hitting();
         if (stat.hp <= 0)
         {
-            Debug.Log("Monster Die");
+            gameObject.SetActive(false);
         }
     }
 }

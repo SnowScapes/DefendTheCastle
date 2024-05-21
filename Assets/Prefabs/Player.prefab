@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2874655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.42506897}
   m_EdgeRadius: 0
 --- !u!114 &4718745403347237245
 MonoBehaviour:
@@ -166,12 +166,15 @@ MonoBehaviour:
     <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
+    <size>k__BackingField: 0
     <bulletName>k__BackingField: 
     <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
     <duration>k__BackingField: 0
     <spread>k__BackingField: 0
     <numberOfProjectilesPerShot>k__BackingField: 0
     <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
     knockback: 0
 --- !u!114 &4122768371699669687
 MonoBehaviour:
@@ -212,6 +215,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb494949224f6142878cee98fe426dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat:
+    <id>k__BackingField: 0
+    <unitName>k__BackingField: 
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <level>k__BackingField: 0
+    <gold>k__BackingField: 0
+    attackSO: {fileID: 0}
+    <size>k__BackingField: 0
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    knockback: 0
   projectileSpawnPosition: {fileID: 5255847300117534795}
   ProjPrefab: {fileID: 6578986455680086051, guid: 9ee7e87d10f4bb14a9963104e89a2c1d, type: 3}
 --- !u!114 &8577486253192229273
