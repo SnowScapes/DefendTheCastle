@@ -21,11 +21,18 @@ public class TNTBehavior : MonsterBehavior
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 11)
+        switch (other.gameObject.layer)
         {
-            StopCoroutine(move);
-            stop = false;
-            StartCoroutine(throwCouroutine(other.transform));
+            case 11:
+                StopCoroutine(move);
+                stop = false;
+                StartCoroutine(throwCouroutine(other.transform));
+                break;
+            case 12:
+                StopCoroutine(move);
+                stop = false;
+                StartCoroutine(throwCouroutine(other.transform));
+                break;
         }
     }
 

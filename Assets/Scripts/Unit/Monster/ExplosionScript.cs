@@ -6,7 +6,15 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour
 {
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip bombClip;
     public int power { get; set; }
+    
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +23,18 @@ public class ExplosionScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 11)
+        switch (other.gameObject.layer)
         {
-            Debug.Log("player damaged " + power);
-            other.gameObject.GetComponent<InputController>().Stats.DamageHandler(power);
+            case 11: other.gameObject.GetComponent<InputController>().Stats.DamageHandler(power);
+                break;
+            case 12: other.gameObject.GetComponentInParent<Castle>().OnDamaged(power);
+                break;
         }
     }
 
     IEnumerator delay()
     {
+        source.PlayOneShot(bombClip);
         yield return new WaitForSeconds(0.91f);
         Destroy(gameObject);
     }

@@ -55,13 +55,14 @@ public class MonsterBehavior : BehaviorController
     {
         switch (other.gameObject.layer)
         {
-            case 11: Debug.Log("Attack Player");
+            case 11:
                 StopCoroutine(move);
                 OnAttackEvent += other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
                 StartCoroutine(attack);
                 break;
-            case 12: Debug.Log("Attack Castle");
+            case 12:
                 StopCoroutine(move);
+                OnAttackEvent += other.gameObject.GetComponent<Castle>().OnDamaged;
                 StartCoroutine(attack);
                 break;
         }
@@ -69,12 +70,16 @@ public class MonsterBehavior : BehaviorController
 
     protected virtual void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        switch (other.gameObject.layer)
         {
-            StopCoroutine(attack);
-            OnAttackEvent -= other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
-            StartCoroutine(move);
-            Debug.Log("Goto Castle Again");
+            case 11: StopCoroutine(attack);
+                OnAttackEvent -= other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
+                StartCoroutine(move);
+                break;
+            case 12: StopCoroutine(attack);
+                OnAttackEvent -= other.gameObject.GetComponent<Castle>().OnDamaged;
+                StartCoroutine(move);
+                break;
         }
     }
 
