@@ -4,36 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class ProjObjectPool : MonoBehaviour
+public class ProjObjectPool : Spawner
 {
     [SerializeField] public Dictionary<Define.eProjName, IObjectPool<GameObject>> dicProjPool = new Dictionary<Define.eProjName, IObjectPool<GameObject>>();
-    [SerializeField]  ObjectPoolManager creator;
-    public static ProjObjectPool instance;
-    [SerializeField] private GameObject[] objProj;
     [SerializeField] private int MaxProjCount = 20;
+    InputController inputController;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        inputController = GetComponent<InputController>();
+    }
+    protected override void Start()
+    {
+        base.Start();
     }
 
-    private void Start()
+    protected override void FilledPool()
     {
-        FilledProjPool();
-    }
-
-    private void FilledProjPool()
-    {
-        for (int i = 0; i < objProj.Length; i++)
+        for (int i = 0; i < objPrefab.Length; i++)
         {
-            dicProjPool[(Define.eProjName)i] = creator.InitPool(objProj[i]);
+            dicProjPool[(Define.eProjName)i] = creator.InitPool(objPrefab[i], MaxProjCount);
 
             Summon((Define.eProjName)i, MaxProjCount);
         }
@@ -46,9 +36,10 @@ public class ProjObjectPool : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicProjPool[type].Get();
-            go.transform.SetParent(creator.transform);
-            go.GetComponent<ProjectileController>().playerController = this.GetComponent<InputController>();
-            go.GetComponent<ProjectileController>().stat = this.GetComponent<InputController>().Stats;
+            go.transform.SetParent(poolBox.transform);
+            ProjectileController proj = go.GetComponent<ProjectileController>();
+            proj.playerController = inputController;
+            proj.pool = this;
             pools.Add(go);
         }
 

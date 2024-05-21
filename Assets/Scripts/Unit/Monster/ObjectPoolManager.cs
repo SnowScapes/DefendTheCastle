@@ -7,9 +7,10 @@ using UnityEngine.Pool;
 
 public class ObjectPoolManager : MonoBehaviour
 {
-    public IObjectPool<GameObject> InitPool(GameObject go)
+
+    public IObjectPool<GameObject> InitPool(GameObject go, int count)
     {
-        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreatePool(go), GetPool, ReleasePool, DestroyPool, maxSize: 20);
+        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreatePool(go), GetPool, ReleasePool, DestroyPool, defaultCapacity: count, maxSize: 20);       
         return pool;       
     }
 
@@ -28,10 +29,9 @@ public class ObjectPoolManager : MonoBehaviour
         pool.SetActive(true);
     }
 
-    private GameObject CreatePool(GameObject pool)
+    protected virtual GameObject CreatePool(GameObject pool)
     {
         GameObject go = Instantiate(pool);
-        //TODO 받아넣기
         return go;
     }
 }
