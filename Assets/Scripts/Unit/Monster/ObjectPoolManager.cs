@@ -10,7 +10,7 @@ public class ObjectPoolManager : MonoBehaviour
 
     public IObjectPool<GameObject> InitPool(GameObject go, int count)
     {
-        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreatePool(go), GetPool, ReleasePool, DestroyPool, defaultCapacity: count, maxSize: 20);       
+        IObjectPool<GameObject> pool = new ObjectPool<GameObject>(() => CreatePool(go), GetPool, ReleasePool, DestroyPool, defaultCapacity: count, maxSize: 25);       
         return pool;       
     }
 
