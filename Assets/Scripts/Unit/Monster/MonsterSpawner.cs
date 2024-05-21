@@ -32,11 +32,11 @@ public class MonsterSpawner : MonoBehaviour
         StartCoroutine(StartGame());      
     }
 
-    //?�시??
+    //?�시??
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(3.0f);
-        StartCoroutine(GetMonsters(Define.eMonsterType.Torch, 1, spawnerLocation[1].transform, 1.0f));
+        StartCoroutine(GetMonsters(Define.eMonsterType.Barrel, 1, spawnerLocation[1].transform, 1.0f));
         yield return null;
     }
 
@@ -45,12 +45,12 @@ public class MonsterSpawner : MonoBehaviour
         for (int i = 0; i < objMonster.Length; i++)
         {
             dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objMonster[i]);
-            //초기 ?�???�소
+            //초기 ?�???�소
             Summon((Define.eMonsterType)i, MaxMonsterCount, spawnerLocation[1].transform, 1);
         }
     }
 
-    //미리?�성
+    //미리?�성
     private void Summon(Define.eMonsterType type, int count, Transform tr, int spawnLocation)
     {
         List<GameObject> pools = new List<GameObject>();
@@ -60,15 +60,7 @@ public class MonsterSpawner : MonoBehaviour
             GameObject go = dicMonsterPool[type].Get();
             go.transform.position = tr.position;
             go.transform.SetParent(transform);
-            switch (type)
-            {
-                case Define.eMonsterType.Torch: go.GetComponent<TorchBehavior>().spawnPoint = (Spawn)spawnLocation;
-                    break;
-                case Define.eMonsterType.Tnt: go.GetComponent<TNTBehavior>().spawnPoint = (Spawn)spawnLocation;
-                    break;
-                case Define.eMonsterType.Barrel: go.GetComponent<BarrelBehavior>().spawnPoint = (Spawn)spawnLocation;
-                    break;
-            }
+            go.GetComponent<MonsterBehavior>().spawnPoint = (Spawn)spawnLocation;
 
             switch ((Spawn)spawnLocation)
             {
@@ -88,7 +80,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
     
-    //몬스???�환
+    //몬스???�환
     public IEnumerator GetMonsters(Define.eMonsterType type, int count, Transform tr, float delayTime)
     {
         for (int i = 0; i < count; i++)
@@ -100,7 +92,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
-    //몬스???�제
+    //몬스???�제
     public void ReleaseMonsterPool(Define.eMonsterType type, GameObject go)
     {
         dicMonsterPool[type].Release(go);

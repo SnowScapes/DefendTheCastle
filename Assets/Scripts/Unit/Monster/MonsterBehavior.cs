@@ -13,8 +13,8 @@ public class MonsterBehavior : BehaviorController
     [SerializeField] internal Spawn spawnPoint;
     [SerializeField] internal MonsterStat stat;
 
-    private IEnumerator move;
-    private IEnumerator attack;
+    protected IEnumerator move;
+    protected IEnumerator attack;
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
     private bool arrived = false;
 
@@ -51,12 +51,13 @@ public class MonsterBehavior : BehaviorController
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.layer)
         {
             case 11: Debug.Log("Attack Player");
                 StopCoroutine(move);
+                OnAttackEvent += other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
                 StartCoroutine(attack);
                 break;
             case 12: Debug.Log("Attack Castle");
@@ -66,11 +67,12 @@ public class MonsterBehavior : BehaviorController
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected virtual void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             StopCoroutine(attack);
+            OnAttackEvent -= other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
             StartCoroutine(move);
             Debug.Log("Goto Castle Again");
         }
@@ -84,14 +86,14 @@ public class MonsterBehavior : BehaviorController
             Vector2 _destination = rallyPoint.Dequeue();
             while (!arrived)
             {
-                CallMoveEvent(_destination);
                 yield return null;
+                CallMoveEvent(_destination);
             }
             arrived = false;
         }
     }
 
-    IEnumerator attackCoroutine()
+    protected virtual IEnumerator attackCoroutine()
     {
         WaitForSeconds delay = new WaitForSeconds(stat.attackSO.delay);
         while (true)
