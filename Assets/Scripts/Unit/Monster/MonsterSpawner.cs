@@ -3,32 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class MonsterSpawner : MonoBehaviour
+public class MonsterSpawner : Spawner
 {
     [SerializeField]
     public Dictionary<Define.eMonsterType, IObjectPool<GameObject>> dicMonsterPool = new Dictionary<Define.eMonsterType, IObjectPool<GameObject>>();
 
     [SerializeField]
-    private ObjectPoolManager creator;
-    [SerializeField]
-    private GameObject[] objMonster;
-    [SerializeField]
     private GameObject[] spawnerLocation;
-    [SerializeField]
-    private int MaxMonsterCount = 5;
 
     public List<Transform> Rally_Left;
     public List<Transform> Rally_Center;
     public List<Transform> Rally_Right;
-    private void Awake()
-    {
-        creator = GetComponent<ObjectPoolManager>();
-    }
+
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        FilledMonsterPool();
+        base.Start();
         StartCoroutine(StartGame());      
     }
 
@@ -40,13 +31,13 @@ public class MonsterSpawner : MonoBehaviour
         yield return null;
     }
 
-    private void FilledMonsterPool()
+    protected override void FilledPool()
     {
-        for (int i = 0; i < objMonster.Length; i++)
+        for (int i = 0; i < objPrefab.Length; i++)
         {
-            dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objMonster[i]);
+            dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objPrefab[i], DefaultItemCount);
             //ì´ˆê¸° ?€???¥ì†Œ
-            Summon((Define.eMonsterType)i, MaxMonsterCount, spawnerLocation[1].transform, 1);
+            Summon((Define.eMonsterType)i, DefaultItemCount, spawnerLocation[1].transform, 1);
         }
     }
 
@@ -59,7 +50,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             GameObject go = dicMonsterPool[type].Get();
             go.transform.position = tr.position;
-            go.transform.SetParent(transform);
+            go.transform.SetParent(poolBox.transform);
             switch (type)
             {
                 case Define.eMonsterType.Torch: go.GetComponent<TorchBehavior>().spawnPoint = (Spawn)spawnLocation;
@@ -95,7 +86,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             GameObject go = dicMonsterPool[type].Get();
             go.transform.position = tr.position;
-            go.transform.SetParent(transform);
+            go.transform.SetParent(poolBox.transform);
             yield return new WaitForSeconds(delayTime);
         }
     }

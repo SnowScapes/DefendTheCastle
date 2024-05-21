@@ -33,4 +33,11 @@ public class Define
         SpecialItem,
         MaxType
     }
+
+    public enum eItmeType
+    {
+        Wood = 0,
+        Gold,
+        Meat
+    }
 }

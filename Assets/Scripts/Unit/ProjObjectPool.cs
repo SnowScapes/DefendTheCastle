@@ -4,24 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class ProjObjectPool : MonoBehaviour
+public class ProjObjectPool : Spawner
 {
     [SerializeField] public Dictionary<Define.eProjName, IObjectPool<GameObject>> dicProjPool = new Dictionary<Define.eProjName, IObjectPool<GameObject>>();
-    [SerializeField] private ObjectPoolManager creator;
-    [SerializeField] private GameObject[] objProj;
     [SerializeField] private int MaxProjCount = 100;
+    [SerializeField] 
 
-
-    private void Start()
+    protected override void Start()
     {
-        FilledProjPool();
+        base.Start();
     }
 
-    private void FilledProjPool()
+    protected override void FilledPool()
     {
-        for (int i = 0; i < objProj.Length; i++)
+        for (int i = 0; i < objPrefab.Length; i++)
         {
-            dicProjPool[(Define.eProjName)i] = creator.InitPool(objProj[i]);
+            dicProjPool[(Define.eProjName)i] = creator.InitPool(objPrefab[i], MaxProjCount);
 
             Summon((Define.eProjName)i, MaxProjCount);
         }
@@ -34,7 +32,7 @@ public class ProjObjectPool : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicProjPool[type].Get();
-            go.transform.SetParent(transform);
+            go.transform.SetParent(poolBox.transform);
             go.GetComponent<ProjectileController>().playerController = this.GetComponent<InputController>();
             go.GetComponent<ProjectileController>().stat = this.GetComponent<InputController>().Stats;
             pools.Add(go);
