@@ -3868,7 +3868,7 @@ Tilemap:
       - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 7, y: -2, z: 0}
@@ -3988,7 +3988,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 5, y: 0, z: 0}
@@ -11432,6 +11432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoreCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2607421612992159082, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3263083535250655688, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: upgradeList.UpgradeImg
       value: 
@@ -11522,11 +11526,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5721094614829869946, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_VerticalFit
