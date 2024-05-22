@@ -7,7 +7,8 @@ public class MonsterSpawner : Spawner
 {
     [SerializeField]
     public Dictionary<Define.eMonsterType, IObjectPool<GameObject>> dicMonsterPool = new Dictionary<Define.eMonsterType, IObjectPool<GameObject>>();
-
+    [SerializeField]
+    private ItemSpawner itemSpawner;
     [SerializeField]
     private GameObject[] spawnerLocation;
 
@@ -15,6 +16,10 @@ public class MonsterSpawner : Spawner
     public List<Transform> Rally_Center;
     public List<Transform> Rally_Right;
 
+    private void Awake()
+    {
+        itemSpawner = GetComponent<ItemSpawner>();   
+    }
 
     // Start is called before the first frame update
     protected override void Start()
@@ -27,7 +32,7 @@ public class MonsterSpawner : Spawner
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(3.0f);
-        StartCoroutine(GetMonsters(Define.eMonsterType.Tnt, 1, spawnerLocation[1].transform, 1.0f));
+        StartCoroutine(GetMonsters(Define.eMonsterType.Tnt, 1, spawnerLocation[0].transform, 0,1.0f));
         yield return null;
     }
 
@@ -36,8 +41,8 @@ public class MonsterSpawner : Spawner
         for (int i = 0; i < objPrefab.Length; i++)
         {
             dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objPrefab[i], DefaultItemCount);
-            //초기 ?�???�소
-            Summon((Define.eMonsterType)i, DefaultItemCount, spawnerLocation[1].transform, 1);
+            //초기 ?�???�소
+            Summon((Define.eMonsterType)i, DefaultItemCount, spawnerLocation[0].transform, 0);
         }
     }
 
@@ -49,19 +54,7 @@ public class MonsterSpawner : Spawner
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicMonsterPool[type].Get();
-            go.transform.position = tr.position;
-            go.transform.SetParent(transform);
-            go.GetComponent<MonsterBehavior>().spawnPoint = (Spawn)spawnLocation;
-
-            switch ((Spawn)spawnLocation)
-            {
-                case Spawn.Left: go.GetComponent<MonsterBehavior>().queueRally(Rally_Left);
-                    break;
-                case Spawn.Center: go.GetComponent<MonsterBehavior>().queueRally(Rally_Center);
-                    break;
-                case Spawn.Right: go.GetComponent<MonsterBehavior>().queueRally(Rally_Right);
-                    break;
-            }
+            Init(go, tr, spawnLocation);
             pools.Add(go);
         }
 
@@ -72,14 +65,34 @@ public class MonsterSpawner : Spawner
     }
     
     //몬스???�환
-    public IEnumerator GetMonsters(Define.eMonsterType type, int count, Transform tr, float delayTime)
+    public IEnumerator GetMonsters(Define.eMonsterType type, int count, Transform tr, int spawnLocation, float delayTime)
     {
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicMonsterPool[type].Get();
-            go.transform.position = tr.position;
-            go.transform.SetParent(poolBox.transform);
+            Init(go, tr, spawnLocation);
             yield return new WaitForSeconds(delayTime);
+        }
+    }
+
+    public void Init(GameObject go, Transform tr, int spawnLocation)
+    {
+        go.transform.position = tr.position;
+        go.transform.SetParent(poolBox.transform);
+        go.GetComponent<MonsterHealthManager>().itemSpawner = itemSpawner;
+        go.GetComponent<MonsterBehavior>().spawnPoint = (Spawn)spawnLocation;
+
+        switch ((Spawn)spawnLocation)
+        {
+            case Spawn.Left:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Left);
+                break;
+            case Spawn.Center:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Center);
+                break;
+            case Spawn.Right:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Right);
+                break;
         }
     }
 

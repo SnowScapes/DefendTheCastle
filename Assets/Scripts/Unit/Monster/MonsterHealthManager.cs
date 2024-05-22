@@ -7,6 +7,7 @@ public class MonsterHealthManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat stat;
     private MonsterAnimationController anim;
+    public ItemSpawner itemSpawner;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class MonsterHealthManager : MonoBehaviour
         anim.Hitting();
         if (stat.hp <= 0)
         {
+            itemSpawner.DropItem(this.gameObject, 100);
             gameObject.SetActive(false);
         }
     }

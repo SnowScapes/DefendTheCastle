@@ -62,7 +62,6 @@ public class Shooting : MonoBehaviour
             return;
 
         GameObject obj = objectPool.dicProjPool[type].Get();
-        obj.GetComponent<ProjectileController>().playerController = GetComponent<InputController>();
         obj.GetComponent<ProjectileController>().stat = GetComponent<InputController>().Stats;
         //obj.transform.SetParent(objectPool.transform);
         obj.transform.position = projectileSpawnPosition.position;
