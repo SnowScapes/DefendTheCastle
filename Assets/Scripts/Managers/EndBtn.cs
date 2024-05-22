@@ -15,6 +15,7 @@ public class EndBtn : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.ChangeBGM(Define.eSceneName.EndScene);
+        ScoreText.text = ScoreManager.instance.gameScore.ToString();
         if (GameManager.instance.isAlive)
         {
             VictoryPanel.SetActive(true);
@@ -24,12 +25,11 @@ public class EndBtn : MonoBehaviour
         {
             GameOverPanel.SetActive(true);
         }
-        ScoreText.text = ScoreManager.instance.gameScore.ToString();
           
     }
     public void RetryBtn()
     {
-
+        ScoreManager.instance.RefreshScore();
         GameManager.instance.isAlive = true;
         GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
         VictoryPanel.SetActive(false);

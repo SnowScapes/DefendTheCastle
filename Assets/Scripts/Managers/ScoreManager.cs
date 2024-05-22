@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    Castle castle = new Castle();
+    [SerializeField] Castle castle = new Castle();
     public int gameScore = 0;
     public int currentCastleHpPoint = 0;
 
@@ -75,5 +75,10 @@ public class ScoreManager : MonoBehaviour
     {
         gameScore += 100*stageLevel;
         Debug.Log("Score LevelScore : " + gameScore);
+    }
+
+    public void RefreshScore()
+    {
+        gameScore = 0;
     }
 }
