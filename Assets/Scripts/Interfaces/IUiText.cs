@@ -1,4 +1,4 @@
 public interface IUiText
 {
-    public void SetText();
+    public void SetText(string text);
 }
