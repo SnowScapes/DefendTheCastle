@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 1434423848631198283}
   - component: {fileID: 8577486253192229273}
   - component: {fileID: 3745859032859544664}
-  - component: {fileID: 1019994207818273159}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -175,6 +174,7 @@ MonoBehaviour:
     <multipleProjectilesAngle>k__BackingField: 0
     <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
     knockback: 0
+  castle: {fileID: 0}
 --- !u!114 &4122768371699669687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,36 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc23d17a89e96949a8ee6df87e2344a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1019994207818273159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104181402301944412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0782db07d7c97aa468a8c55f02993e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stat:
-    <hp>k__BackingField: 0
-    <maxHp>k__BackingField: 0
-    <atk>k__BackingField: 0
-    <moveSpeed>k__BackingField: 0
-    <gold>k__BackingField: 0
-    front: {fileID: 0}
-    attackSO: {fileID: 0}
-    <bulletName>k__BackingField: 
-    <delay>k__BackingField: 0
-    <projSpeed>k__BackingField: 0
-    <duration>k__BackingField: 0
-    <spread>k__BackingField: 0
-    <numberOfProjectilesPerShot>k__BackingField: 0
-    <multipleProjectilesAngle>k__BackingField: 0
-    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
-    knockback: 0
-  castle: {fileID: 0}
 --- !u!1 &812346658106113939
 GameObject:
   m_ObjectHideFlags: 0
