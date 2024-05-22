@@ -16,6 +16,8 @@ public class LevelSystem : MonoBehaviour
     private int Tnt;
     private int Barrel;
 
+    public IEnumerator startLevel;
+    
     private void Start()
     {
         RandomPool.Capacity = 10;
@@ -27,7 +29,8 @@ public class LevelSystem : MonoBehaviour
         Torch = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Torch);
         Tnt = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Tnt);
         Barrel = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Barrel);
-        StartCoroutine(StartLevel(Torch, Tnt, Barrel, spawnDelay));
+        startLevel = StartLevel(Torch, Tnt, Barrel, spawnDelay);
+        StartCoroutine(startLevel);
     }
 
     IEnumerator StartLevel(int TorchAmount, int TntAmount, int BarrelAmount, float delay)
