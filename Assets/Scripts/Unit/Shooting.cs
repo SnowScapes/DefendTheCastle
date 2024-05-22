@@ -35,6 +35,12 @@ public class Shooting : MonoBehaviour
 
     private void OnShoot(int _)
     {
+        StartCoroutine(DelayShoot());
+    }
+
+    IEnumerator DelayShoot()
+    {
+        yield return new WaitForSeconds(0.5f);
         float projectilesAngleSpace = stat.multipleProjectilesAngle;
         int numberOfPorjectilesPerShot = stat.numberOfProjectilesPerShot;
 
@@ -47,9 +53,7 @@ public class Shooting : MonoBehaviour
             angle += randomSpread;
             CreateProjectile(angle);
         }
-
     }
-
     private void CreateProjectile(float angle)
     {
         Define.eProjName type;
