@@ -14,7 +14,6 @@ public class Shooting : MonoBehaviour
 
     private ProjObjectPool objectPool;
 
-    public GameObject ProjPrefab; // ����ü ������ ( ȭ��, ��ź )
     private void Awake()
     {
         controller = GetComponent<InputController>();
