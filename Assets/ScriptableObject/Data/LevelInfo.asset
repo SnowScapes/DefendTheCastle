@@ -14,22 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelList:
   - level: 1
+    Total: 10
     Torch: 10
     Tnt: 0
     Barrel: 0
   - level: 2
+    Total: 20
     Torch: 16
     Tnt: 4
     Barrel: 0
   - level: 3
+    Total: 30
     Torch: 21
     Tnt: 6
     Barrel: 3
   - level: 4
+    Total: 40
     Torch: 24
     Tnt: 12
     Barrel: 4
   - level: 5
+    Total: 50
     Torch: 25
     Tnt: 15
     Barrel: 10
