@@ -21,7 +21,6 @@ public class PlayerStatsHandler : MonoBehaviour
     {
         if(collision.CompareTag("Item"))
         {
-            ScoreManager.instance.ItemScoreAdd();
             Item item = collision.GetComponent<Item>();
             int index = item.GetItemType(item.type);
             if (index != -1)
@@ -41,6 +40,7 @@ public class PlayerStatsHandler : MonoBehaviour
                         StartCoroutine(stat.FeverTime(ps));
                         break;
                 }
+                ScoreManager.instance.ItemScoreAdd();
             }
             item.spawner.ReleaseItem(collision.gameObject);
         }
