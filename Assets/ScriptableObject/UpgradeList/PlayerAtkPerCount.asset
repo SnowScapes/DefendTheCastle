@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bd33e9954627844e98d8384ea175d4d, type: 3}
-  m_Name: PlayerAtkSpeed
+  m_Name: PlayerAtkPerCount
   m_EditorClassIdentifier: 
   type: 4
   upgradeLv: 0
-  upgradeValues: 040000000600000008000000
-  upgradeCosts: d0070000b80b0000
+  upgradeValues: 010000000200000003000000
+  upgradeCosts: c409000088130000
   upgradeUI: {fileID: 858841808, guid: 2e5b3ee6f53772348a8d36da55b0eeea, type: 3}
