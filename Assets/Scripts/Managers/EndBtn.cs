@@ -24,6 +24,7 @@ public class EndBtn : MonoBehaviour
         {
             GameOverPanel.SetActive(true);
         }
+        ScoreText.text = ScoreManager.instance.gameScore.ToString();
           
     }
     public void RetryBtn()
