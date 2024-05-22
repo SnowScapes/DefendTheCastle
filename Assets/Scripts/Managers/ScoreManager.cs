@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    [SerializeField] Castle castle = new Castle();
+    [SerializeField] private Castle castle;
     public int gameScore = 0;
     public int currentCastleHpPoint = 0;
 
@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            ScoreManager.instance.castle = this.castle;
             Destroy(gameObject);
         }
     }
@@ -49,7 +50,7 @@ public class ScoreManager : MonoBehaviour
             score = scorePointTNT;
         else if (name == "GoblinBarrel(Clone)")
             score = scorePointBarrel;
-        else //¸¶¿Õ
+        else //ï¿½ï¿½ï¿½ï¿½
             score = scorePointKing;
 
         instance.AddScore(score);

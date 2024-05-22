@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        StopCoroutine(LevelSystem.startLevel);
+        LevelSystem.StopLevel();
         StopCoroutine(gameStart);
         ScoreManager.instance.CastleHpScoreAdd();
         ScoreManager.instance.StageLevelScoreAdd(currentLevel-1);

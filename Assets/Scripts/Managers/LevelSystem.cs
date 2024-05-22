@@ -31,6 +31,7 @@ public class LevelSystem : MonoBehaviour
         Barrel = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Barrel);
         startLevel = StartLevel(Torch, Tnt, Barrel, spawnDelay);
         StartCoroutine(startLevel);
+        //MainUIManager.Instance._stageText.SetText(level.ToString());
     }
 
     IEnumerator StartLevel(int TorchAmount, int TntAmount, int BarrelAmount, float delay)
@@ -67,5 +68,10 @@ public class LevelSystem : MonoBehaviour
             int j = Random.Range(0, i + 1);
             (pool[j], pool[i]) = (pool[i], pool[j]);
         }
+    }
+
+    public void StopLevel()
+    {
+        StopAllCoroutines();;
     }
 }
