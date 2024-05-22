@@ -57,7 +57,6 @@ public class ProjectileController : MonoBehaviour
         //this.attackData = attackData;
         this.direction = direction;
 
-        UpdateProjectileSprite();
         trailRenderer.Clear();
         currentDuration = 0;
         spriteRenderer.color = stat.projectileColor;
@@ -67,10 +66,7 @@ public class ProjectileController : MonoBehaviour
         isReady = true;
     }
 
-    private void UpdateProjectileSprite()
-    {
-        transform.localScale = Vector3.one * stat.size;
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   

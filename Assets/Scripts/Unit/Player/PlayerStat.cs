@@ -1,21 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 public enum eSpecialMode {normal, invincibleMode, speedMode}
-public enum StatsChangeType
-{
-    Add,
-    Multiple,
-    Override
-}
-
 
 [System.Serializable]
 public class PlayerStat : UnitStat
 {
+    public Transform front;
+
     public AttackSO attackSO;
-    [field:SerializeField] public float size { get; set; }
     [field:SerializeField] public string bulletName { get; set; }
     [field: SerializeField] public float delay { get; set; }
     [field: SerializeField] public float projSpeed { get; set; }
@@ -65,7 +61,6 @@ public class PlayerStat : UnitStat
     public void InitStat(AttackSO so)
     {
         RangedAttackSO _so = so as RangedAttackSO;
-        size = _so.size;
         bulletName = _so.bulletName;
         delay = _so.delay;
         duration = _so.duration;
@@ -86,11 +81,13 @@ public class PlayerStat : UnitStat
         if (hp + addValue <= maxHp)
         {
             hp += addValue;
+            front.localScale = new Vector3((float)hp / maxHp, 1.0f, 1.0f);
             return;
         }
         else
         {
             hp = maxHp;
+            front.localScale = Vector3.one;
         }
     }
 
@@ -99,6 +96,7 @@ public class PlayerStat : UnitStat
         int temp = addValue - maxHp;
         maxHp = addValue;
         hp += temp;
+        front.localScale = new Vector3((float)hp / maxHp, 1.0f, 1.0f);
     }
 
     public bool CheckedHaveMoney(int cost)
@@ -116,6 +114,7 @@ public class PlayerStat : UnitStat
     public void DamageHandler(int power)
     {
         hp -= power;
+        front.localScale = new Vector3((float)hp / maxHp, 1.0f, 1.0f);
         if (hp <= 0)
         {
             // 게임종료
