@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         WaitForSeconds roundTime = new WaitForSeconds(totalRoundTime);
         for (int i = 0; i < LevelInfo.levelList.Count; i++)
         {
-            Debug.Log(currentLevel);
+            Debug.Log("Stage : " + currentLevel);
             LevelSystem.SetLevel(currentLevel);
             yield return roundTime;
             currentLevel++;
