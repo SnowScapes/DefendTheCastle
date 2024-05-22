@@ -133,7 +133,14 @@ public class Castle : MonoBehaviour
 
     public void CheckCastleHp()
     {
-        ScoreManager.instance.currentCastleHpPoint = currentCastleHp;
+        if (currentCastleHp < 0)
+        {
+            ScoreManager.instance.currentCastleHpPoint = 0;
+        }
+        else
+        {
+            ScoreManager.instance.currentCastleHpPoint = currentCastleHp;
+        }
     }
 }
 

@@ -4260,7 +4260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feda6572c6594c847a14d6b4e75f8b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle: {fileID: 0}
+  castle: {fileID: 1530868351}
   gameScore: 0
   currentCastleHpPoint: 0
   scorePointKing: 50
