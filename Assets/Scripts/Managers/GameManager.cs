@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     {
         StopCoroutine(LevelSystem.startLevel);
         StopCoroutine(gameStart);
+        ScoreManager.instance.CastleHpScoreAdd();
+        ScoreManager.instance.StageLevelScoreAdd(currentLevel-1);
         ChangedScene(Define.eSceneName.EndScene);
         
     }
