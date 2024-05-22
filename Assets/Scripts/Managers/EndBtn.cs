@@ -30,6 +30,7 @@ public class EndBtn : MonoBehaviour
     public void RetryBtn()
     {
         ScoreManager.instance.RefreshScore();
+        SoundManager.Instance.ChangeBGM(Define.eSceneName.TutorialScene);
         GameManager.instance.isAlive = true;
         GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
         VictoryPanel.SetActive(false);
