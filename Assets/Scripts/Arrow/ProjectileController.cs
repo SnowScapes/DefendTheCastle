@@ -1,12 +1,11 @@
 ﻿using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
     public ProjObjectPool pool;
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
     public PlayerStat stat;

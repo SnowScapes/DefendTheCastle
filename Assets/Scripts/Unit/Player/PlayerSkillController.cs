@@ -13,7 +13,7 @@ public class PlayerSkillController : MonoBehaviour
     bool bIsRepair = false;
     float coolDownTime = 30.0f;
     float operateTime = 5.0f;
-    float waitPeriod = 1.0f;
+    //float waitPeriod = 1.0f;
     [SerializeField]
     private int recoveryAmount = 5;
     [SerializeField]
