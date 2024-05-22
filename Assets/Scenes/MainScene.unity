@@ -853,7 +853,7 @@ Tilemap:
       - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 1, z: 0}
@@ -3767,7 +3767,7 @@ Tilemap:
       - {fileID: -743170660, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 185632971, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -240285218, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -5, z: 0}
@@ -4007,7 +4007,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 5, y: 0, z: 0}
@@ -4238,6 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feda6572c6594c847a14d6b4e75f8b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: 0
   scorePointKing: 50
   scorePointBarrel: 5
   scorePointTNT: 3
@@ -11002,37 +11003,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1863709611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1863709612}
-  m_Layer: 0
-  m_Name: Monster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1863709612
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863709611}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1953011108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2075728287538426818, guid: dcca5c3b6bbda044db5b604ded397cab, type: 3}
