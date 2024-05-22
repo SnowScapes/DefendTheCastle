@@ -7,10 +7,35 @@ using System.Runtime.InteropServices;
 
 public class EndBtn : MonoBehaviour
 {
-    public void SceneChange(int num)
+
+    [SerializeField] private GameObject VictoryPanel;
+    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private Text ScoreText;
+
+    private void Start()
     {
-        SceneManager.LoadScene(num);
         SoundManager.Instance.ChangeBGM(Define.eSceneName.EndScene);
+        if (GameManager.instance.isAlive)
+        {
+            VictoryPanel.SetActive(true);
+        }
+            
+        else
+        {
+            GameOverPanel.SetActive(true);
+        }
+          
+    }
+    public void RetryBtn()
+    {
+
+        GameManager.instance.isAlive = true;
+
+        StartCoroutine(GameManager.instance.gameStart);
+        GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
+        VictoryPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+
     }
     public void ExitGame()
     {

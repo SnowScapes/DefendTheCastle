@@ -1691,6 +1691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03286fa58e084a245824fa78da2a8f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VictoryPanel: {fileID: 794996166}
+  GameOverPanel: {fileID: 460817287}
 --- !u!4 &971396786
 Transform:
   m_ObjectHideFlags: 0
@@ -3232,8 +3234,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 971396785}
         m_TargetAssemblyTypeName: EndBtn, Assembly-CSharp
-        m_MethodName: SceneChange
-        m_Mode: 3
+        m_MethodName: RetryBtn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

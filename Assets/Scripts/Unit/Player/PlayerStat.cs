@@ -117,7 +117,8 @@ public class PlayerStat : UnitStat
         front.localScale = new Vector3((float)hp / maxHp, 1.0f, 1.0f);
         if (hp <= 0)
         {
-            // 게임종료
+            GameManager.instance.isAlive = false;
+            GameManager.instance.GameOver();
         }
     }
 

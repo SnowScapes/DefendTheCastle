@@ -114,6 +114,7 @@ public class Castle : MonoBehaviour
             yield return null;
         }
         Camera.main.transform.position = originPos;
+        GameManager.instance.isAlive = false;
         GameManager.instance.GameOver();
     }
 

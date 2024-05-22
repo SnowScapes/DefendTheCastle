@@ -3934,7 +3934,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: -4, z: 0}
@@ -4189,7 +4189,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 1, z: 0}
@@ -10302,6 +10302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8425198769547049853, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8577486253192229273, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
       propertyPath: creator
       value: 
@@ -11527,7 +11531,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 211573204021261309, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: m_SortingOrder
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 303710956060481460, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11579,7 +11583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306028888258725482, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: m_SortingOrder
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

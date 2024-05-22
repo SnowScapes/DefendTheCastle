@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private float totalRoundTime = 70f;
     public bool isPlaying = false;
     public bool isAlive = true;
-    private IEnumerator gameStart;
+    public IEnumerator gameStart;
     private void Awake()
     {
         if(instance == null) 
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StopCoroutine(gameStart);
+        ChangedScene(Define.eSceneName.EndScene);
     }
     public void ChangedScene(Define.eSceneName name)
     {
