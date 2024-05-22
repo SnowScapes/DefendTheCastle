@@ -52,9 +52,14 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    protected void SetTrans(GameObject go)
+    protected virtual void SetTrans(GameObject go)
     {
         go.transform.SetParent(poolBox.transform);
         go.transform.position = poolBox.transform.position;
+    }
+
+    public void ReleaseItem(GameObject pool)
+    {
+        pools.Release(pool);
     }
 }

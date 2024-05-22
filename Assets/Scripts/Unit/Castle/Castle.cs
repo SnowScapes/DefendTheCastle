@@ -10,7 +10,7 @@ public class Castle : MonoBehaviour
     private CastleInfoes[] _castleInfoes;
     private int castleLv = 0;
     [SerializeField]
-    public int currentCastleHp { get; private set; } = 50;
+    public int currentCastleHp = 50;
     [SerializeField]
     private int castleMaxHp = 50;
 

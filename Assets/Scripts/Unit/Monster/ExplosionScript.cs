@@ -25,7 +25,7 @@ public class ExplosionScript : MonoBehaviour
     {
         switch (other.gameObject.layer)
         {
-            case 11: other.gameObject.GetComponent<InputController>().Stats.DamageHandler(power);
+            case 11: GameManager.instance.playerStat.DamageHandler(power);
                 break;
             case 12: other.gameObject.GetComponentInParent<Castle>().OnDamaged(power);
                 break;

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerStat player;
+    private PlayerStat stat;
     [SerializeField]
     private Castle castle;
 
@@ -22,6 +21,7 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stat = GameManager.instance.playerStat;
         for(int i = 0; i< contentSO.Length; i++) 
         {
 
@@ -35,14 +35,14 @@ public class Shop : MonoBehaviour
 
     public void OnAtkUpgrade()
     {
-        int temp = player.AtkUpgrade;
+        int temp = stat.AtkUpgrade;
         SetValue(Define.eUpgradeType.PlayerAtk, ref temp);
         //player.AtkUpgrade = temp;
     }
 
     public void OnPlayerMaxHpUpgrade()
     {
-        int temp = player.MaxHpUpgrade;
+        int temp = stat.MaxHpUpgrade;
         SetValue(Define.eUpgradeType.PlayerMaxHp, ref temp);
     }
 
@@ -53,7 +53,7 @@ public class Shop : MonoBehaviour
 
     public void OnPlayerMoveSpeedUpgrade()
     {
-        float temp = player.moveSpeed;
+        float temp = stat.moveSpeed;
         SetValue(Define.eUpgradeType.PlayerMoveSpeed, ref temp);
     }
 
@@ -69,10 +69,11 @@ public class Shop : MonoBehaviour
     }
 
 
+
     public void SetValue(Define.eUpgradeType type, ref int value)
     {
         var list = dicUpgrade[type];
-        if (!player.CheckedHaveMoney(list.UpgradeCosts[list.UpgradeLv]))
+        if (!stat.CheckedHaveMoney(list.UpgradeCosts[list.UpgradeLv]))
         {
             OnResult(0);
             return;
@@ -83,7 +84,7 @@ public class Shop : MonoBehaviour
     public void SetValue(Define.eUpgradeType type, ref float value)
     {
         var list = dicUpgrade[type];
-        if (!player.CheckedHaveMoney(list.UpgradeCosts[list.UpgradeLv]))
+        if (!stat.CheckedHaveMoney(list.UpgradeCosts[list.UpgradeLv]))
         {
             OnResult(0);
             return;

@@ -6,10 +6,9 @@ public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
     public ProjObjectPool pool;
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
-    public InputController playerController;
     public PlayerStat stat;
     private AttackSO attackData;
     private float currentDuration;
@@ -25,7 +24,7 @@ public class ProjectileController : MonoBehaviour
 
     private void Start()
     {
-        stat = playerController.Stats;
+        stat = GameManager.instance.playerStat;
         attackData = stat.attackSO;
     }
 

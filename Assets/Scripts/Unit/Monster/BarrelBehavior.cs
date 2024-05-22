@@ -45,9 +45,16 @@ public class BarrelBehavior : MonsterBehavior
         explosion.GetComponent<Transform>().localScale = size;
         explosion.GetComponent<Transform>().position = this.transform.position;
         explosion.SetActive(true);
-        
-        //yield return new WaitForSeconds(0.91f);
-        //explosion.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+    }
+    
+    protected override void OnDisable()
+    {
+        base.OnDisable();
     }
 }

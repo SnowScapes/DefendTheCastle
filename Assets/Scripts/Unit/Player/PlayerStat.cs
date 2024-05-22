@@ -120,4 +120,12 @@ public class PlayerStat : UnitStat
             // 게임종료
         }
     }
+
+    public IEnumerator FeverTime()
+    {
+        float speed = moveSpeed;
+        moveSpeed *= 1.5f;
+        yield return new WaitForSeconds(3.0f);
+        moveSpeed = speed;
+    }
 }

@@ -30,6 +30,7 @@ public class IntroButtons : MonoBehaviour, IUiButton
         {
             case 0:
                 GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
+                SoundManager.Instance.ChangeBGM("TutorialScene");
                 break;
             case 1: SettingBoard.SetActive(true);
                 break;

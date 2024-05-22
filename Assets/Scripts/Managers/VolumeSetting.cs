@@ -41,7 +41,8 @@ public class VolumeSetting : MonoBehaviour
         BgmVol.value = value;
         _audioMixer.GetFloat("SFX", out value);
         SfxVol.value = value;
-        
+
+        Time.timeScale = 1.0f;
         gameObject.SetActive(false);
     }
 }
