@@ -55,9 +55,10 @@ public class ScoreManager : MonoBehaviour
     }
 
     //After Item Eat call, Update
-    public void ItemScoreAdd(int itemScore)
+    public void ItemScoreAdd()
     {
-        gameScore += 10 * itemScore;
+        gameScore += 10;
+        Debug.Log("Score: " + gameScore);
     }
 
     //Castle call

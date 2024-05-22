@@ -19,6 +19,7 @@ public class PlayerStatsHandler : MonoBehaviour
     {
         if(collision.CompareTag("Item"))
         {
+            ScoreManager.instance.ItemScoreAdd();
             Item item = collision.GetComponent<Item>();
             int index = item.GetItemType(item.type);
             if (index != -1)
