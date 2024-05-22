@@ -37,9 +37,7 @@ public class ProjObjectPool : Spawner
         {
             GameObject go = dicProjPool[type].Get();
             go.transform.SetParent(poolBox.transform);
-            ProjectileController proj = go.GetComponent<ProjectileController>();
-            proj.playerController = inputController;
-            proj.pool = this;
+            go.GetComponent<ProjectileController>().pool = this;
             pools.Add(go);
         }
 

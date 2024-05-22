@@ -11,9 +11,9 @@ public class PlayerStatsHandler : MonoBehaviour
     [SerializeField]
     private Castle castle;
 
-    private void Awake()
+    private void Start()
     {
-        stat = gameObject.GetComponent<InputController>().Stats;
+        stat = GameManager.instance.playerStat;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,6 +39,7 @@ public class PlayerStatsHandler : MonoBehaviour
                         break;
                 }
             }
+            item.spawner.ReleaseItem(collision.gameObject);
         }
     }
 

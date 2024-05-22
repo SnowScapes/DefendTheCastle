@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
     private PlayerStat stat;
     [SerializeField]
     private Castle castle;
@@ -23,7 +21,7 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stat = player.GetComponent<InputController>().Stats;
+        stat = GameManager.instance.playerStat;
         for(int i = 0; i< contentSO.Length; i++) 
         {
 

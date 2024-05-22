@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public LevelInfo LevelInfo;
+    public PlayerStat playerStat;
     public int currentLevel { get; set; }
     public bool isPlaying = false;
     public bool isAlive = true;

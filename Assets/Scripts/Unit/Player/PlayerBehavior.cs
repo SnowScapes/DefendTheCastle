@@ -15,12 +15,13 @@ public class PlayerBehavior : BehaviorController
 
     protected virtual void Awake()
     {
-        
+
     }
 
     private void Start()
     {
         stats.InitStat(stats.attackSO);
+        GameManager.instance.playerStat = stats;
     }
 
     private void Update()

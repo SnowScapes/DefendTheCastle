@@ -9,7 +9,6 @@ public class ProjectileController : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
     private TrailRenderer trailRenderer;
-    public InputController playerController;
     public PlayerStat stat;
     private AttackSO attackData;
     private float currentDuration;
@@ -25,7 +24,7 @@ public class ProjectileController : MonoBehaviour
 
     private void Start()
     {
-        stat = playerController.Stats;
+        stat = GameManager.instance.playerStat;
         attackData = stat.attackSO;
     }
 
