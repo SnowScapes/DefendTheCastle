@@ -6423,6 +6423,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &935177682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5482761167881053589, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
+  m_PrefabInstance: {fileID: 188987296165047295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &958946559
 GameObject:
   m_ObjectHideFlags: 0
@@ -11448,7 +11453,6 @@ MonoBehaviour:
     <multipleProjectilesAngle>k__BackingField: 0
     <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
     knockback: 0
-  totalRoundTime: 45
   isPlaying: 0
   isAlive: 1
 --- !u!4 &2114163214
@@ -11528,9 +11532,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1799628955569163147, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
+      propertyPath: pawn
+      value: 
+      objectReference: {fileID: 935177682}
+    - target: {fileID: 1799628955569163147, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1033799021}
+    - target: {fileID: 2543466145587547025, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589366223793209622, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5595415293710702025, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: m_Name
       value: Castle
