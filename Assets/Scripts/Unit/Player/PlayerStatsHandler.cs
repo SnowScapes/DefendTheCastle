@@ -10,6 +10,8 @@ public class PlayerStatsHandler : MonoBehaviour
     private PlayerStat stat;
     [SerializeField]
     private Castle castle;
+    [SerializeField]
+    private ParticleSystem ps;
 
     private void Start()
     {
@@ -34,8 +36,8 @@ public class PlayerStatsHandler : MonoBehaviour
                     case 2:
                         stat.HpRecovery = item.amount;
                         break;
-                    case 3:
-                        StartCoroutine(stat.FeverTime());
+                    case 3: 
+                        StartCoroutine(stat.FeverTime(ps));
                         break;
                 }
             }
