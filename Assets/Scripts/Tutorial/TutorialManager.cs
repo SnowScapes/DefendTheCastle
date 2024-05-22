@@ -19,13 +19,13 @@ public class TutorialManager : MonoBehaviour
             startBtn.onClick.AddListener(() =>
             {
                 GameManager.instance.ChangedScene(Define.eSceneName.MainScene);
-                SoundManager.Instance.ChangeBGM("MainScene");
+                SoundManager.Instance.ChangeBGM(Define.eSceneName.MainScene);
 
             });
             skipBtn.onClick.AddListener(() =>
             {
                 GameManager.instance.ChangedScene(Define.eSceneName.MainScene);
-                SoundManager.Instance.ChangeBGM("MainScene");
+                SoundManager.Instance.ChangeBGM(Define.eSceneName.MainScene);
             });
         }
     }

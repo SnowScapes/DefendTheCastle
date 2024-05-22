@@ -30,24 +30,24 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeBGM("IntroScene");
+        ChangeBGM(Define.eSceneName.IntroScene);
     }
 
-    public void ChangeBGM(string sceneName)
+    public void ChangeBGM(Define.eSceneName sceneName)
     {
         //Change BGM by sceneName
         switch (sceneName)
         {
-            case "IntroScene":
+            case Define.eSceneName.IntroScene:
                 audioSource.clip = introBGM;
                 break;
-            case "TutorialScene":
+            case Define.eSceneName.TutorialScene:
                 audioSource.clip = tutorialBGM;
                 break;
-            case "MainScene":
+            case Define.eSceneName.MainScene:
                 audioSource.clip = mainBGM;
                 break;
-            case "EndScene":
+            case Define.eSceneName.EndScene:
                 audioSource.clip = endBGM;
                 break;
         }
