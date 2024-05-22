@@ -13,10 +13,14 @@ public class MonsterBehavior : BehaviorController
     [SerializeField] internal Spawn spawnPoint;
     [SerializeField] internal MonsterStat stat;
 
+    [SerializeField]private PlayerStat player;
+    [SerializeField]private Castle castle;
+
     protected IEnumerator move;
     protected IEnumerator attack;
     private Queue<Vector2> rallyPoint = new Queue<Vector2>();
     private bool arrived = false;
+    public bool die { get; set; } = false;
 
     protected virtual void Awake()
     {
@@ -27,13 +31,12 @@ public class MonsterBehavior : BehaviorController
     protected virtual void Start()
     {
         OnMoveEvent += WalkTo;
-        move = moveCoroutine();
         attack = attackCoroutine();
-        StartCoroutine(move);
     }
 
     public void queueRally(List<Transform> rallyPos)
     {
+        rallyPoint.Clear();
         for (int i = 0; i < rallyPos.Count; i++)
         {
             float rallypos_x = Random.Range(rallyPos[i].position.x - 0.5f, rallyPos[i].position.x + 0.5f);
@@ -57,12 +60,14 @@ public class MonsterBehavior : BehaviorController
         {
             case 11:
                 StopCoroutine(move);
-                OnAttackEvent += other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
+                player = other.gameObject.GetComponent<InputController>().Stats;
+                OnAttackEvent += player.DamageHandler;
                 StartCoroutine(attack);
                 break;
             case 12:
                 StopCoroutine(move);
-                OnAttackEvent += other.gameObject.GetComponent<Castle>().OnDamaged;
+                castle = other.gameObject.GetComponentInParent<Castle>();
+                OnAttackEvent += castle.OnDamaged;
                 StartCoroutine(attack);
                 break;
         }
@@ -73,12 +78,11 @@ public class MonsterBehavior : BehaviorController
         switch (other.gameObject.layer)
         {
             case 11: StopCoroutine(attack);
-                OnAttackEvent -= other.gameObject.GetComponent<InputController>().Stats.DamageHandler;
+                OnAttackEvent -= player.DamageHandler;
                 StartCoroutine(move);
                 break;
             case 12: StopCoroutine(attack);
-                OnAttackEvent -= other.gameObject.GetComponent<Castle>().OnDamaged;
-                StartCoroutine(move);
+                OnAttackEvent -= castle.OnDamaged;
                 break;
         }
     }
@@ -106,5 +110,22 @@ public class MonsterBehavior : BehaviorController
             CallAttackEvent(stat.atk);
             yield return delay;
         }
+    }
+
+    protected virtual void OnEnable()
+    {
+        move = moveCoroutine();
+        StartCoroutine(move);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (die)
+        {
+            OnAttackEvent = null;
+            StopCoroutine(move);
+            StopCoroutine(attack);
+        }
+        die = false;
     }
 }
