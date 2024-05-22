@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    Castle castle;
-    private int gameScore = 0;
-
-    [SerializeField] private int scorePointKing = 50;
-    [SerializeField] private int scorePointBarrel = 5;
-    [SerializeField] private int scorePointTNT = 3;
-    [SerializeField] private int scorePointTorch = 1;
-
     public static ScoreManager instance;
+    Castle castle;
+    public int gameScore = 0;
+
+    [SerializeField] public int scorePointKing = 50;
+    [SerializeField] public int scorePointBarrel = 5;
+    [SerializeField] public int scorePointTNT = 3;
+    [SerializeField] public int scorePointTorch = 1;
 
     private void Awake()
     {
@@ -31,40 +31,44 @@ public class ScoreManager : MonoBehaviour
         gameScore = 0;
     }
 
+    public void AddScore(int score)
+    {
+        gameScore += score;
+        Debug.Log("Score: " + gameScore);
+    }
+
     //After Monster Die, Monster.cs call, Update
     //After call gameScore += score;
-    ScoreManager scoreManager;
-    public void MonsterScoreAdd()
+    public void MonsterScoreAdd(string name)
     {
         int score;
-        if (gameObject.name == "goblinTorch")
+        if (name == "GoblinTorch(Clone)")
             score = scorePointTorch;
-        else if (gameObject.name == "goblinTNT")
+        else if (name == "GoblinTNT(Clone)")
             score = scorePointTNT;
-        else if (gameObject.name == "goblinBarrel")
+        else if (name == "GoblinBarrel(Clone)")
             score = scorePointBarrel;
         else //¸¶¿Õ
             score = scorePointKing;
 
-        scoreManager.gameScore += score;
-        Debug.Log(gameScore);
+        instance.AddScore(score);
     }
 
     //After Item Eat call, Update
     public void ItemScoreAdd(int itemScore)
     {
-        scoreManager.gameScore += 10 * itemScore;
+        gameScore += 10 * itemScore;
     }
 
     //Castle call
     public void CastleHpScoreAdd(int castleHp)
     {
-        scoreManager.gameScore += 10 * castleHp;
+        gameScore += 10 * castleHp;
     }
 
     //GameManager? call, Stage Level
     public void StageLevelScoreAdd(int stageLevel)
     {
-        scoreManager.gameScore += 100*stageLevel;
+        gameScore += 100*stageLevel;
     }
 }

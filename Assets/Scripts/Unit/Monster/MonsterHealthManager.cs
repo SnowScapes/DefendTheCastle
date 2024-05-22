@@ -31,6 +31,7 @@ public class MonsterHealthManager : MonoBehaviour
             itemSpawner.DropItem(this.gameObject, 100);
             controller.die = true;
             gameObject.SetActive(false);
+            ScoreManager.instance.MonsterScoreAdd(this.gameObject.name);
         }
     }
 }
