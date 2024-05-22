@@ -8,59 +8,76 @@ public class Shop : MonoBehaviour
     private PlayerStat stat;
     [SerializeField]
     private Castle castle;
-
+    [SerializeField]
+    private Text currentGoldTxt;
     private Dictionary<Define.eUpgradeType, UpgradeList> dicUpgrade = new Dictionary<Define.eUpgradeType, UpgradeList>();
     public List<UpgradeList> upgradeList = new List<UpgradeList>();
-
+    private List<ShopSlot> slotList = new List<ShopSlot>();
     [SerializeField]
     private UpgradeContentSO[] contentSO;
+    //shopslot으로 프리팹생성가능
     [SerializeField]
-    private GameObject upgradePrefab;
+    private ShopSlot upgradePrefab;
     [SerializeField]
     private Text purchasedStateTxt;
     // Start is called before the first frame update
     void Start()
     {
         stat = GameManager.instance.playerStat;
-        for(int i = 0; i< contentSO.Length; i++) 
+        currentGoldTxt.text = stat.gold.ToString() + "G ";
+        for (int i = 0; i< contentSO.Length; i++) 
         {
 
-            GameObject go = Instantiate(upgradePrefab, transform);
+            ShopSlot slot = Instantiate(upgradePrefab, transform);
             upgradeList[i].InitInfo(contentSO[i]);
             dicUpgrade[contentSO[i].type] = upgradeList[i];
-            go.GetComponent<ShopSlot>().upgradeList = upgradeList[i];
-            go.GetComponent<ShopSlot>().shop = this;
+            slot.upgradeList = upgradeList[i];
+            slot.shop = this;
+            slotList.Add(slot);
         }
     }
 
-    public void OnAtkUpgrade()
+    public void OnAtkUpgrade(ShopSlot slot)
     {
         int temp = stat.AtkUpgrade;
         SetValue(Define.eUpgradeType.PlayerAtk, ref temp);
-        //player.AtkUpgrade = temp;
+        stat.AtkUpgrade = temp;
+        ClearSlotUI(slot);
     }
 
-    public void OnPlayerMaxHpUpgrade()
+    public void OnPlayerMaxHpUpgrade(ShopSlot slot)
     {
         int temp = stat.MaxHpUpgrade;
         SetValue(Define.eUpgradeType.PlayerMaxHp, ref temp);
+        stat.MaxHpUpgrade = temp;
+        ClearSlotUI(slot);
     }
 
-    public void OnCastleUpgrade()
+    public void OnCastleUpgrade(ShopSlot slot)
     {
-        castle.UpgradeCastle(100);
+        if (slot.upgradeList.UpgradeCosts.Length != slot.upgradeList.UpgradeLv)
+        {
+            castle.UpgradeCastle(100);
+            stat.gold -= slot.upgradeList.UpgradeCosts[slot.upgradeList.UpgradeLv];
+            slot.upgradeList.UpgradeLv++;
+        }
+        ClearSlotUI(slot);
     }
 
-    public void OnPlayerMoveSpeedUpgrade()
+    public void OnPlayerMoveSpeedUpgrade(ShopSlot slot)
     {
         float temp = stat.moveSpeed;
         SetValue(Define.eUpgradeType.PlayerMoveSpeed, ref temp);
+        stat.moveSpeed = temp;
+        ClearSlotUI(slot);
     }
 
-    public void OnPlayerAtkSpeedUpgrade()
+    public void OnPlayerAtkSpeedUpgrade(ShopSlot slot)
     {
         //float temp = player.;
         //SetValue(Define.eUpgradeType.PlayerAtkSpeed, ref temp);
+        //slot.SetListUI();
+        //currentGoldTxt.text = stat.gold.ToString() + "G ";
     }
 
     public void OnSpecialItem()
@@ -68,7 +85,11 @@ public class Shop : MonoBehaviour
 
     }
 
-
+    private void ClearSlotUI(ShopSlot slot)
+    {
+        slot.SetListUI();
+        currentGoldTxt.text = stat.gold.ToString() + "G ";
+    }
 
     public void SetValue(Define.eUpgradeType type, ref int value)
     {
@@ -78,7 +99,8 @@ public class Shop : MonoBehaviour
             OnResult(0);
             return;
         }
-        value = list.UpgradeValues[list.UpgradeLv];
+        stat.gold -= list.UpgradeCosts[list.UpgradeLv];
+        value = list.UpgradeValues[++list.UpgradeLv];
         OnResult(1);
     }
     public void SetValue(Define.eUpgradeType type, ref float value)
@@ -89,7 +111,8 @@ public class Shop : MonoBehaviour
             OnResult(0);
             return;
         }
-        value = list.UpgradeValues[list.UpgradeLv];
+        stat.gold -= list.UpgradeCosts[list.UpgradeLv];
+        value = list.UpgradeValues[++list.UpgradeLv];
         OnResult(1);
     }
 

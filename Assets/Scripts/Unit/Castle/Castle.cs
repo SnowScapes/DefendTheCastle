@@ -36,14 +36,14 @@ public class Castle : MonoBehaviour
     }
 
     public void UpgradeCastle(int stat)
-    {
-        
+    {        
         int temp = stat - castleMaxHp;
         castleMaxHp = stat;
-        currentCastleHp = temp;
+        currentCastleHp += temp;
         dicCastleLv[castleLv++].castle.SetActive(false);
         dicCastleLv[castleLv].castle.SetActive(true);
         burningeffects = dicCastleLv[castleLv].burningEffect;
+        CheckedState();
     }
 
     public void RepairCastle(int amount)
