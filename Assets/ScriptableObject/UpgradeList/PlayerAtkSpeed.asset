@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   upgradeLv: 0
-  upgradeValues: 0400000006000000080000000a000000
-  upgradeCosts: d0070000b80b000088130000
+  upgradeValues: 040000000600000008000000
+  upgradeCosts: d0070000b80b0000
   upgradeUI: {fileID: 858841808, guid: 2e5b3ee6f53772348a8d36da55b0eeea, type: 3}

@@ -20,6 +20,8 @@ public class Castle : MonoBehaviour
     private GameObject[] explosioneffects;
     [SerializeField]
     private Image hpBar;
+    [SerializeField]
+    private GameObject pawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,14 +38,14 @@ public class Castle : MonoBehaviour
     }
 
     public void UpgradeCastle(int stat)
-    {
-        
+    {        
         int temp = stat - castleMaxHp;
         castleMaxHp = stat;
-        currentCastleHp = temp;
+        currentCastleHp += temp;
         dicCastleLv[castleLv++].castle.SetActive(false);
         dicCastleLv[castleLv].castle.SetActive(true);
         burningeffects = dicCastleLv[castleLv].burningEffect;
+        CheckedState();
     }
 
     public void RepairCastle(int amount)
@@ -82,6 +84,7 @@ public class Castle : MonoBehaviour
         {
 
             hpBar.fillAmount = 0;
+            pawn.SetActive(false);
             StartCoroutine(ExplosionShake(0.1f,2));
             StartCoroutine(OnExplosion());
         }
