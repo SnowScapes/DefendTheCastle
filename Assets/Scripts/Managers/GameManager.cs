@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public LevelSystem LevelSystem;
     public PlayerStat playerStat;
     private int currentLevel = 1;
-    [SerializeField]private float totalRoundTime = 45f;
+    [SerializeField]private float totalRoundTime = 70f;
     public bool isPlaying = false;
     public bool isAlive = true;
     private IEnumerator gameStart;

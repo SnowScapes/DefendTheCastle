@@ -24,7 +24,7 @@ public class LevelSystem : MonoBehaviour
 
     public void SetLevel(int level)
     {
-        spawnDelay = 30f / GameManager.instance.LevelInfo.levelList[level - 1].Total;
+        spawnDelay = 50f / GameManager.instance.LevelInfo.levelList[level - 1].Total;
         Torch = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Torch);
         Tnt = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Tnt);
         Barrel = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Barrel);
