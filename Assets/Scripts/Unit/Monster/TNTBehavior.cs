@@ -60,4 +60,14 @@ public class TNTBehavior : MonsterBehavior
             dynamite.SetActive(true);
         }
     }
+    
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+    }
+    
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+    }
 }
