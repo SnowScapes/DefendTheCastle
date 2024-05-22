@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAnimationController : AnimationController
 {
@@ -40,6 +41,10 @@ public class PlayerAnimationController : AnimationController
 
     protected virtual void Attacking(int n)
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (degree <= 90 && degree >= 67.5 || degree <= 112.5 && degree >= 90) //  상단
             animator.SetTrigger(attackUp);
         else if (degree < 67.5 && degree >= 22.5 || degree <= 157.5 && degree >= 112.5) //  대각 상단

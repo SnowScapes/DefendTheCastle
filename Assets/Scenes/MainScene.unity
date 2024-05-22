@@ -10307,6 +10307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
+      propertyPath: stats.<gold>k__BackingField
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 1019994207818273159, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
       propertyPath: castle
       value: 
@@ -11568,6 +11572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2607421612992159082, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3618288603543319343, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11650,6 +11658,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5090229425227628520, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6742683197152157937, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}

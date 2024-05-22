@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
@@ -35,6 +36,10 @@ public class Shooting : MonoBehaviour
 
     private void OnShoot(int _)
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         StartCoroutine(DelayShoot());
     }
 
