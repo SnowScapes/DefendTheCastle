@@ -10,6 +10,7 @@ public class BehaviorController : MonoBehaviour
     public Action<Vector2> OnMoveEvent;
     public Action<Vector2> OnLookEvent;
     public Action<int> OnAttackEvent;
+    public Action OnSkillEvent;
 
 
     public void CallMoveEvent(Vector2 input)
@@ -25,5 +26,10 @@ public class BehaviorController : MonoBehaviour
     public void CallAttackEvent(int attack)
     {
         OnAttackEvent?.Invoke(attack);
+    }
+
+    public void CallSkillEvent()
+    {
+        OnSkillEvent?.Invoke();
     }
 }

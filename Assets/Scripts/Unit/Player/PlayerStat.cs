@@ -124,11 +124,11 @@ public class PlayerStat : UnitStat
 
     public IEnumerator FeverTime(ParticleSystem ps)
     {
-        ps.gameObject.SetActive(true);
+        ps.Play();
         float speed = moveSpeed;
         moveSpeed *= 1.5f;
         yield return new WaitForSeconds(3.0f);
-        moveSpeed /= 1.5f;
-        //ps.gameObject.SetActive(false);
+        moveSpeed = speed;
+        ps.Stop();
     }
 }

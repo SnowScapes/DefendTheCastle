@@ -32,4 +32,9 @@ public class InputController : PlayerBehavior
     {
         IsAttacking = input.isPressed;
     }
+
+    public void OnSkill(InputValue input)
+    {
+        CallSkillEvent();
+    }
 }
