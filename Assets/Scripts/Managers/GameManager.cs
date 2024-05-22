@@ -42,11 +42,13 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameStart()
     {
+        yield return new WaitForSeconds(10f);
         currentLevel = 1;
         float spawnDelay = 5;
         
         for (int i = 0; i < LevelInfo.levelList.Count; i++)
         {
+            MainUIManager.Instance.stageText.SetText(currentLevel.ToString());
             LevelSystem.SetLevel(currentLevel++, spawnDelay);
             yield return new WaitForSeconds(spawnDelay-- * LevelInfo.levelList[i].Total + 15);
         }   
@@ -72,4 +74,18 @@ public class GameManager : MonoBehaviour
             StartCoroutine(gameStart);
         }
     }
+/*
+    private IEnumerator AsyncSceneLoad(Define.eSceneName name)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)name);
+        while (!asyncLoad.isDone || !MainUIManager.Instance.SceneLoaded)
+        {
+            yield return null;
+        }
+        if (name == Define.eSceneName.MainScene)
+        {
+            gameStart = GameStart();
+            StartCoroutine(gameStart);
+        }
+    }*/
 }
