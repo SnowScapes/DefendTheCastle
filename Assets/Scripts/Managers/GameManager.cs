@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public LevelSystem LevelSystem;
     public PlayerStat playerStat;
     private int currentLevel = 1;
-    [SerializeField]private float totalRoundTime = 70f;
+    private float totalRoundTime;
     public bool isPlaying = false;
     public bool isAlive = true;
     private IEnumerator gameStart;
@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
     public IEnumerator GameStart()
     {
         currentLevel = 1;
-        WaitForSeconds roundTime = new WaitForSeconds(totalRoundTime);
+        float spawnDelay = 5;
+        
         for (int i = 0; i < LevelInfo.levelList.Count; i++)
         {
             Debug.Log("Stage : " + currentLevel);
-            LevelSystem.SetLevel(currentLevel);
-            yield return roundTime;
-            currentLevel++;
+            LevelSystem.SetLevel(currentLevel++, spawnDelay);
+            yield return new WaitForSeconds(spawnDelay-- * LevelInfo.levelList[i].Total + 15);
         }   
     }
 

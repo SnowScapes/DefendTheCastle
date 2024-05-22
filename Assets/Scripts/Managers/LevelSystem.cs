@@ -15,14 +15,13 @@ public class LevelSystem : MonoBehaviour
     private int Torch;
     private int Tnt;
     private int Barrel;
-    private float spawnDelay;
 
     private void Start()
     {
         RandomPool.Capacity = 10;
     }
 
-    public void SetLevel(int level)
+    public void SetLevel(int level, float spawnDelay)
     {
         spawnDelay = 50f / GameManager.instance.LevelInfo.levelList[level - 1].Total;
         Torch = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Torch);
