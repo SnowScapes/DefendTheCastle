@@ -7,10 +7,12 @@ public class MonsterHealthManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat stat;
     private MonsterAnimationController anim;
+    private MonsterBehavior controller;
 
     private void Awake()
     {
-        stat = this.GetComponent<MonsterBehavior>().stat;
+        controller = GetComponent<MonsterBehavior>();
+        stat = controller.stat;
         anim = GetComponentInChildren<MonsterAnimationController>();
     }
 
@@ -25,6 +27,7 @@ public class MonsterHealthManager : MonoBehaviour
         anim.Hitting();
         if (stat.hp <= 0)
         {
+            controller.die = true;
             gameObject.SetActive(false);
         }
     }
