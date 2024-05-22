@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2874655}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.42506897}
+  m_Size: {x: 1, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &4718745403347237245
 MonoBehaviour:
@@ -158,17 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: 
     <hp>k__BackingField: 100
     <maxHp>k__BackingField: 100
     <atk>k__BackingField: 1
     <moveSpeed>k__BackingField: 5
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     front: {fileID: 8683853503765257156}
     attackSO: {fileID: 11400000, guid: 802dfcf90e38f774eb3a0c5910260544, type: 2}
-    <size>k__BackingField: 0
     <bulletName>k__BackingField: 
     <delay>k__BackingField: 0
     <projSpeed>k__BackingField: 0
@@ -218,17 +214,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: 
     <hp>k__BackingField: 0
     <maxHp>k__BackingField: 0
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     front: {fileID: 0}
     attackSO: {fileID: 0}
-    <size>k__BackingField: 0
     <bulletName>k__BackingField: 
     <delay>k__BackingField: 0
     <projSpeed>k__BackingField: 0
@@ -507,7 +499,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 11
   m_Sprite: {fileID: -4752010850636072970, guid: 0c61089265537c24090784f76c19df09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
