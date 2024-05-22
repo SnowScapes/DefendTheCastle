@@ -30,9 +30,7 @@ public class MonsterBehavior : BehaviorController
 
     protected virtual void Start()
     {
-        stat.InitStatFromSo();
         OnMoveEvent += WalkTo;
-        attack = attackCoroutine();
     }
 
     public void queueRally(List<Transform> rallyPos)
@@ -115,6 +113,8 @@ public class MonsterBehavior : BehaviorController
 
     protected virtual void OnEnable()
     {
+        stat.InitStatFromSo();
+        attack = attackCoroutine();
         move = moveCoroutine();
         StartCoroutine(move);
     }
