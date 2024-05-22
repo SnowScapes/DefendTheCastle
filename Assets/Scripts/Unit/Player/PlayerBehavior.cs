@@ -64,6 +64,8 @@ public class PlayerBehavior : BehaviorController
                     case 3:
                         StartCoroutine(stats.FeverTime(ps));
                         break;
+                    default:
+                        break;
                 }
                 ScoreManager.instance.ItemScoreAdd();
             }
