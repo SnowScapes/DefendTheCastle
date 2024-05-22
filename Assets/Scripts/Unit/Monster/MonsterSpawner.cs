@@ -45,7 +45,7 @@ public class MonsterSpawner : Spawner
         {
             DefaultItemCount = GameManager.instance.LevelInfo.levelList[4].get((Define.eMonsterType)i);
             dicMonsterPool[(Define.eMonsterType)i] = creator.InitPool(objPrefab[i], DefaultItemCount);
-            //초기 ?�???�소
+            //초기 ?�???�소
             Summon((Define.eMonsterType)i, DefaultItemCount, spawnerLocation[0].transform, 0);
         }
     }
@@ -78,12 +78,15 @@ public class MonsterSpawner : Spawner
         switch ((Spawn)spawnLocation)
         {
             case Spawn.Left:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = false;
                 monsterController.queueRally(Rally_Left);
                 break;
             case Spawn.Center:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = false;
                 monsterController.queueRally(Rally_Center);
                 break;
             case Spawn.Right:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = true;
                 monsterController.queueRally(Rally_Right);
                 break;
         }
