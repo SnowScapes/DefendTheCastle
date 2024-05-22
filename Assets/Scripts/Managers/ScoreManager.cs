@@ -12,6 +12,20 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int scorePointTNT = 3;
     [SerializeField] private int scorePointTorch = 1;
 
+    public static ScoreManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         gameScore = 0;
@@ -33,6 +47,7 @@ public class ScoreManager : MonoBehaviour
             score = scorePointKing;
 
         scoreManager.gameScore += score;
+        Debug.Log(gameScore);
     }
 
     //After Item Eat call, Update
