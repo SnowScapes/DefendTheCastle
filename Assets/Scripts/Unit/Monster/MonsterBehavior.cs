@@ -30,6 +30,7 @@ public class MonsterBehavior : BehaviorController
 
     protected virtual void Start()
     {
+        stat.InitStatFromSo();
         OnMoveEvent += WalkTo;
         attack = attackCoroutine();
     }
