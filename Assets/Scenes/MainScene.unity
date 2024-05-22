@@ -3857,7 +3857,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -2, z: 0}
@@ -4239,6 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScore: 0
+  currentCastleHpPoint: 0
   scorePointKing: 50
   scorePointBarrel: 5
   scorePointTNT: 3
@@ -10076,6 +10077,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 1490819025}
+    - target: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
+      propertyPath: castle
+      value: 
+      objectReference: {fileID: 1530868351}
+    - target: {fileID: 996455118455403161, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
       propertyPath: stats.<gold>k__BackingField
       value: 100000
       objectReference: {fileID: 0}
@@ -10087,6 +10096,10 @@ PrefabInstance:
       propertyPath: castle
       value: 
       objectReference: {fileID: 1530868351}
+    - target: {fileID: 1019994207818273159, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1709279841032320890, guid: 2b280b541b8bf6041bcc5519ade47085, type: 3}
       propertyPath: m_MaxParticleSize
       value: 1

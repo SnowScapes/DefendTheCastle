@@ -8,6 +8,7 @@ public class PlayerBehavior : BehaviorController
 
     [SerializeField]private PlayerStat stats;
     [SerializeField]private Castle castle;
+    [SerializeField]private ParticleSystem ps;
     public PlayerStat Stats
     {
         get { return stats; }
@@ -61,7 +62,7 @@ public class PlayerBehavior : BehaviorController
                         stats.HpRecovery = item.amount;
                         break;
                     case 3:
-                        StartCoroutine(stats.FeverTime());
+                        StartCoroutine(stats.FeverTime(ps));
                         break;
                 }
                 ScoreManager.instance.ItemScoreAdd();
