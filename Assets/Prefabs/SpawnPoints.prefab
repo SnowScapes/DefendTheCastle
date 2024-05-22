@@ -856,7 +856,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5927196693870837949}
-  - component: {fileID: 2376085967449880910}
   m_Layer: 0
   m_Name: SpawnPoints
   m_TagString: Untagged
@@ -882,25 +881,3 @@ Transform:
   - {fileID: 2769062039165922684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2376085967449880910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8881920620425400191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e60057604ea8b4d95d22074988d761, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rally_Left:
-  - {fileID: 4713800830505774536}
-  - {fileID: 8723649987374497936}
-  - {fileID: 7985080145032504945}
-  - {fileID: 8531508831592877542}
-  Rally_Center:
-  - {fileID: 7056277793234634975}
-  Rally_Right:
-  - {fileID: 483459207117564190}
-  - {fileID: 17507470931782686}

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public LevelInfo LevelInfo;
     public LevelSystem LevelSystem;
     public PlayerStat playerStat;
+    private Define.eSceneName currentScene;
     private int currentLevel = 1;
     private float totalRoundTime;
     public bool isPlaying = false;
@@ -18,15 +19,18 @@ public class GameManager : MonoBehaviour
     public IEnumerator gameStart;
     private void Awake()
     {
-        if(instance == null) 
-        { 
+        if(instance == null)
+        {
             instance = this;
             Application.targetFrameRate = 60;
             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            GameManager.instance.LevelSystem._monsterSpawner = this.LevelSystem._monsterSpawner;
+            if (GameManager.instance.currentScene == Define.eSceneName.MainScene)
+            {
+                GameManager.instance.LevelSystem._monsterSpawner = this.LevelSystem._monsterSpawner;
+            }
             Destroy(this.gameObject);
         }
     }
@@ -38,13 +42,11 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameStart()
     {
-        Debug.Log("Game Start");
         currentLevel = 1;
         float spawnDelay = 5;
         
         for (int i = 0; i < LevelInfo.levelList.Count; i++)
         {
-            Debug.Log("Stage : " + currentLevel);
             LevelSystem.SetLevel(currentLevel++, spawnDelay);
             yield return new WaitForSeconds(spawnDelay-- * LevelInfo.levelList[i].Total + 15);
         }   
@@ -55,10 +57,13 @@ public class GameManager : MonoBehaviour
         StopCoroutine(LevelSystem.startLevel);
         StopCoroutine(gameStart);
         ChangedScene(Define.eSceneName.EndScene);
+        
     }
     public void ChangedScene(Define.eSceneName name)
     {
+        GameManager.instance.LevelSystem._monsterSpawner = null;
         SceneManager.LoadScene((int)name);
+        currentScene = name;
         if (name == Define.eSceneName.MainScene)
         {
             gameStart = GameStart();
