@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        SoundManager.Instance.ChangeBGM("EndScene");
     }
     public void ChangedScene(Define.eSceneName name)
     {

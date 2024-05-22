@@ -10,6 +10,7 @@ public class EndBtn : MonoBehaviour
     public void SceneChange(int num)
     {
         SceneManager.LoadScene(num);
+        SoundManager.Instance.ChangeBGM("MainScene");
     }
     public void ExitGame()
     {

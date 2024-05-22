@@ -3253,6 +3253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5db714b5afdb44390bd272babf65cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelInfo: {fileID: 0}
   isPlaying: 0
   isAlive: 1
 --- !u!4 &765712876
@@ -3657,7 +3658,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Instance: {fileID: 0}
   audioSource: {fileID: 0}
-  BGM: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  introBGM: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  tutorialBGM: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
+  mainBGM: {fileID: 8300000, guid: 47f45ef7b5767674393cc401fc325705, type: 3}
+  endBGM: {fileID: 8300000, guid: 1532c7e67c2d60c4c8780da14b7e8fcf, type: 3}
 --- !u!4 &1173647334
 Transform:
   m_ObjectHideFlags: 0
