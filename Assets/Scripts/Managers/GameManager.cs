@@ -33,11 +33,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameStart = GameStart();
+        
     }
 
     public IEnumerator GameStart()
     {
+        Debug.Log("Game Start");
         currentLevel = 1;
         float spawnDelay = 5;
         
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        StopCoroutine(LevelSystem.startLevel);
         StopCoroutine(gameStart);
         ChangedScene(Define.eSceneName.EndScene);
     }
@@ -58,6 +60,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene((int)name);
         if (name == Define.eSceneName.MainScene)
+        {
+            gameStart = GameStart();
             StartCoroutine(gameStart);
+        }
     }
 }

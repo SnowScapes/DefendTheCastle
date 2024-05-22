@@ -30,8 +30,6 @@ public class EndBtn : MonoBehaviour
     {
 
         GameManager.instance.isAlive = true;
-
-        StartCoroutine(GameManager.instance.gameStart);
         GameManager.instance.ChangedScene(Define.eSceneName.TutorialScene);
         VictoryPanel.SetActive(false);
         GameOverPanel.SetActive(false);
