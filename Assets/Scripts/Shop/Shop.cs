@@ -36,6 +36,15 @@ public class Shop : MonoBehaviour
             slotList.Add(slot);
         }
     }
+    
+    private void OnEnable()
+    {
+        if (stat == null)
+        {
+            stat = GameManager.instance.playerStat;
+        }
+        currentGoldTxt.text = stat.gold.ToString() + "G ";
+    }
 
     public void OnAtkUpgrade(ShopSlot slot)
     {
@@ -72,12 +81,12 @@ public class Shop : MonoBehaviour
         ClearSlotUI(slot);
     }
 
-    public void OnPlayerAtkSpeedUpgrade(ShopSlot slot)
+    public void OnPlayerAtkPerCountUpgrade(ShopSlot slot)
     {
-        //float temp = player.;
-        //SetValue(Define.eUpgradeType.PlayerAtkSpeed, ref temp);
-        //slot.SetListUI();
-        //currentGoldTxt.text = stat.gold.ToString() + "G ";
+        int temp = stat.numberOfProjectilesPerShot;
+        SetValue(Define.eUpgradeType.PlayerAtkPerCount, ref temp);
+        stat.numberOfProjectilesPerShot = temp;
+        ClearSlotUI(slot);
     }
 
     public void OnSpecialItem()

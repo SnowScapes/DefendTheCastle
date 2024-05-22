@@ -63,9 +63,9 @@ public class ShopSlot : MonoBehaviour
             case Define.eUpgradeType.PlayerMoveSpeed:
                 upgradeBtn.onClick.AddListener(() => shop.OnPlayerMoveSpeedUpgrade(this));
                 return "플레이어\n이동속도";
-            case Define.eUpgradeType.PlayerAtkSpeed:
-                upgradeBtn.onClick.AddListener(() => shop.OnPlayerAtkSpeedUpgrade(this));
-                return "플레이어\n공격속도";
+            case Define.eUpgradeType.PlayerAtkPerCount:
+                upgradeBtn.onClick.AddListener(() => shop.OnPlayerAtkPerCountUpgrade(this));
+                return "화살\n발사개수";
             case Define.eUpgradeType.CastleLv:
                 upgradeBtn.onClick.AddListener(() => shop.OnCastleUpgrade(this));
                 return "캐슬\n최대 체력";

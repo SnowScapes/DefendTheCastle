@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
@@ -35,6 +36,16 @@ public class Shooting : MonoBehaviour
 
     private void OnShoot(int _)
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        StartCoroutine(DelayShoot());
+    }
+
+    IEnumerator DelayShoot()
+    {
+        yield return new WaitForSeconds(0.5f);
         float projectilesAngleSpace = stat.multipleProjectilesAngle;
         int numberOfPorjectilesPerShot = stat.numberOfProjectilesPerShot;
 
@@ -47,9 +58,7 @@ public class Shooting : MonoBehaviour
             angle += randomSpread;
             CreateProjectile(angle);
         }
-
     }
-
     private void CreateProjectile(float angle)
     {
         Define.eProjName type;
