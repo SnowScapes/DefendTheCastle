@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class LevelSystem : MonoBehaviour
 {
-    [SerializeField] private MonsterSpawner _monsterSpawner;
+    public MonsterSpawner _monsterSpawner;
     
     private List<int> RandomPool = new List<int>();
     
@@ -15,11 +15,20 @@ public class LevelSystem : MonoBehaviour
     private int Torch;
     private int Tnt;
     private int Barrel;
+    private float spawnDelay;
 
     private void Start()
     {
         RandomPool.Capacity = 10;
-        StartCoroutine(StartLevel(21, 6, 3, 1f));
+    }
+
+    public void SetLevel(int level)
+    {
+        spawnDelay = 30f / GameManager.instance.LevelInfo.levelList[level - 1].Total;
+        Torch = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Torch);
+        Tnt = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Tnt);
+        Barrel = GameManager.instance.LevelInfo.levelList[level - 1].get(Define.eMonsterType.Barrel);
+        StartCoroutine(StartLevel(Torch, Tnt, Barrel, spawnDelay));
     }
 
     IEnumerator StartLevel(int TorchAmount, int TntAmount, int BarrelAmount, float delay)

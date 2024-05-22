@@ -7,11 +7,12 @@ using UnityEngine;
 class Level
 {
     public int level;
-    public int Torch;
-    public int Tnt;
-    public int Barrel;
+    public int Total;
+    [SerializeField]private int Torch;
+    [SerializeField]private int Tnt;
+    [SerializeField]private int Barrel;
 
-
+    
     public int get(Define.eMonsterType type)
     {
         int amount = 0;
