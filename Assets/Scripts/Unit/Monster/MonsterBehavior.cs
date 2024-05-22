@@ -78,7 +78,8 @@ public class MonsterBehavior : BehaviorController
         {
             case 11: StopCoroutine(attack);
                 OnAttackEvent -= player.DamageHandler;
-                StartCoroutine(move);
+                if(!die)
+                    StartCoroutine(move);
                 break;
             case 12: StopCoroutine(attack);
                 OnAttackEvent -= castle.OnDamaged;
@@ -124,8 +125,7 @@ public class MonsterBehavior : BehaviorController
         if (die)
         {
             OnAttackEvent = null;
-            StopCoroutine(move);
-            StopCoroutine(attack);
+            StopAllCoroutines();
         }
         die = false;
     }
