@@ -35,11 +35,6 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeBGM(string sceneName)
     {
-        //Get Scene info
-        Scene currentScene = SceneManager.GetActiveScene();
-
-        Debug.Log(currentScene.name);
-
         //Change BGM by sceneName
         switch (sceneName)
         {
