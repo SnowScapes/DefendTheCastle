@@ -130,6 +130,11 @@ public class Castle : MonoBehaviour
         }
         dicCastleLv[castleLv].spriteRenderer.sprite = dicCastleLv[castleLv].destroySprite;
     }
+
+    public void CheckCastleHp()
+    {
+        ScoreManager.instance.currentCastleHpPoint = currentCastleHp;
+    }
 }
 
 [System.Serializable]

@@ -1361,6 +1361,7 @@ GameObject:
   - component: {fileID: 751286322}
   - component: {fileID: 751286324}
   - component: {fileID: 751286323}
+  - component: {fileID: 751286325}
   m_Layer: 5
   m_Name: ScoreTxt
   m_TagString: Untagged
@@ -1429,6 +1430,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751286321}
   m_CullTransparentMesh: 1
+--- !u!114 &751286325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751286321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03286fa58e084a245824fa78da2a8f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VictoryPanel: {fileID: 0}
+  GameOverPanel: {fileID: 0}
+  ScoreText: {fileID: 751286323}
 --- !u!1 &794996166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1610,7 @@ GameObject:
   - component: {fileID: 942467408}
   - component: {fileID: 942467410}
   - component: {fileID: 942467409}
+  - component: {fileID: 942467411}
   m_Layer: 5
   m_Name: ScoreTxt
   m_TagString: Untagged
@@ -1662,6 +1679,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942467407}
   m_CullTransparentMesh: 1
+--- !u!114 &942467411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942467407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03286fa58e084a245824fa78da2a8f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VictoryPanel: {fileID: 0}
+  GameOverPanel: {fileID: 0}
+  ScoreText: {fileID: 942467409}
 --- !u!1 &971396784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VictoryPanel: {fileID: 794996166}
   GameOverPanel: {fileID: 460817287}
+  ScoreText: {fileID: 0}
 --- !u!4 &971396786
 Transform:
   m_ObjectHideFlags: 0
