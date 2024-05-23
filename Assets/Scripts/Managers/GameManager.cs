@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameStart()
     {
+        isAlive = true;
         yield return new WaitForSeconds(10f);
         currentLevel = 1;
         float spawnDelay = 5;
@@ -46,7 +47,9 @@ public class GameManager : MonoBehaviour
             MainUIManager.Instance.stageText.SetText(currentLevel.ToString());
             LevelSystem.SetLevel(currentLevel++, spawnDelay);
             yield return new WaitForSeconds(spawnDelay-- * LevelInfo.levelList[i].Total + 15);
-        }   
+        }
+
+        GameOver();
     }
 
     public void GameOver()
