@@ -60,7 +60,6 @@ public class ScoreManager : MonoBehaviour
     public void ItemScoreAdd()
     {
         gameScore += 10;
-        Debug.Log("Score: " + gameScore);
     }
 
     //Castle call
