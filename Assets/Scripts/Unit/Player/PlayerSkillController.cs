@@ -26,7 +26,7 @@ public class PlayerSkillController : MonoBehaviour
     {
         controller = GetComponent<BehaviorController>();
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         controller.OnSkillEvent += SKill;
@@ -75,10 +75,5 @@ public class PlayerSkillController : MonoBehaviour
         coolDownBar.gameObject.SetActive(false);
         coolDownBtn.interactable = true;
         bIsRepair = false;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -14,11 +14,6 @@ public class PlayerBehavior : BehaviorController
         get { return stats; }
     }
 
-    protected virtual void Awake()
-    {
-
-    }
-
     private void Start()
     {
         stats.InitStat(stats.attackSO);

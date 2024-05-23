@@ -57,14 +57,4 @@ public class PlayerAnimationController : AnimationController
         else if (degree < -67.5 && degree >= -90 || degree >= -112.5 && degree <= -90) //  �ϴ�
             animator.SetTrigger(attackDown);
     }
-
-    private void Hit()
-    {
-        animator.SetBool(isHit, true);
-    }
-
-    private void InvincibilityEnd()
-    {
-        animator.SetBool(isHit, false);
-    }
 }
