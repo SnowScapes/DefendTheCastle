@@ -35,11 +35,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
     public IEnumerator GameStart()
     {
         yield return new WaitForSeconds(10f);
@@ -74,18 +69,4 @@ public class GameManager : MonoBehaviour
             StartCoroutine(gameStart);
         }
     }
-/*
-    private IEnumerator AsyncSceneLoad(Define.eSceneName name)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)name);
-        while (!asyncLoad.isDone || !MainUIManager.Instance.SceneLoaded)
-        {
-            yield return null;
-        }
-        if (name == Define.eSceneName.MainScene)
-        {
-            gameStart = GameStart();
-            StartCoroutine(gameStart);
-        }
-    }*/
 }

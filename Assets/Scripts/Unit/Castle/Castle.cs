@@ -31,12 +31,6 @@ public class Castle : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpgradeCastle(int stat)
     {        
         int temp = stat - castleMaxHp;
