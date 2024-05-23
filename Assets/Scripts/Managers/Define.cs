@@ -28,7 +28,7 @@ public class Define
         PlayerMaxHp,
         PlayerAtk,
         PlayerMoveSpeed,
-        PlayerAtkSpeed,
+        PlayerAtkPerCount,
         CastleLv,
         SpecialItem,
         MaxType

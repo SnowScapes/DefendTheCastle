@@ -1,55 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    Castle castle;
-    private int gameScore = 0;
+    public static ScoreManager instance;
+    [SerializeField] private Castle castle;
+    public int gameScore = 0;
+    public int currentCastleHpPoint = 0;
 
-    [SerializeField] private int scorePointKing = 50;
-    [SerializeField] private int scorePointBarrel = 5;
-    [SerializeField] private int scorePointTNT = 3;
-    [SerializeField] private int scorePointTorch = 1;
+    [SerializeField] public int scorePointKing = 50;
+    [SerializeField] public int scorePointBarrel = 5;
+    [SerializeField] public int scorePointTNT = 3;
+    [SerializeField] public int scorePointTorch = 1;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            ScoreManager.instance.castle = this.castle;
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         gameScore = 0;
     }
 
+    public void AddScore(int score)
+    {
+        gameScore += score;
+        Debug.Log("Score: " + gameScore);
+    }
+
     //After Monster Die, Monster.cs call, Update
     //After call gameScore += score;
-    ScoreManager scoreManager;
-    public void MonsterScoreAdd()
+    public void MonsterScoreAdd(string name)
     {
         int score;
-        if (gameObject.name == "goblinTorch")
+        if (name == "GoblinTorch(Clone)")
             score = scorePointTorch;
-        else if (gameObject.name == "goblinTNT")
+        else if (name == "GoblinTNT(Clone)")
             score = scorePointTNT;
-        else if (gameObject.name == "goblinBarrel")
+        else if (name == "GoblinBarrel(Clone)")
             score = scorePointBarrel;
-        else //¸¶¿Õ
+        else //ï¿½ï¿½ï¿½ï¿½
             score = scorePointKing;
 
-        scoreManager.gameScore += score;
+        instance.AddScore(score);
     }
 
     //After Item Eat call, Update
-    public void ItemScoreAdd(int itemScore)
+    public void ItemScoreAdd()
     {
-        scoreManager.gameScore += 10 * itemScore;
+        gameScore += 10;
     }
 
     //Castle call
-    public void CastleHpScoreAdd(int castleHp)
+    public void CastleHpScoreAdd()
     {
-        scoreManager.gameScore += 10 * castleHp;
+        castle.CheckCastleHp();
+        gameScore += 10 * currentCastleHpPoint;
+        Debug.Log("Score CastleHp : " + gameScore);
     }
 
     //GameManager? call, Stage Level
     public void StageLevelScoreAdd(int stageLevel)
     {
-        scoreManager.gameScore += 100*stageLevel;
+        gameScore += 100*stageLevel;
+        Debug.Log("Score LevelScore : " + gameScore);
+    }
+
+    public void RefreshScore()
+    {
+        gameScore = 0;
     }
 }

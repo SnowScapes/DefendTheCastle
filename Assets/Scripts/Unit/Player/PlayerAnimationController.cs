@@ -2,21 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAnimationController : AnimationController
 {
     private static readonly int isRun = Animator.StringToHash("isRun");
     private static readonly int isHit = Animator.StringToHash("isHit");
-    private static readonly int attackUp = Animator.StringToHash("attackUp"); //À§ÂÊ °ø°Ý
-    private static readonly int attackDiagonalUp = Animator.StringToHash("attackDiagonalUp"); //»ç¼±À§ °ø°Ý
-    private static readonly int attackFront = Animator.StringToHash("attackFront"); // ¿· °ø°Ý
-    private static readonly int attackDiagonalDown = Animator.StringToHash("attackDiagonalDown"); //»ç¼±¾Æ·¡ °ø°Ý
-    private static readonly int attackDown = Animator.StringToHash("attackDown"); // ¾Æ·¡ °ø°Ý
+    private static readonly int attackUp = Animator.StringToHash("attackUp"); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private static readonly int attackDiagonalUp = Animator.StringToHash("attackDiagonalUp"); //ï¿½ç¼±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private static readonly int attackFront = Animator.StringToHash("attackFront"); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private static readonly int attackDiagonalDown = Animator.StringToHash("attackDiagonalDown"); //ï¿½ç¼±ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private static readonly int attackDown = Animator.StringToHash("attackDown"); // ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private readonly float magnituteThreshold = 0.5f;
     private float degree;
     private float speed;
-    private void Awake()
+    
+    protected override void Awake()
     {
         base.Awake();
     }
@@ -40,25 +42,19 @@ public class PlayerAnimationController : AnimationController
 
     protected virtual void Attacking(int n)
     {
-        if (degree <= 90 && degree >= 67.5 || degree <= 112.5 && degree >= 90) //  »ó´Ü
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        if (degree <= 90 && degree >= 67.5 || degree <= 112.5 && degree >= 90) //  ï¿½ï¿½ï¿½
             animator.SetTrigger(attackUp);
-        else if (degree < 67.5 && degree >= 22.5 || degree <= 157.5 && degree >= 112.5) //  ´ë°¢ »ó´Ü
+        else if (degree < 67.5 && degree >= 22.5 || degree <= 157.5 && degree >= 112.5) //  ï¿½ë°¢ ï¿½ï¿½ï¿½
             animator.SetTrigger(attackDiagonalUp);
-        else if (degree < 22.5 && degree >= -22.5 || degree <= 180 && degree >= 157.5 || degree >= -180 && degree <= -157.5) //  Á¤¸é
+        else if (degree < 22.5 && degree >= -22.5 || degree <= 180 && degree >= 157.5 || degree >= -180 && degree <= -157.5) //  ï¿½ï¿½ï¿½ï¿½
             animator.SetTrigger(attackFront);
-        else if (degree < -22.5 && degree >= -67.5 || degree >= -157.5 && degree <= -112.5) //  ´ë°¢ ÇÏ´Ü
+        else if (degree < -22.5 && degree >= -67.5 || degree >= -157.5 && degree <= -112.5) //  ï¿½ë°¢ ï¿½Ï´ï¿½
             animator.SetTrigger(attackDiagonalDown);
-        else if (degree < -67.5 && degree >= -90 || degree >= -112.5 && degree <= -90) //  ÇÏ´Ü
+        else if (degree < -67.5 && degree >= -90 || degree >= -112.5 && degree <= -90) //  ï¿½Ï´ï¿½
             animator.SetTrigger(attackDown);
-    }
-
-    private void Hit()
-    {
-        animator.SetBool(isHit, true);
-    }
-
-    private void InvincibilityEnd()
-    {
-        animator.SetBool(isHit, false);
     }
 }

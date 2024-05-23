@@ -86,6 +86,7 @@ MonoBehaviour:
   - {fileID: 1136165121066507348, guid: ef9c535abe8bbf34ba8c1288a88e10d2, type: 3}
   - {fileID: 8369343405598923016, guid: 0aa29f679bf494b4b8d927196766e407, type: 3}
   poolBox: {fileID: 220909057992032775}
+  itemSpawner: {fileID: 0}
   spawnerLocation:
   - {fileID: 0}
   - {fileID: 0}
@@ -95,9 +96,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   Rally_Center:
   - {fileID: 0}
+  - {fileID: 0}
   Rally_Right:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &5257673289641693570

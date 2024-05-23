@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     protected GameObject poolBox;
 
-    protected int DefaultItemCount = 5;
+    protected int DefaultItemCount = 10;
 
     protected virtual void Start()
     {
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    protected void SetTrans(GameObject go)
+    protected virtual void SetTrans(GameObject go)
     {
         go.transform.SetParent(poolBox.transform);
         go.transform.position = poolBox.transform.position;

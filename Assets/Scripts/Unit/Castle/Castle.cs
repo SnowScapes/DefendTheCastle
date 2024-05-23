@@ -10,7 +10,7 @@ public class Castle : MonoBehaviour
     private CastleInfoes[] _castleInfoes;
     private int castleLv = 0;
     [SerializeField]
-    public int currentCastleHp { get; private set; } = 50;
+    public int currentCastleHp = 50;
     [SerializeField]
     private int castleMaxHp = 50;
 
@@ -20,6 +20,8 @@ public class Castle : MonoBehaviour
     private GameObject[] explosioneffects;
     [SerializeField]
     private Image hpBar;
+    [SerializeField]
+    private GameObject pawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,21 +31,15 @@ public class Castle : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpgradeCastle(int stat)
-    {
-        
+    {        
         int temp = stat - castleMaxHp;
         castleMaxHp = stat;
-        currentCastleHp = temp;
+        currentCastleHp += temp;
         dicCastleLv[castleLv++].castle.SetActive(false);
         dicCastleLv[castleLv].castle.SetActive(true);
         burningeffects = dicCastleLv[castleLv].burningEffect;
+        CheckedState();
     }
 
     public void RepairCastle(int amount)
@@ -82,6 +78,7 @@ public class Castle : MonoBehaviour
         {
 
             hpBar.fillAmount = 0;
+            pawn.SetActive(false);
             StartCoroutine(ExplosionShake(0.1f,2));
             StartCoroutine(OnExplosion());
         }
@@ -114,6 +111,7 @@ public class Castle : MonoBehaviour
             yield return null;
         }
         Camera.main.transform.position = originPos;
+        GameManager.instance.isAlive = false;
         GameManager.instance.GameOver();
     }
 
@@ -125,6 +123,18 @@ public class Castle : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         dicCastleLv[castleLv].spriteRenderer.sprite = dicCastleLv[castleLv].destroySprite;
+    }
+
+    public void CheckCastleHp()
+    {
+        if (currentCastleHp < 0)
+        {
+            ScoreManager.instance.currentCastleHpPoint = 0;
+        }
+        else
+        {
+            ScoreManager.instance.currentCastleHpPoint = currentCastleHp;
+        }
     }
 }
 

@@ -129,15 +129,30 @@ MonoBehaviour:
   spawnmanager: {fileID: 0}
   spawnPoint: 0
   stat:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: TNT
     <hp>k__BackingField: 0
     <maxHp>k__BackingField: 15
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 11400000, guid: 9c215ec7567bf184cbd614bae52eb5d2, type: 2}
+  player:
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <gold>k__BackingField: 0
+    front: {fileID: 0}
+    attackSO: {fileID: 0}
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    knockback: 0
+  castle: {fileID: 0}
   Dynamite_Prefab: {fileID: 6660723251897500060, guid: 7e916badbb44a6442ae0710b23444e6c, type: 3}
 --- !u!114 &-7365800433943093606
 MonoBehaviour:
@@ -164,15 +179,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: 
     <hp>k__BackingField: 0
     <maxHp>k__BackingField: 0
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 0}
+  itemSpawner: {fileID: 0}
 --- !u!114 &451321308167228595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -8342529471178515844, guid: 470557b87adf1d448a7482fcba24a122, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

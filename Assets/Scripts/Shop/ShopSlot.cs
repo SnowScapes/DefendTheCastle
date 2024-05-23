@@ -21,29 +21,29 @@ public class ShopSlot : MonoBehaviour
     private Text afterAbility;
     [SerializeField] 
     private GameObject upgradeComplete;
-    [SerializeField]
-    private Image upgradeImg;
+    public Image upgradeImg;
 
     // Start is called before the first frame update
     void Start()
     {
         SetListUI();
+        attributeTxt.text = GetType(upgradeList.Type);
     }
 
     public void SetListUI()
-    {
-        attributeTxt.text = GetType(upgradeList.Type);
-        if (upgradeList.UpgradeValues.Length - 1 > upgradeList.UpgradeLv)
-        {
-            costTxt.text = upgradeList.UpgradeCosts[upgradeList.UpgradeLv].ToString() + " G";
-            currentAbility.text = upgradeList.UpgradeValues[upgradeList.UpgradeLv].ToString();
-            afterAbility.text = upgradeList.UpgradeValues[upgradeList.UpgradeLv + 1].ToString();
-        }
-        else
+    {        
+        if (upgradeList.UpgradeCosts.Length == upgradeList.UpgradeLv)
         {
             costTxt.text = " - G";
             abiltyGO.SetActive(false);
             upgradeComplete.SetActive(true);
+            upgradeBtn.interactable = false;
+        }
+        else
+        {
+            costTxt.text = upgradeList.UpgradeCosts[upgradeList.UpgradeLv].ToString() + " G";
+            currentAbility.text = upgradeList.UpgradeValues[upgradeList.UpgradeLv].ToString();
+            afterAbility.text = upgradeList.UpgradeValues[upgradeList.UpgradeLv + 1].ToString();
         }
 
         upgradeImg = upgradeList.UpgradeImg;
@@ -54,20 +54,20 @@ public class ShopSlot : MonoBehaviour
         switch(type) 
         {
             case Define.eUpgradeType.PlayerAtk:
-                upgradeBtn.onClick.AddListener(shop.OnAtkUpgrade);
-                return "플레이어\n공격력";
+                upgradeBtn.onClick.AddListener(() => shop.OnAtkUpgrade(this));
+                return "Upgrade Complete!";
             case Define.eUpgradeType.PlayerMaxHp:
-                upgradeBtn.onClick.AddListener(shop.OnPlayerMaxHpUpgrade);
-                return "플레이어\n최대 체력";
+                upgradeBtn.onClick.AddListener(() => shop.OnPlayerMaxHpUpgrade(this));
+                return "Upgrade Complete!";
             case Define.eUpgradeType.PlayerMoveSpeed:
-                upgradeBtn.onClick.AddListener(shop.OnPlayerMoveSpeedUpgrade);
-                return "플레이어\n이동속도";
-            case Define.eUpgradeType.PlayerAtkSpeed:
-                upgradeBtn.onClick.AddListener(shop.OnPlayerAtkSpeedUpgrade);
-                return "플레이어\n공격속도";
+                upgradeBtn.onClick.AddListener(() => shop.OnPlayerMoveSpeedUpgrade(this));
+                return "Upgrade Complete!";
+            case Define.eUpgradeType.PlayerAtkPerCount:
+                upgradeBtn.onClick.AddListener(() => shop.OnPlayerAtkPerCountUpgrade(this));
+                return "Upgrade Complete!";
             case Define.eUpgradeType.CastleLv:
-                upgradeBtn.onClick.AddListener(shop.OnCastleUpgrade);
-                return "캐슬\n최대 체력";
+                upgradeBtn.onClick.AddListener(() => shop.OnCastleUpgrade(this));
+                return "Upgrade Complete!";
             default: 
                 return string.Empty;
         }

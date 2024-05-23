@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -3244391150922479996, guid: 6740b6cadb2d0e643b6d36fede7e658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -312,15 +312,30 @@ MonoBehaviour:
   spawnmanager: {fileID: 0}
   spawnPoint: 0
   stat:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: Barrel
     <hp>k__BackingField: 0
     <maxHp>k__BackingField: 30
     <atk>k__BackingField: 10
     <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 11400000, guid: 51a70f640d9426b4ab68593d465c715b, type: 2}
+  player:
+    <hp>k__BackingField: 0
+    <maxHp>k__BackingField: 0
+    <atk>k__BackingField: 0
+    <moveSpeed>k__BackingField: 0
+    <gold>k__BackingField: 0
+    front: {fileID: 0}
+    attackSO: {fileID: 0}
+    <bulletName>k__BackingField: 
+    <delay>k__BackingField: 0
+    <projSpeed>k__BackingField: 0
+    <duration>k__BackingField: 0
+    <spread>k__BackingField: 0
+    <numberOfProjectilesPerShot>k__BackingField: 0
+    <multipleProjectilesAngle>k__BackingField: 0
+    <projectileColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+    knockback: 0
+  castle: {fileID: 0}
   explosion_prefab: {fileID: 4093275879539375780, guid: f3dbbb314a9cc6346a546d014505db5c, type: 3}
 --- !u!114 &-1195374970221440662
 MonoBehaviour:
@@ -347,15 +362,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat:
-    <id>k__BackingField: 0
-    <unitName>k__BackingField: 
     <hp>k__BackingField: 0
     <maxHp>k__BackingField: 0
     <atk>k__BackingField: 0
     <moveSpeed>k__BackingField: 0
-    <level>k__BackingField: 0
     <gold>k__BackingField: 0
     attackSO: {fileID: 0}
+  itemSpawner: {fileID: 0}
 --- !u!114 &-6065904926870720241
 MonoBehaviour:
   m_ObjectHideFlags: 0

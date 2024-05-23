@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TNT
   m_EditorClassIdentifier: 
   size: 1
-  delay: 1
+  delay: 1.5
   power: 5
   projSpeed: 3
   target:

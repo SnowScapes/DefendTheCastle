@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,28 +8,25 @@ public class MonsterSpawner : Spawner
 {
     [SerializeField]
     public Dictionary<Define.eMonsterType, IObjectPool<GameObject>> dicMonsterPool = new Dictionary<Define.eMonsterType, IObjectPool<GameObject>>();
-
+    [SerializeField]
+    private ItemSpawner itemSpawner;
     [SerializeField]
     private GameObject[] spawnerLocation;
+
+    private MonsterBehavior monsterController;
 
     public List<Transform> Rally_Left;
     public List<Transform> Rally_Center;
     public List<Transform> Rally_Right;
 
-
-    // Start is called before the first frame update
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-        StartCoroutine(StartGame());      
+        itemSpawner = GetComponent<ItemSpawner>();   
     }
 
-    //?�시??
-    IEnumerator StartGame()
+    protected override void Start()
     {
-        yield return new WaitForSeconds(3.0f);
-        StartCoroutine(GetMonsters(Define.eMonsterType.Tnt, 1, spawnerLocation[0].transform, 1.0f));
-        yield return null;
+        base.Start();  
     }
 
     protected override void FilledPool()
@@ -50,19 +48,7 @@ public class MonsterSpawner : Spawner
         for (int i = 0; i < count; i++)
         {
             GameObject go = dicMonsterPool[type].Get();
-            go.transform.position = tr.position;
-            go.transform.SetParent(transform);
-            go.GetComponent<MonsterBehavior>().spawnPoint = (Spawn)spawnLocation;
-
-            switch ((Spawn)spawnLocation)
-            {
-                case Spawn.Left: go.GetComponent<MonsterBehavior>().queueRally(Rally_Left);
-                    break;
-                case Spawn.Center: go.GetComponent<MonsterBehavior>().queueRally(Rally_Center);
-                    break;
-                case Spawn.Right: go.GetComponent<MonsterBehavior>().queueRally(Rally_Right);
-                    break;
-            }
+            Init(go, tr, spawnLocation);
             pools.Add(go);
         }
 
@@ -71,16 +57,52 @@ public class MonsterSpawner : Spawner
             ReleaseMonsterPool(type, pool);
         }
     }
-    
+
     //몬스???�환
-    public IEnumerator GetMonsters(Define.eMonsterType type, int count, Transform tr, float delayTime)
+    public void GetMonsters(Define.eMonsterType type, int spawnLocation)
     {
-        for (int i = 0; i < count; i++)
+        GameObject go = dicMonsterPool[type].Get();
+        go.SetActive(false);
+        monsterController = go.GetComponent<MonsterBehavior>();
+        monsterController.spawnPoint = (Spawn)spawnLocation;
+        switch ((Spawn)spawnLocation)
         {
-            GameObject go = dicMonsterPool[type].Get();
-            go.transform.position = tr.position;
-            go.transform.SetParent(poolBox.transform);
-            yield return new WaitForSeconds(delayTime);
+            case Spawn.Left:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = false;
+                monsterController.queueRally(Rally_Left);
+                break;
+            case Spawn.Center:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = false;
+                monsterController.queueRally(Rally_Center);
+                break;
+            case Spawn.Right:
+                go.GetComponentInChildren<SpriteRenderer>().flipX = true;
+                monsterController.queueRally(Rally_Right);
+                break;
+        }
+        go.transform.position = spawnerLocation[spawnLocation].transform.position;
+        go.transform.SetParent(poolBox.transform);
+        go.SetActive(true);
+    }
+
+    public void Init(GameObject go, Transform tr, int spawnLocation)
+    {
+        go.transform.position = tr.position;
+        go.transform.SetParent(poolBox.transform);
+        go.GetComponent<MonsterHealthManager>().itemSpawner = itemSpawner;
+        go.GetComponent<MonsterBehavior>().spawnPoint = (Spawn)spawnLocation;
+
+        switch ((Spawn)spawnLocation)
+        {
+            case Spawn.Left:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Left);
+                break;
+            case Spawn.Center:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Center);
+                break;
+            case Spawn.Right:
+                go.GetComponent<MonsterBehavior>().queueRally(Rally_Right);
+                break;
         }
     }
 

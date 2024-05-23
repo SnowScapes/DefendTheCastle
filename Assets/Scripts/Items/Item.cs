@@ -8,15 +8,11 @@ public class Item : MonoBehaviour
     public Spawner spawner;
     public Define.eItmeType type { get; private set; }
     public int amount { get; private set; }
+    private float releaseTime = 10.0f;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void OnBecameVisible()
     {
@@ -26,11 +22,29 @@ public class Item : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(ReleaseItem());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(ReleaseItem());
+    }
     public void Init(Define.eItmeType itemType, int _amount)
     {
         type = itemType;
         amount = _amount;
         GetItemType(itemType);
+    }
+
+    private IEnumerator ReleaseItem()
+    {
+        yield return new WaitForSeconds(releaseTime);
+        if (this.gameObject.activeSelf)
+        {
+            spawner.ReleaseItem(this.gameObject);
+        }
     }
 
     public int GetItemType(Define.eItmeType _type)
