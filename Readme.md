@@ -101,6 +101,8 @@ W/A/S/D 키를 통해 캐릭터를 움직이고, 마우스 위치를 통해 캐�
   <img src ="https://github.com/SnowScapes/DefendTheCastle/assets/122630746/ff3f3317-5296-40b7-a97b-84849023d77f" width = 500>
 </details>
 
+<br>
+
 ## 사용 에셋
 
 디자인 에셋 [Tiny Swords](https://pixelfrog-assets.itch.io/tiny-swords)
