@@ -105,6 +105,4 @@ W/A/S/D 키를 통해 캐릭터를 움직이고, 마우스 위치를 통해 캐�
 
 디자인 에셋 [Tiny Swords](https://pixelfrog-assets.itch.io/tiny-swords)
 
-배경 음악 에셋 [BGM 1](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116)
-
-[BGM 2](https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943)
+배경 음악 에셋 [BGM 1](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116) , [BGM 2](https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943)
