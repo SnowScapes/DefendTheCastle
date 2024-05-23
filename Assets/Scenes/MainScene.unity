@@ -4040,7 +4040,7 @@ Tilemap:
       - {fileID: 1709744029, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: 945082375, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -383855836, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: 0, z: 0}
@@ -4145,7 +4145,7 @@ Tilemap:
       - {fileID: -1887707169, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1097203772, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
       - {fileID: -1975554766, guid: 80785fd97db4a4f478494efec014bbdc, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 5, y: 2, z: 0}
@@ -6454,11 +6454,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &935177682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5482761167881053589, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-  m_PrefabInstance: {fileID: 188987296165047295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &958946559
 GameObject:
   m_ObjectHideFlags: 0
@@ -10108,17 +10103,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoints
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2924976052376265854, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 3722737334631794500, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 4983530649778104230, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 1133301253245459771, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 3125409914162385669, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 5067112566890465842, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 1622021417198067865, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 2459887096916721902, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 4593213455271959260, guid: 06de69c047f176446bef12844e97559b, type: 3}
-    - {fileID: 5875590081808406794, guid: 06de69c047f176446bef12844e97559b, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11465,77 +11450,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 367756452443018495, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 767333342029618705, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 927756719158582442, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1354131198731276139, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564967583622482072, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1799628955569163147, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: pawn
-      value: 
-      objectReference: {fileID: 935177682}
     - target: {fileID: 1799628955569163147, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1033799021}
-    - target: {fileID: 2543466145587547025, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2892695520067297742, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3099695419769958971, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267659321418535296, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3941586856336469290, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5079705587960172637, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138255624034241511, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5589366223793209622, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5595415293710702025, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
       propertyPath: m_Name
       value: Castle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7890561996231558317, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461062729596423621, guid: 99afd7bf0e8047c4a8dcaac9d056e116, type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11644,11 +11565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 5529314226784116121, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6742683197152157937, guid: 1d6d3b3f982e42049a2ccaf651379644, type: 3}
       propertyPath: castle

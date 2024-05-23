@@ -21,8 +21,7 @@ public class ShopSlot : MonoBehaviour
     private Text afterAbility;
     [SerializeField] 
     private GameObject upgradeComplete;
-    [SerializeField]
-    private Image upgradeImg;
+    public Image upgradeImg;
 
     // Start is called before the first frame update
     void Start()

@@ -16,4 +16,4 @@ MonoBehaviour:
   upgradeLv: 0
   upgradeValues: 6400000096000000
   upgradeCosts: b0040000
-  upgradeUI: {fileID: 858841808, guid: 2e5b3ee6f53772348a8d36da55b0eeea, type: 3}
+  upgradeUI: {fileID: -4752010850636072970, guid: 0c61089265537c24090784f76c19df09, type: 3}

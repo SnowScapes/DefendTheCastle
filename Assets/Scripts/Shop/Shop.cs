@@ -29,6 +29,7 @@ public class Shop : MonoBehaviour
         {
 
             ShopSlot slot = Instantiate(upgradePrefab, transform);
+            upgradeList[i].UpgradeImg = slot.upgradeImg;
             upgradeList[i].InitInfo(contentSO[i]);
             dicUpgrade[contentSO[i].type] = upgradeList[i];
             slot.upgradeList = upgradeList[i];
