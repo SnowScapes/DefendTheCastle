@@ -134,11 +134,11 @@ public class Shop : MonoBehaviour
         purchasedStateTxt.gameObject.SetActive(true);
         if (result == 0)
         {
-            purchasedStateTxt.text = "���׷��̵忡 �����Ͽ����ϴ�.";
+            purchasedStateTxt.text = "업그레이드를 실패하였습니다..";
         }
         else
         {
-            purchasedStateTxt.text = "���׷��̵带 �����Ͽ����ϴ�.";
+            purchasedStateTxt.text = "업그레이드에 성공하였습니다..";
         }
         yield return new WaitForSeconds(1.0f);
         purchasedStateTxt.gameObject.SetActive(false);
