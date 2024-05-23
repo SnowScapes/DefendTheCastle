@@ -72,7 +72,7 @@ W/A/S/D 키를 통해 캐릭터를 움직이고, 마우스 위치를 통해 캐�
 - ⌨ W/A/S/D 키를 통해 캐릭터를 움직이고, 🖱 마우스 좌클릭을 통해 공격합니다.
 - 적을 처치하면 다양한 아이템이 드랍됩니다.
 - 상점을 통해 업그레이드를 진행할 수 있습니다.
-
+- 특수 기능을 통해, 쿨 타임마다 성을 수리할 수 있습니다.
 <details>
   <summary> 🎮 플레이어 이동 / 💎 상점 </summary>
   <img src = "https://github.com/SnowScapes/DefendTheCastle/assets/122630746/bb5403d4-b9f2-4148-a5cc-7dbd7bf5020c" width = 500>
@@ -100,3 +100,9 @@ W/A/S/D 키를 통해 캐릭터를 움직이고, 마우스 위치를 통해 캐�
   <img src = "https://github.com/SnowScapes/DefendTheCastle/assets/122630746/23ffcb75-2977-4525-80c4-632e6c65695b" width = 500>
   <img src ="https://github.com/SnowScapes/DefendTheCastle/assets/122630746/ff3f3317-5296-40b7-a97b-84849023d77f" width = 500>
 </details>
+
+## 사용 에셋
+
+[Tiny Swords](https://pixelfrog-assets.itch.io/tiny-swords)
+[BGM 1](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116)
+[BGM 2](https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943)
