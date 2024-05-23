@@ -24,20 +24,10 @@ public class MonsterSpawner : Spawner
         itemSpawner = GetComponent<ItemSpawner>();   
     }
 
-    // Start is called before the first frame update
     protected override void Start()
     {
-        base.Start();
-        //StartCoroutine(StartGame());      
+        base.Start();  
     }
-    /*
-    //?�시??
-    IEnumerator StartGame()
-    {
-        yield return new WaitForSeconds(3.0f);
-        StartCoroutine(GetMonsters(Define.eMonsterType.Tnt, 1, spawnerLocation[2].transform, 1.0f));
-        yield return null;
-    }*/
 
     protected override void FilledPool()
     {

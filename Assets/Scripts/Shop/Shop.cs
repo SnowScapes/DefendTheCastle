@@ -15,12 +15,12 @@ public class Shop : MonoBehaviour
     private List<ShopSlot> slotList = new List<ShopSlot>();
     [SerializeField]
     private UpgradeContentSO[] contentSO;
-    //shopslotÀ¸·Î ÇÁ¸®ÆÕ»ý¼º°¡´É
+    
     [SerializeField]
     private ShopSlot upgradePrefab;
     [SerializeField]
     private Text purchasedStateTxt;
-    // Start is called before the first frame update
+    
     void Start()
     {
         stat = GameManager.instance.playerStat;
@@ -29,6 +29,7 @@ public class Shop : MonoBehaviour
         {
 
             ShopSlot slot = Instantiate(upgradePrefab, transform);
+            upgradeList[i].UpgradeImg = slot.upgradeImg;
             upgradeList[i].InitInfo(contentSO[i]);
             dicUpgrade[contentSO[i].type] = upgradeList[i];
             slot.upgradeList = upgradeList[i];
@@ -89,11 +90,6 @@ public class Shop : MonoBehaviour
         ClearSlotUI(slot);
     }
 
-    public void OnSpecialItem()
-    {
-
-    }
-
     private void ClearSlotUI(ShopSlot slot)
     {
         slot.SetListUI();
@@ -138,11 +134,11 @@ public class Shop : MonoBehaviour
         purchasedStateTxt.gameObject.SetActive(true);
         if (result == 0)
         {
-            purchasedStateTxt.text = "¾÷±×·¹ÀÌµå¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.";
+            purchasedStateTxt.text = "ï¿½ï¿½ï¿½×·ï¿½ï¿½Ìµå¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
         }
         else
         {
-            purchasedStateTxt.text = "¾÷±×·¹ÀÌµå¸¦ ¼º°øÇÏ¿´½À´Ï´Ù.";
+            purchasedStateTxt.text = "ï¿½ï¿½ï¿½×·ï¿½ï¿½Ìµå¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
         }
         yield return new WaitForSeconds(1.0f);
         purchasedStateTxt.gameObject.SetActive(false);

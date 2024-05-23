@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     protected GameObject poolBox;
 
-    protected int DefaultItemCount = 5;
+    protected int DefaultItemCount = 10;
 
     protected virtual void Start()
     {

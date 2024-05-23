@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9528302, g: 0.74158955, b: 0.74158955, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -889,7 +889,7 @@ MonoBehaviour:
     UpgradeLv: 0
     UpgradeValues: 
     UpgradeCosts: 
-    UpgradeImg: {fileID: 0}
+    UpgradeImg: {fileID: 6697117054241945737}
   shop: {fileID: 0}
   upgradeBtn: {fileID: 2692781513744397973}
   attributeTxt: {fileID: 5364028750552112548}

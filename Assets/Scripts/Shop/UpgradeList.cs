@@ -18,7 +18,7 @@ public class UpgradeList
         UpgradeLv = so.upgradeLv;
         UpgradeValues = so.upgradeValues;
         UpgradeCosts = so.upgradeCosts;
-        //UpgradeImg.sprite = so.upgradeUI;
+        UpgradeImg.sprite = so.upgradeUI;
     }
 }
 
